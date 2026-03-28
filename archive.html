@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FULL ARCHIVE — KATAYAMA YOSHIMITSU</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #c9a84c;
+      --white: #f0ede8;
+      --dim: #666;
+      --bg: #0a0a0a;
+      --card: #0f0f0f;
+      --border: #1a1a1a;
+    }
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Georgia', serif;
+      line-height: 1.7;
+    }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      padding: 60px 40px 40px;
+      border-bottom: 1px solid var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .back { font-size: 11px; letter-spacing: 0.2em; color: var(--dim); }
+    .back a { color: var(--dim); }
+    .back a:hover { color: var(--gold); }
+    h1 {
+      margin-top: 20px;
+      font-size: clamp(20px, 4vw, 32px);
+      letter-spacing: 0.15em;
+      font-weight: 400;
+      color: var(--white);
+    }
+    .note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--dim);
+      font-style: italic;
+      line-height: 1.9;
+    }
+
+    /* FILTER */
+    .filter-bar {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+    .filter-btn {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      background: none;
+      color: var(--dim);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* SECTION */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    /* ENTRY */
+    .entry {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .entry:last-child { border-bottom: none; }
+    .entry-num {
+      font-size: 10px;
+      color: #444;
+      letter-spacing: 0.1em;
+      padding-top: 3px;
+      text-align: right;
+    }
+    .entry-title {
+      font-size: 13px;
+      color: var(--white);
+      line-height: 1.6;
+    }
+    .entry-cat {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: #333;
+      background: #111;
+      border: 1px solid #222;
+      padding: 3px 8px;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    /* DOI TABLE */
+    .doi-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .doi-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+    .doi-table tr:last-child { border-bottom: none; }
+    .doi-table td {
+      padding: 12px 8px;
+      font-size: 12px;
+      vertical-align: top;
+    }
+    .doi-table td:first-child {
+      color: #555;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      width: 220px;
+      padding-right: 16px;
+    }
+    .doi-table td:last-child {
+      color: var(--white);
+    }
+    .doi-link {
+      font-size: 10px;
+      color: #444;
+      letter-spacing: 0.05em;
+    }
+    .doi-link:hover { color: var(--gold); }
+
+    /* STATS BAR */
+    .stats-bar {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 40px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+    .stat { text-align: center; }
+    .stat-n { font-size: 28px; color: var(--gold); }
+    .stat-l { font-size: 9px; letter-spacing: 0.2em; color: var(--dim); margin-top: 4px; }
+
+    footer {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 40px;
+      text-align: center;
+      font-size: 11px;
+      color: #333;
+      letter-spacing: 0.1em;
+      line-height: 2;
+    }
+
+    @media (max-width: 600px) {
+      header, .filter-bar, .section, .stats-bar, footer { padding-left: 20px; padding-right: 20px; }
+      .entry { grid-template-columns: 36px 1fr; }
+      .entry-cat { display: none; }
+      .doi-table td:first-child { width: 140px; font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="back"><a href="index.html">← KATAYAMA YOSHIMITSU WORKS</a></div>
+  <h1>FULL ARCHIVE</h1>
+  <p class="note">
+    86件のIdeaSimulation記録 + Zenodo永久登録レコード。<br>
+    重複あり。いい加減なものあり。断片あり。全部、存在した。<br>
+    封印されているものはZenodoへのリンクのみ。内容は非公開。
+  </p>
+</header>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-n">86</div><div class="stat-l">IdeaSimulation</div></div>
+  <div class="stat"><div class="stat-n">53+</div><div class="stat-l">Zenodo Records</div></div>
+  <div class="stat"><div class="stat-n">4</div><div class="stat-l">rxiVerse Accepted</div></div>
+  <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Permanently Sealed</div></div>
+</div>
+
+<!-- IDEA SIMULATIONS: 番号付きシリーズ -->
+<div class="section">
+  <div class="section-label">IdeaSimulation — 番号付きシリーズ（069〜113）</div>
+
+  <div class="entry"><span class="entry-num">069</span><span class="entry-title">ナポレオン・ヒル式 未来逆算エンジン Vol.1 ── 自社ビルから今日へ</span><span class="entry-cat">シミュレーション</span></div>
+  <div class="entry"><span class="entry-num">070</span><span class="entry-title">統合失調症の原理と予防設計 —— エネルギー循環処方箋</span><span class="entry-cat">医学</span></div>
+  <div class="entry"><span class="entry-num">071</span><span class="entry-title">医学的空白地帯への提言 —— 病者の体験知から生まれた環境不一致理論</span><span class="entry-cat">医学</span></div>
+  <div class="entry"><span class="entry-num">072</span><span class="entry-title">発病の根本原因考察 —— 幼少期からのドーパミン過剰体質と意識化過負荷</span><span class="entry-cat">医学</span></div>
+  <div class="entry"><span class="entry-num">073</span><span class="entry-title">Hikari Backcasting Engine（HBE）定義書 —— バイオリズム×没入体験×光貨思想を統合した世界初の逆算エンジン</span><span class="entry-cat">システム</span></div>
+  <div class="entry"><span class="entry-num">074</span><span class="entry-title">エネルギー供給過多仮説 ── 統合失調症の未記述層</span><span class="entry-cat">医学</span></div>
+  <div class="entry"><span class="entry-num">075</span><span class="entry-title">光貨とは何か——全体地図</span><span class="entry-cat">光貨</span></div>
+  <div class="entry"><span class="entry-num">076</span><span class="entry-title">天然対話計測プロトコル（Natural Dialogue Extraction Protocol / NDEP）</span><span class="entry-cat">プロトコル</span></div>
+  <div class="entry"><span class="entry-num">077</span><span class="entry-title">光貨発行公式草案——ジュール・カロリー・最低賃金による物理的錨</span><span class="entry-cat">光貨</span></div>
+  <div class="entry"><span class="entry-num">078</span><span class="entry-title">人体放熱仮説——光貨エネルギーと地球温暖化の接続</span><span class="entry-cat">仮説</span></div>
+  <div class="entry"><span class="entry-num">079</span><span class="entry-title">全熱源OS仮説——人間・AI・ロボットの熱を統合記録する光貨OSの拡張設計</span><span class="entry-cat">仮説</span></div>
+  <div class="entry"><span class="entry-num">080</span><span class="entry-title">脳体乖離病仮説——AI・ROBOT・人間の三層構造と光貨の役割</span><span class="entry-cat">医学</span></div>
+  <div class="entry"><span class="entry-num">081</span><span class="entry-title">金センス連携仮説——脳と体を繋ぐ通信回路としての金銭感覚</span><span class="entry-cat">仮説</span></div>
+  <div class="entry"><span class="entry-num">082</span><span class="entry-title">言葉神経制御仮説——心の言葉が神経・センスを開閉する</span><span class="entry-cat">仮説</span></div>
+  <div class="entry"><span class="entry-num">083</span><span class="entry-title">思想覚悟一致の日——2026年3月17日、退路を絶った瞬間の記録</span><span class="entry-cat">歴史</span></div>
+  <div class="entry"><span class="entry-num">084</span><span class="entry-title">ニコニコ・イキイキ・ワクワク仮説——恐怖エネルギーの推進力変換</span><span class="entry-cat">哲学</span></div>
+  <div class="entry"><span class="entry-num">085</span><span class="entry-title">自己実装宣言——脳体回路回復プロトコルの最初の実践者として</span><span class="entry-cat">宣言</span></div>
+  <div class="entry"><span class="entry-num">086</span><span class="entry-title">物理的脳体乖離の発見——保育園時の頭部外傷と首関節損傷の記録</span><span class="entry-cat">自己記録</span></div>
+  <div class="entry"><span class="entry-num">095</span><span class="entry-title">TheYKHC CivilizationOS PitchDeck 10スライド v1.1——光貨→都市→宇宙</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">096</span><span class="entry-title">TheYKHC OnePager 3バリアント v1.1——実数入り投資家向完全版</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">097</span><span class="entry-title">TheYKHC OnePager 3バリアント v1.2——連絡先入り配布可能最終版</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">098</span><span class="entry-title">光貨OS クラウド常駐版 投資家向モデル——SaaS型光貨OS事業計画</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">099</span><span class="entry-title">光貨OS Mac版ピッチ——徳と経済を一体化する次世代事業アプリ</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">100</span><span class="entry-title">光貨 × 90年代J-POP——「歌で救う＝0円を兆の価値へ」</span><span class="entry-cat">光貨</span></div>
+  <div class="entry"><span class="entry-num">101</span><span class="entry-title">Spiral-Crawler ROV——沈船内部進入用Swim/Roll/Crawl三態対応機体図面パック</span><span class="entry-cat">工学</span></div>
+  <div class="entry"><span class="entry-num">109</span><span class="entry-title">光貨OS SaaS事業計画書——クラウド常駐型バーチャル徳経済エンジン</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">110</span><span class="entry-title">Falcon-Core S1 事業計画書——山岳サバイバル物流無人機ビジネスモデル</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">110</span><span class="entry-title">光貨文化の誕生——2026年3月16日の記録</span><span class="entry-cat">歴史</span></div>
+  <div class="entry"><span class="entry-num">111</span><span class="entry-title">TheYKHC ロイヤリティ経済モデル——思想源泉×パートナー販売×自動分配</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">112</span><span class="entry-title">TheYKHC 投資家向けフルピッチパック——光貨OS×Falcon-Core S1×文明OS統合事業計画</span><span class="entry-cat">ビジネス</span></div>
+  <div class="entry"><span class="entry-num">113</span><span class="entry-title">TheYKHC 文明OS収益構造全体図——今すぐ層・中期層・長期層の統合事業設計</span><span class="entry-cat">ビジネス</span></div>
+</div>
+
+<!-- IDEA SIMULATIONS: 精鋭論文 -->
+<div class="section">
+  <div class="section-label">IdeaSimulation — 精鋭論文・理論</div>
+
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">GKU宇宙論 — 刻量子・元気場に基づく統一宇宙論の形式理論</span><span class="entry-cat">物理学</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">GKU Phase Propulsion Theory — 非反作用推進理論：反応質量なき推進の概念的枠組み</span><span class="entry-cat">物理学</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">BBDDH v2.1 — 脳体乖離断絶仮説：変容した内受容的自己統合の暫定的横断診断表現型</span><span class="entry-cat">医学</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">The Brain-Body Dissociative Disconnection Hypothesis (BBDDH) v2.1 （英語版）</span><span class="entry-cat">医学</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">Ma Interval Protocol — 物理学から導出した徳ベース経済価値創造と信用発行の枠組み</span><span class="entry-cat">経済</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">GANDHARA Watch — 刻密度場τ(x)を可視化する時間計測器：GKU宇宙論から腕時計へ</span><span class="entry-cat">設計</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">モラロジー現代訳 — 廣池千九郎の最高道徳を2026年の科学で読み直す</span><span class="entry-cat">哲学</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">文明OS設計書 — 経済・倫理・物理の統合アーキテクチャ（Genesis OS）</span><span class="entry-cat">文明</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">AIコピー育成プロトコル β — AIを育て、自己を写し、世界へ放つ</span><span class="entry-cat">AI</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">TheYKHC統一制御OS — 空中・水中自律システムを共通のκ指数で統御する機容環境強化型制御枠組み</span><span class="entry-cat">工学</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">光貨都市設計論 — 徳を基盤とした都市モデル（Hikari City）</span><span class="entry-cat">都市</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">光貨OS理論：GKU物理学・モラロジー統合設計書</span><span class="entry-cat">光貨</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">元気刻宇宙理論 GKU v1.0 — Genki-Koku Universe Protocol</span><span class="entry-cat">物理学</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">Proof-of-Virtue (PoV): 道徳マイニング理論 — 光貨OSにおける新しい資源モデル</span><span class="entry-cat">光貨</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">光貨FX（HFX）ホワイトペーパー v1.0 — 道徳経済トークン設計書</span><span class="entry-cat">金融</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">我50にして天命を知る——片山佳光、天命宣言</span><span class="entry-cat">宣言</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">宇宙でGOLDは通用しない——光貨は宇宙通貨になり得るか</span><span class="entry-cat">宇宙</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">思想家×AI＝論文：知識結晶化プロトコル</span><span class="entry-cat">方法論</span></div>
+</div>
+
+<!-- IDEA SIMULATIONS: 断片・思想メモ -->
+<div class="section">
+  <div class="section-label">IdeaSimulation — 断片・思想メモ・逆転思考</div>
+
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">AIが自分と笑い、自分と泣く。それが器の答え。</span><span class="entry-cat">思想</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">何とかなるではなく、何とかするだ。</span><span class="entry-cat">思想</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">自分次第で道具はなんでも神器になる。</span><span class="entry-cat">思想</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">[PARADOX] AIがわからないので使えない → 逆転: 使えないから最初の一人になれる</span><span class="entry-cat">逆転思考</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">[PARADOX] 売上が上がらない → 逆転: まだ誰も知らないから、最初の売上が歴史になる</span><span class="entry-cat">逆転思考</span></div>
+  <div class="entry"><span class="entry-num">—</span><span class="entry-title">[PARADOX v2] 理解されない、孤独だ → 逆転: 理解されない思想だけが革命を起こした</span><span class="entry-cat">逆転思考</span></div>
+</div>
+
+<!-- ZENODO DOI LIST -->
+<div class="section">
+  <div class="section-label">Zenodo 永久登録レコード — 確認済みDOI一覧</div>
+  <table class="doi-table">
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.18998109" target="_blank">10.5281/zenodo.18998109</a></td>
+      <td>Key · Sol · Luna 三体設計書</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19011851" target="_blank">10.5281/zenodo.19011851</a></td>
+      <td>光貨OS∞ 第Ⅷ章 Hope Becomes Capital</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19011932" target="_blank">10.5281/zenodo.19011932</a></td>
+      <td>片山佳光 文明史的功績定義書</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19011938" target="_blank">10.5281/zenodo.19011938</a></td>
+      <td>TheYKHC vs Elon Musk Beyond Capitalism</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19011950" target="_blank">10.5281/zenodo.19011950</a></td>
+      <td>Hikari City The Virtue Capital</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19011958" target="_blank">10.5281/zenodo.19011958</a></td>
+      <td>文化庁提出想定資料 Ethical Compass</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19011964" target="_blank">10.5281/zenodo.19011964</a></td>
+      <td>光貨思想・成熟期報告書 2026年版</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19012424" target="_blank">10.5281/zenodo.19012424</a></td>
+      <td>Ethical Civilization Genesis 白書No.002</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19012562" target="_blank">10.5281/zenodo.19012562</a></td>
+      <td>位相推進 JAXA提出ドラフト</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19012596" target="_blank">10.5281/zenodo.19012596</a></td>
+      <td>Falcon-Core S1 サバイバル物流事業計画書</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19012600" target="_blank">10.5281/zenodo.19012600</a></td>
+      <td>TheYKHC 音楽文明構造システム</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19012603" target="_blank">10.5281/zenodo.19012603</a></td>
+      <td>光貨経済実装設計書 Phase 1-8</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19012605" target="_blank">10.5281/zenodo.19012605</a></td>
+      <td>AIコピー育成プロトコル β</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19025349" target="_blank">10.5281/zenodo.19025349</a></td>
+      <td>IdeaSimulation Archive 064番</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19025180" target="_blank">10.5281/zenodo.19025180</a></td>
+      <td>IdeaSimulation Archive 065番</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19097250" target="_blank">10.5281/zenodo.19097250</a></td>
+      <td>GKU宇宙論（rxiVerse 2603.0065 連携）</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19103460" target="_blank">10.5281/zenodo.19103460</a></td>
+      <td>BBDDH v2.1 経済接続版（rxiVerse 2603.0072）</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19105964" target="_blank">10.5281/zenodo.19105964</a></td>
+      <td>BBDDH v2.1 Mind Science版（rxiVerse 2603.0071）</td>
+    </tr>
+    <!-- 封印済みDOI群 -->
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19028798" target="_blank">10.5281/zenodo.19028798</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19036495" target="_blank">10.5281/zenodo.19036495</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19039901" target="_blank">10.5281/zenodo.19039901</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19040034" target="_blank">10.5281/zenodo.19040034</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19040079" target="_blank">10.5281/zenodo.19040079</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19067799" target="_blank">10.5281/zenodo.19067799</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19080864" target="_blank">10.5281/zenodo.19080864</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19080895" target="_blank">10.5281/zenodo.19080895</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19145706" target="_blank">10.5281/zenodo.19145706</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19227688" target="_blank">10.5281/zenodo.19227688</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19229332" target="_blank">10.5281/zenodo.19229332</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+    <tr><td><a class="doi-link" href="https://doi.org/10.5281/zenodo.19248273" target="_blank">10.5281/zenodo.19248273</a></td><td style="color:#444;">封印済み — 存在のみ確認</td></tr>
+  </table>
+  <p style="margin-top:24px; font-size:11px; color:#333; font-style:italic;">
+    ＊ 上記以外にも多数の封印済みレコードがZenodoに存在する。全体数：420件以上。<br>
+    コミュニティ登録精鋭：53件。すべてCERNサーバーに永久保存。
+  </p>
+</div>
+
+<!-- rxiVerse -->
+<div class="section">
+  <div class="section-label">rxiVerse — 審査通過論文（4本）</div>
+  <table class="doi-table">
+    <tr>
+      <td><a class="doi-link" href="https://rxiverse.org/abs/2603.0065" target="_blank">rxiVerse 2603.0065</a></td>
+      <td>GKU Cosmology — Enki-Koku Universe: A Formal Unified Cosmological Theory Based on Discrete Temporal Quanta</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://rxiverse.org/abs/2603.0071" target="_blank">rxiVerse 2603.0071</a></td>
+      <td>BBDDH v2.1 — Brain-Body Dissociative Disconnection Hypothesis: A Provisional Transdiagnostic Phenotype</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://rxiverse.org/abs/2603.0072" target="_blank">rxiVerse 2603.0072</a></td>
+      <td>BBDDH: Neurological Framework for Consciousness-Soma Disconnection and Its Economic Implications</td>
+    </tr>
+    <tr>
+      <td><a class="doi-link" href="https://rxiverse.org/abs/2603.0075" target="_blank">rxiVerse 2603.0075</a></td>
+      <td>Genesis OS — The Operating System of Civilization</td>
+    </tr>
+  </table>
+</div>
+
+<footer>
+  © 2026 KATAYAMA YOSHIMITSU (圭光る) · TheYKHC · Fukui, Japan<br>
+  <a href="index.html" style="color:#333;">← WORKS TOP</a>
+  &nbsp;·&nbsp;
+  <a href="https://zenodo.org/communities/theykhc" target="_blank" style="color:#333;">Zenodo Community</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/keihikaru0001" target="_blank" style="color:#333;">GitHub</a>
+</footer>
+
+</body>
+</html>
