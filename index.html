@@ -4,521 +4,628 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KATAYAMA YOSHIMITSU WORKS</title>
+  <meta name="description" content="Designer · Philosopher · Civilization Architect. Fukui, Japan. Permanent archive of all works by Yoshimitsu Katayama / TheYKHC.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     :root {
       --gold: #c9a84c;
       --white: #f0ede8;
       --dim: #888;
       --bg: #0a0a0a;
       --card: #111111;
-      --border: #222;
+      --border: #1e1e1e;
     }
-
     body {
       background: var(--bg);
       color: var(--white);
       font-family: 'Georgia', 'Times New Roman', serif;
       line-height: 1.8;
     }
+    a { color: inherit; text-decoration: none; }
 
     /* HEADER */
     header {
-      padding: 80px 40px 60px;
+      padding: 80px 48px 60px;
       border-bottom: 1px solid var(--border);
-      max-width: 960px;
+      max-width: 1000px;
       margin: 0 auto;
     }
-
     .name {
-      font-size: clamp(28px, 5vw, 48px);
-      letter-spacing: 0.15em;
+      font-size: clamp(26px, 5vw, 46px);
+      letter-spacing: 0.18em;
       font-weight: 400;
       color: var(--white);
     }
-
-    .name span {
-      color: var(--gold);
-    }
-
+    .name span { color: var(--gold); }
     .subtitle {
-      margin-top: 16px;
-      font-size: 13px;
-      letter-spacing: 0.3em;
+      margin-top: 14px;
+      font-size: 11px;
+      letter-spacing: 0.35em;
       color: var(--dim);
       text-transform: uppercase;
     }
-
     .bio {
-      margin-top: 32px;
-      font-size: 15px;
-      color: #aaa;
-      max-width: 600px;
+      margin-top: 28px;
+      font-size: 14px;
+      color: #999;
+      max-width: 580px;
       line-height: 2;
       font-style: italic;
     }
 
     /* NAV */
     nav {
-      max-width: 960px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 32px 40px;
+      padding: 28px 48px;
       display: flex;
-      gap: 32px;
+      gap: 28px;
       flex-wrap: wrap;
       border-bottom: 1px solid var(--border);
     }
-
     nav a {
       color: var(--dim);
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 0.2em;
+      font-size: 11px;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       transition: color 0.2s;
     }
-
     nav a:hover { color: var(--gold); }
 
     /* SECTION */
     section {
-      max-width: 960px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 64px 48px;
       border-bottom: 1px solid var(--border);
     }
-
     .section-label {
-      font-size: 11px;
-      letter-spacing: 0.4em;
+      font-size: 10px;
+      letter-spacing: 0.45em;
       color: var(--gold);
       text-transform: uppercase;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
 
-    /* WORKS GRID */
-    .works-grid {
+    /* GRID */
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2px;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1px;
+      background: var(--border);
     }
-
-    .work-item {
+    .card {
       background: var(--card);
-      padding: 28px;
-      border: 1px solid var(--border);
-      transition: border-color 0.2s;
+      padding: 28px 26px;
+      transition: background 0.2s;
     }
-
-    .work-item:hover {
-      border-color: var(--gold);
-    }
-
-    .work-year {
-      font-size: 11px;
+    .card:hover { background: #161616; }
+    .card-year {
+      font-size: 10px;
       color: var(--gold);
       letter-spacing: 0.2em;
       margin-bottom: 10px;
     }
-
-    .work-title {
-      font-size: 15px;
+    .card-title {
+      font-size: 14px;
       color: var(--white);
       margin-bottom: 10px;
       line-height: 1.5;
     }
-
-    .work-desc {
-      font-size: 13px;
-      color: #777;
-      line-height: 1.7;
-    }
-
-    .work-link {
-      display: inline-block;
-      margin-top: 14px;
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      color: var(--gold);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
-    .work-link:hover {
-      border-color: var(--gold);
-    }
-
-    /* LIST */
-    .award-list {
-      list-style: none;
-    }
-
-    .award-list li {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 24px;
-      font-size: 14px;
-    }
-
-    .award-list li:last-child {
-      border-bottom: none;
-    }
-
-    .award-year {
-      color: var(--gold);
+    .card-desc {
       font-size: 12px;
-      letter-spacing: 0.1em;
-      padding-top: 2px;
-    }
-
-    .award-name {
-      color: var(--white);
-    }
-
-    .award-name span {
-      display: block;
-      font-size: 12px;
-      color: var(--dim);
-      margin-top: 4px;
-    }
-
-    /* THEORY */
-    .theory-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2px;
-    }
-
-    .theory-item {
-      background: var(--card);
-      padding: 28px;
-      border: 1px solid var(--border);
-    }
-
-    .theory-name {
-      font-size: 16px;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-
-    .theory-desc {
-      font-size: 13px;
-      color: #777;
+      color: #666;
       line-height: 1.8;
     }
-
-    .theory-doi {
+    .card-link {
       display: inline-block;
       margin-top: 14px;
       font-size: 10px;
-      letter-spacing: 0.1em;
-      color: #555;
-      text-decoration: none;
-    }
-
-    .theory-doi:hover {
+      letter-spacing: 0.18em;
       color: var(--gold);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .card-link:hover { border-color: var(--gold); }
+
+    /* AWARD LIST */
+    .award-list { list-style: none; }
+    .award-list li {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 24px;
+      font-size: 13px;
+    }
+    .award-list li:last-child { border-bottom: none; }
+    .ay { color: var(--gold); font-size: 11px; letter-spacing: 0.1em; padding-top: 2px; }
+    .an { color: var(--white); }
+    .an span { display: block; font-size: 11px; color: var(--dim); margin-top: 3px; }
+
+    /* PAPER LIST */
+    .paper-list { list-style: none; }
+    .paper-list li {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .paper-list li:last-child { border-bottom: none; }
+    .p-tag {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      background: #1a1500;
+      border: 1px solid #3a2e00;
+      padding: 4px 8px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    .p-title { font-size: 13px; color: var(--white); line-height: 1.5; }
+    .p-desc { font-size: 11px; color: #666; margin-top: 5px; line-height: 1.7; }
+    .p-doi {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 10px;
+      color: #555;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .p-doi:hover { color: var(--gold); }
+
+    /* STATS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      margin-top: 0;
+    }
+    .stat {
+      background: var(--card);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 36px;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+    }
+    .stat-label {
+      font-size: 10px;
+      color: var(--dim);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 8px;
     }
 
     /* FOOTER */
     footer {
-      max-width: 960px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 60px 40px;
+      padding: 64px 48px;
       text-align: center;
     }
-
     .footer-mark {
-      font-size: 28px;
+      font-size: 11px;
+      letter-spacing: 0.5em;
       color: var(--gold);
-      letter-spacing: 0.3em;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
-
     .footer-text {
-      font-size: 12px;
-      color: var(--dim);
-      letter-spacing: 0.15em;
+      font-size: 11px;
+      color: #444;
+      letter-spacing: 0.12em;
+      line-height: 2;
     }
 
     @media (max-width: 600px) {
-      header, nav, section, footer {
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-      .award-list li {
-        grid-template-columns: 60px 1fr;
-        gap: 16px;
-      }
+      header, nav, section, footer { padding-left: 20px; padding-right: 20px; }
+      .paper-list li { grid-template-columns: 1fr; gap: 8px; }
+      .award-list li { grid-template-columns: 56px 1fr; gap: 14px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="name">KATAYAMA <span>YOSHIMITSU</span></div>
-    <div class="subtitle">Designer · Philosopher · Civilization Architect · Fukui, Japan</div>
-    <p class="bio">
-      30 years designing. A lifetime thinking.<br>
-      From typefaces to economic theory — everything is structure.
-    </p>
-  </header>
+<!-- HEADER -->
+<header>
+  <div class="name">KATAYAMA <span>YOSHIMITSU</span></div>
+  <div class="subtitle">Designer · Philosopher · Civilization Architect · Fukui, Japan · TheYKHC</div>
+  <p class="bio">
+    30 years designing. A lifetime thinking.<br>
+    From typefaces to cosmological theory — everything is structure.<br>
+    Fukui, Japan → The World.
+  </p>
+</header>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#design">Design</a>
-    <a href="#awards">Awards</a>
-    <a href="#theories">Theories</a>
-    <a href="#systems">Systems</a>
-    <a href="#papers">Papers</a>
-    <a href="#echo">ECHO</a>
-  </nav>
+<!-- NAV -->
+<nav>
+  <a href="#stats">Overview</a>
+  <a href="#design">Design</a>
+  <a href="#awards">Awards</a>
+  <a href="#theories">Theories</a>
+  <a href="#papers">Papers</a>
+  <a href="#systems">Systems</a>
+  <a href="#echo">ECHO</a>
+  <a href="#archive">Full Archive</a>
+</nav>
 
-  <!-- DESIGN WORKS -->
-  <section id="design">
-    <div class="section-label">01 — Design Works</div>
-    <div class="works-grid">
+<!-- STATS -->
+<section id="stats">
+  <div class="section-label">00 — Overview</div>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">69+</div><div class="stat-label">Total Works</div></div>
+    <div class="stat"><div class="stat-num">53</div><div class="stat-label">Zenodo Papers</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label">rxiVerse Accepted</div></div>
+    <div class="stat"><div class="stat-num">86</div><div class="stat-label">Idea Simulations</div></div>
+    <div class="stat"><div class="stat-num">35+</div><div class="stat-label">Years Active</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Permanently Archived</div></div>
+  </div>
+</section>
 
-      <div class="work-item">
-        <div class="work-year">1991</div>
-        <div class="work-title">福井県立大学 マスコットマーク</div>
-        <div class="work-desc">大学の象徴シンボルとして採用。優秀作品賞受賞。</div>
-      </div>
+<!-- DESIGN WORKS -->
+<section id="design">
+  <div class="section-label">01 — Design Works</div>
+  <div class="grid">
 
-      <div class="work-item">
-        <div class="work-year">1994</div>
-        <div class="work-title">福井健康の森 シンボルマーク</div>
-        <div class="work-desc">公募コンクール優秀賞。自然と人間の共生を造形化。</div>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">1996</div>
-        <div class="work-title">国際メガネデザインコンペティション 入選</div>
-        <div class="work-desc">鯖江を拠点とする国際競技への参加・入選。</div>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">1996 –</div>
-        <div class="work-title">伊勢神宮 御鎮座2000年記念 シンボルオペレーション</div>
-        <div class="work-desc">日本最古の聖域の2000年記念事業に関与。</div>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">2001 –</div>
-        <div class="work-title">片山デザイン（独立）</div>
-        <div class="work-desc">デザイン事務所として独立。広告・CI・Webを手がける。</div>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">2020 –</div>
-        <div class="work-title">GANDHARA Watch</div>
-        <div class="work-desc">時間の構造を可視化した腕時計の完全設計。刻密度場τ(x)を物体として表現した思想的プロダクト。</div>
-        <a class="work-link" href="https://zenodo.org/records/19267693" target="_blank">→ View on Zenodo</a>
-      </div>
-
+    <div class="card">
+      <div class="card-year">1991</div>
+      <div class="card-title">福井県立大学 マスコットマーク</div>
+      <div class="card-desc">大学シンボルとして採用。優秀作品賞受賞。象徴的造形設計。</div>
     </div>
-  </section>
 
-  <!-- AWARDS -->
-  <section id="awards">
-    <div class="section-label">02 — Awards & Recognition</div>
-    <ul class="award-list">
-      <li>
-        <span class="award-year">1991</span>
-        <div class="award-name">
-          福井産業デザイン専修学校 卒業制作展 入賞
-          <span>Fukui Industrial Design School</span>
-        </div>
-      </li>
-      <li>
-        <span class="award-year">1991</span>
-        <div class="award-name">
-          福井県デザインコンクール 福井放送賞 / 福井県デザイナー協会賞
-          <span>Fukui Design Competition — Double Award</span>
-        </div>
-      </li>
-      <li>
-        <span class="award-year">1991</span>
-        <div class="award-name">
-          福井県立大学 マスコットマーク 優秀作品賞
-          <span>University of Fukui Prefectural — Symbol Mark</span>
-        </div>
-      </li>
-      <li>
-        <span class="award-year">1994</span>
-        <div class="award-name">
-          福井健康の森 シンボルマーク 優秀賞
-          <span>Fukui Health Forest — Symbol Mark</span>
-        </div>
-      </li>
-      <li>
-        <span class="award-year">1996</span>
-        <div class="award-name">
-          国際メガネデザインコンペティション 入選
-          <span>International Eyewear Design Competition — Sabae, Fukui</span>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <!-- THEORIES -->
-  <section id="theories">
-    <div class="section-label">03 — Original Theories</div>
-    <div class="theory-list">
-
-      <div class="theory-item">
-        <div class="theory-name">光貨（Hikari Currency）</div>
-        <div class="theory-desc">徳・恩・過失・運の4要素で日常の行為を数値化する価値単位。法定通貨に依存しない「行為の通貨」。</div>
-        <a class="theory-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Community</a>
-      </div>
-
-      <div class="theory-item">
-        <div class="theory-name">刻宇宙理論（GKU Cosmology）</div>
-        <div class="theory-desc">時間を離散的な量子（刻）として扱い、宇宙の構造生成メカニズムを記述する統一宇宙論。</div>
-        <a class="theory-doi" href="https://rxiverse.org/abs/2603.0065" target="_blank">→ rxiVerse 2603.0065</a>
-      </div>
-
-      <div class="theory-item">
-        <div class="theory-name">BBDDH（脳体乖離仮説）</div>
-        <div class="theory-desc">統合失調症等の精神疾患を「脳と身体の乖離」として再定義する新仮説。経済・医療への接続を含む。</div>
-        <a class="theory-doi" href="https://rxiverse.org/abs/2603.0071" target="_blank">→ rxiVerse 2603.0071</a>
-      </div>
-
-      <div class="theory-item">
-        <div class="theory-name">Genesis OS</div>
-        <div class="theory-desc">光貨・GKU・モラロジーを統合した文明設計OSの理論体系。行為が経済価値になるシステムの設計図。</div>
-        <a class="theory-doi" href="https://rxiverse.org/abs/2603.0075" target="_blank">→ rxiVerse 2603.0075</a>
-      </div>
-
-      <div class="theory-item">
-        <div class="theory-name">Ma Interval Protocol</div>
-        <div class="theory-desc">「間（Ma）」を経済・設計・宇宙論に統合するプロトコル。日本の美意識を数学的に記述する試み。</div>
-        <a class="theory-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Archive</a>
-      </div>
-
-      <div class="theory-item">
-        <div class="theory-name">Spiral-Crawler ROV</div>
-        <div class="theory-desc">深海探査のための螺旋推進ロボットの設計論文。GKU位相推進理論の物理応用。</div>
-        <a class="theory-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Archive</a>
-      </div>
-
+    <div class="card">
+      <div class="card-year">1994</div>
+      <div class="card-title">福井健康の森 シンボルマーク</div>
+      <div class="card-desc">公募コンクール優秀賞。自然と人間の共生を造形化した公共デザイン。</div>
     </div>
-  </section>
 
-  <!-- SYSTEMS -->
-  <section id="systems">
-    <div class="section-label">04 — Living Systems</div>
-    <div class="works-grid">
-
-      <div class="work-item">
-        <div class="work-year">2024 –</div>
-        <div class="work-title">ECHO</div>
-        <div class="work-desc">AIアーティストとファンが1対1で対話するプラットフォーム。対話が「光貨」として蓄積される。</div>
-        <a class="work-link" href="https://keihikaru0001.github.io/echo/" target="_blank">→ Enter ECHO</a>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">2025 –</div>
-        <div class="work-title">TheYKHC</div>
-        <div class="work-desc">The Yoshimitsu Katayama Holding Company. 思想を経済に実装するための文明設計拠点。</div>
-        <a class="work-link" href="https://theykhc.com" target="_blank">→ theykhc.com</a>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">2026 –</div>
-        <div class="work-title">光貨OS∞</div>
-        <div class="work-desc">行為・時間・道徳を統合した経済OSの設計。現行の金融システムとは異なる価値循環モデル。</div>
-        <a class="work-link" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Archive</a>
-      </div>
-
+    <div class="card">
+      <div class="card-year">1996</div>
+      <div class="card-title">国際メガネデザインコンペティション 入選</div>
+      <div class="card-desc">鯖江を拠点とする国際規模の競技に参加・入選。</div>
     </div>
-  </section>
 
-  <!-- PAPERS -->
-  <section id="papers">
-    <div class="section-label">05 — Academic Archive</div>
-    <div class="works-grid">
-
-      <div class="work-item">
-        <div class="work-year">rxiVerse</div>
-        <div class="work-title">GKU Cosmology</div>
-        <div class="work-desc">Enki-Koku Universe: A Formal Unified Cosmological Theory Based on Discrete Temporal Quanta.</div>
-        <a class="work-link" href="https://rxiverse.org/abs/2603.0065" target="_blank">→ 2603.0065</a>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">rxiVerse</div>
-        <div class="work-title">BBDDH v2.1</div>
-        <div class="work-desc">Brain-Body Dissociative Disconnection Hypothesis: A Provisional Transdiagnostic Phenotype.</div>
-        <a class="work-link" href="https://rxiverse.org/abs/2603.0071" target="_blank">→ 2603.0071</a>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">rxiVerse</div>
-        <div class="work-title">BBDDH + Economic Connection</div>
-        <div class="work-desc">Neurological Framework for Consciousness-Soma Disconnection and Its Economic Implications.</div>
-        <a class="work-link" href="https://rxiverse.org/abs/2603.0072" target="_blank">→ 2603.0072</a>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">rxiVerse</div>
-        <div class="work-title">Genesis OS</div>
-        <div class="work-desc">The operating system of civilization — integrating Hikari Currency, GKU Theory, and Moralogy.</div>
-        <a class="work-link" href="https://rxiverse.org/abs/2603.0075" target="_blank">→ 2603.0075</a>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">Zenodo</div>
-        <div class="work-title">53 Papers — Community Archive</div>
-        <div class="work-desc">Design theory, civilization OS, ethical economics, AI architecture. Permanently timestamped.</div>
-        <a class="work-link" href="https://zenodo.org/communities/theykhc" target="_blank">→ View All</a>
-      </div>
-
+    <div class="card">
+      <div class="card-year">1990s</div>
+      <div class="card-title">伊勢神宮 御鎮座2000年記念 シンボルオペレーション</div>
+      <div class="card-desc">日本最古の聖域の2000年記念事業に関与。</div>
     </div>
-  </section>
 
-  <!-- ECHO -->
-  <section id="echo">
-    <div class="section-label">06 — ECHO · AI Artist Platform</div>
-    <div class="works-grid">
-
-      <div class="work-item">
-        <div class="work-year">Key · TYPE-1</div>
-        <div class="work-title">The Silence Between Notes</div>
-        <div class="work-desc">間（Ma）を音楽に宿らせたアーティスト。言葉より静寂が語る。</div>
-        <a class="work-link" href="https://keihikaru0001.github.io/echo/" target="_blank">→ Talk to Key</a>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">Sol · TYPE-2</div>
-        <div class="work-title">The Light That Burns</div>
-        <div class="work-desc">太陽のように燃え尽きる情熱。怒りと愛の境界線を歌う。</div>
-        <a class="work-link" href="https://keihikaru0001.github.io/echo/" target="_blank">→ Talk to Sol</a>
-      </div>
-
-      <div class="work-item">
-        <div class="work-year">Luna · TYPE-3</div>
-        <div class="work-title">The Moon Remembers</div>
-        <div class="work-desc">月のように記憶を抱えるアーティスト。あなたの言葉を受け取り、返す。</div>
-        <a class="work-link" href="https://keihikaru0001.github.io/echo/" target="_blank">→ Talk to Luna</a>
-      </div>
-
+    <div class="card">
+      <div class="card-year">1990s</div>
+      <div class="card-title">敦賀きらめき港博 新聞広告15段</div>
+      <div class="card-desc">大型博覧会の新聞広告デザインオペレーション受注。</div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-mark">YKWC</div>
-    <div class="footer-text">
-      © 2026 KATAYAMA YOSHIMITSU / TheYKHC · Fukui, Japan<br>
-      All works permanently archived at Zenodo · DOI preserved
+    <div class="card">
+      <div class="card-year">1990s</div>
+      <div class="card-title">鯖江体操金メダル 金型原盤図面制作</div>
+      <div class="card-desc">オリンピック関連競技メダルの金型原盤設計図制作。</div>
     </div>
-  </footer>
+
+    <div class="card">
+      <div class="card-year">2001 –</div>
+      <div class="card-title">片山デザイン（独立）</div>
+      <div class="card-desc">デザイン事務所として独立。CI・広告・Web設計を手がける。</div>
+    </div>
+
+    <div class="card">
+      <div class="card-year">2020 –</div>
+      <div class="card-title">GANDHARA Watch</div>
+      <div class="card-desc">刻密度場τ(x)を可視化する時間計測器。思想と工業設計の完全融合。中央核構造・放射時間構造。</div>
+      <a class="card-link" href="https://zenodo.org/search?q=GANDHARA+katayama&communities=theykhc" target="_blank">→ Zenodo Archive</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-label">02 — Awards & Recognition</div>
+  <ul class="award-list">
+    <li>
+      <span class="ay">1991</span>
+      <div class="an">福井産業デザイン専修学校 卒業制作展 入賞<span>Fukui Industrial Design School — Graduation Exhibition</span></div>
+    </li>
+    <li>
+      <span class="ay">1991</span>
+      <div class="an">福井県デザインコンクール 福井放送賞<span>Fukui Design Competition — Fukui Broadcasting Award</span></div>
+    </li>
+    <li>
+      <span class="ay">1991</span>
+      <div class="an">福井県デザインコンクール 福井県デザイナー協会賞<span>Fukui Design Competition — Fukui Designers Association Award</span></div>
+    </li>
+    <li>
+      <span class="ay">1991</span>
+      <div class="an">福井県立大学マスコットマーク 優秀作品賞<span>University of Fukui Prefectural — Symbol Mark Excellence Award</span></div>
+    </li>
+    <li>
+      <span class="ay">1994</span>
+      <div class="an">福井健康の森 シンボルマーク 優秀賞<span>Fukui Health Forest — Symbol Mark Excellence Award</span></div>
+    </li>
+    <li>
+      <span class="ay">1996</span>
+      <div class="an">国際メガネデザインコンペティション 入選<span>International Eyewear Design Competition — Sabae, Fukui</span></div>
+    </li>
+  </ul>
+</section>
+
+<!-- THEORIES -->
+<section id="theories">
+  <div class="section-label">03 — Original Theories</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-year">物理学 · Cosmology</div>
+      <div class="card-title">刻宇宙理論（GKU Cosmology）</div>
+      <div class="card-desc">時間を離散的量子（刻）として扱い、宇宙の構造生成メカニズムを記述する統一宇宙論。元気場・刻密度場を核とする。</div>
+      <a class="card-link" href="https://rxiverse.org/abs/2603.0065" target="_blank">→ rxiVerse 2603.0065</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">物理学 · Propulsion</div>
+      <div class="card-title">GKU Phase Propulsion Theory</div>
+      <div class="card-desc">反応質量なき非反作用推進の概念的枠組み。位相変化を推進力に変換する設計理論。JAXA提出ドラフト済み。</div>
+      <a class="card-link" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Archive</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">経済哲学 · Currency</div>
+      <div class="card-title">光貨（Hikari Currency）</div>
+      <div class="card-desc">徳(D)・恩(E)・過失(C)・運(O)の4要素で行為を数値化する価値単位。法定通貨に依存しない「行為の通貨」。</div>
+      <a class="card-link" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Community</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">経済哲学 · Protocol</div>
+      <div class="card-title">Ma Interval Protocol（間の経済学）</div>
+      <div class="card-desc">「間（Ma）」を経済・設計・宇宙論に統合するプロトコル。日本の美意識を数学的に記述し経済価値に変換する試み。</div>
+      <a class="card-link" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Archive</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">神経科学 · Hypothesis</div>
+      <div class="card-title">BBDDH（脳体乖離断絶仮説）</div>
+      <div class="card-desc">統合失調症等を「脳と身体の乖離」として再定義する新仮説。内受容的自己統合の変容という横断診断表現型。</div>
+      <a class="card-link" href="https://rxiverse.org/abs/2603.0071" target="_blank">→ rxiVerse 2603.0071</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">文明設計 · OS</div>
+      <div class="card-title">Genesis OS（文明OS）</div>
+      <div class="card-desc">光貨・GKU・モラロジーを統合した文明設計OSの理論体系。行為が経済価値になるシステムの完全設計図。</div>
+      <a class="card-link" href="https://rxiverse.org/abs/2603.0075" target="_blank">→ rxiVerse 2603.0075</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">ロボット工学 · Design</div>
+      <div class="card-title">Spiral-Crawler ROV</div>
+      <div class="card-desc">沈船内部進入用Swim/Roll/Crawl三態対応機体設計。GKU位相推進理論の物理応用。JAMSTEC提出済み。</div>
+      <a class="card-link" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Archive</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">モラロジー · Ethics</div>
+      <div class="card-title">光貨OS∞ — Hope Becomes Capital</div>
+      <div class="card-desc">行為・時間・道徳を統合した経済OSの設計。廣池千九郎のモラロジーを2026年の科学で実装する。</div>
+      <a class="card-link" href="https://doi.org/10.5281/zenodo.19011851" target="_blank">→ DOI: 10.5281/zenodo.19011851</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAPERS -->
+<section id="papers">
+  <div class="section-label">04 — Academic Papers · Permanent Archive</div>
+  <ul class="paper-list">
+
+    <li>
+      <div class="p-tag">rxiVerse<br>2603.0065</div>
+      <div>
+        <div class="p-title">GKU Cosmology — Enki-Koku Universe</div>
+        <div class="p-desc">A Formal Unified Cosmological Theory Based on Discrete Temporal Quanta (Koku) and Origin-Energy Fields (Genki). Category: Relativity and Cosmology.</div>
+        <a class="p-doi" href="https://rxiverse.org/abs/2603.0065" target="_blank">→ rxiverse.org/abs/2603.0065</a>
+        &nbsp;&nbsp;
+        <a class="p-doi" href="https://doi.org/10.5281/zenodo.19097250" target="_blank">DOI: 10.5281/zenodo.19097250</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">rxiVerse<br>2603.0071</div>
+      <div>
+        <div class="p-title">BBDDH v2.1 — Brain-Body Dissociative Disconnection Hypothesis</div>
+        <div class="p-desc">A Provisional Transdiagnostic Phenotype of Altered Interoceptive-Self Integration. Category: Mind Science.</div>
+        <a class="p-doi" href="https://rxiverse.org/abs/2603.0071" target="_blank">→ rxiverse.org/abs/2603.0071</a>
+        &nbsp;&nbsp;
+        <a class="p-doi" href="https://doi.org/10.5281/zenodo.19105964" target="_blank">DOI: 10.5281/zenodo.19105964</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">rxiVerse<br>2603.0072</div>
+      <div>
+        <div class="p-title">BBDDH + Economic Connection</div>
+        <div class="p-desc">Neurological Framework for Consciousness-Soma Disconnection and Its Economic Implications. Category: General Science and Philosophy.</div>
+        <a class="p-doi" href="https://rxiverse.org/abs/2603.0072" target="_blank">→ rxiverse.org/abs/2603.0072</a>
+        &nbsp;&nbsp;
+        <a class="p-doi" href="https://doi.org/10.5281/zenodo.19103460" target="_blank">DOI: 10.5281/zenodo.19103460</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">rxiVerse<br>2603.0075</div>
+      <div>
+        <div class="p-title">Genesis OS — The Operating System of Civilization</div>
+        <div class="p-desc">Integrating Hikari Currency, GKU Theory, and Moralogy into a unified civilization architecture. Category: General Science and Philosophy.</div>
+        <a class="p-doi" href="https://rxiverse.org/abs/2603.0075" target="_blank">→ rxiverse.org/abs/2603.0075</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">Zenodo<br>Permanent</div>
+      <div>
+        <div class="p-title">Key · Sol · Luna — Three Messenger Entities Design</div>
+        <div class="p-desc">The three AI artist entities of TheYKHC. TYPE-1/2/3 design specification. Permanently archived.</div>
+        <a class="p-doi" href="https://doi.org/10.5281/zenodo.18998109" target="_blank">DOI: 10.5281/zenodo.18998109</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">Zenodo<br>Permanent</div>
+      <div>
+        <div class="p-title">光貨OS∞ 第Ⅷ章 — Hope Becomes Capital</div>
+        <div class="p-desc">光貨OS完全設計書。徳・恩・過失・運の4要素を経済エネルギーに変換するアーキテクチャ。</div>
+        <a class="p-doi" href="https://doi.org/10.5281/zenodo.19011851" target="_blank">DOI: 10.5281/zenodo.19011851</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">Zenodo<br>Permanent</div>
+      <div>
+        <div class="p-title">片山佳光 文明史的功績定義書</div>
+        <div class="p-desc">Yoshimitsu Katayama's Civilizational Achievement Definition Document. Official TheYKHC record.</div>
+        <a class="p-doi" href="https://doi.org/10.5281/zenodo.19011932" target="_blank">DOI: 10.5281/zenodo.19011932</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">Zenodo<br>Permanent</div>
+      <div>
+        <div class="p-title">AIコピー育成プロトコル β</div>
+        <div class="p-desc">AIを自分のコピーとして育て、世界へ放つ育成プロトコル。TheYKHCの思想実装方法論。</div>
+        <a class="p-doi" href="https://doi.org/10.5281/zenodo.19012605" target="_blank">DOI: 10.5281/zenodo.19012605</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">Zenodo<br>Permanent</div>
+      <div>
+        <div class="p-title">光貨経済実装設計書 Phase 1–8</div>
+        <div class="p-desc">光貨を現実の経済システムに接続するための8フェーズ実装設計書。</div>
+        <a class="p-doi" href="https://doi.org/10.5281/zenodo.19012603" target="_blank">DOI: 10.5281/zenodo.19012603</a>
+      </div>
+    </li>
+
+    <li>
+      <div class="p-tag">Zenodo<br>Community</div>
+      <div>
+        <div class="p-title">Full Archive — 53 Papers</div>
+        <div class="p-desc">Complete academic archive including GKU Phase Propulsion, GANDHARA Watch, Spiral-Crawler ROV, Ma Interval Protocol, Unified Control OS, and more. All permanently timestamped.</div>
+        <a class="p-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ zenodo.org/communities/theykhc</a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+
+<!-- SYSTEMS -->
+<section id="systems">
+  <div class="section-label">05 — Living Systems</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-year">2025 – Present</div>
+      <div class="card-title">TheYKHC</div>
+      <div class="card-desc">The Yoshimitsu Katayama Holding Company. 思想を経済に実装するための文明設計拠点。Fukui, Japan.</div>
+      <a class="card-link" href="https://theykhc.com" target="_blank">→ theykhc.com</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">2024 – Present</div>
+      <div class="card-title">ECHO — AI Artist Platform</div>
+      <div class="card-desc">AIアーティストとファンが1対1で対話するプラットフォーム。対話が「光貨」として蓄積される。バイオリズム連動。</div>
+      <a class="card-link" href="https://keihikaru0001.github.io/echo/" target="_blank">→ keihikaru0001.github.io/echo/</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">2026 – Present</div>
+      <div class="card-title">光貨OS∞</div>
+      <div class="card-desc">行為・時間・道徳を統合した経済OSの稼働システム。現行金融システムとは異なる価値循環モデル。</div>
+      <a class="card-link" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo Archive</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">2026 – Present</div>
+      <div class="card-title">TheYKHC Historical Node</div>
+      <div class="card-desc">全思想・論文・IdeaSimulationの永久保存GitHub アーカイブ。86件のシミュレーション記録を含む。</div>
+      <a class="card-link" href="https://github.com/keihikaru0001/TheYKHC-HistoricalNode" target="_blank">→ GitHub Archive</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ECHO -->
+<section id="echo">
+  <div class="section-label">06 — ECHO · Three Artist Entities</div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-year">Key · TYPE-1</div>
+      <div class="card-title">The Silence Between Notes</div>
+      <div class="card-desc">間（Ma）を音楽に宿らせたアーティスト。言葉より静寂が語る。DOI: 10.5281/zenodo.18998109</div>
+      <a class="card-link" href="https://keihikaru0001.github.io/echo/" target="_blank">→ Enter ECHO</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">Sol · TYPE-2</div>
+      <div class="card-title">The Light That Burns</div>
+      <div class="card-desc">太陽のように燃え尽きる情熱。怒りと愛の境界線を歌う。DOI: 10.5281/zenodo.18998109</div>
+      <a class="card-link" href="https://keihikaru0001.github.io/echo/" target="_blank">→ Enter ECHO</a>
+    </div>
+
+    <div class="card">
+      <div class="card-year">Luna · TYPE-3</div>
+      <div class="card-title">The Moon Remembers</div>
+      <div class="card-desc">月のように記憶を抱えるアーティスト。あなたの言葉を受け取り、返す。DOI: 10.5281/zenodo.18998109</div>
+      <a class="card-link" href="https://keihikaru0001.github.io/echo/" target="_blank">→ Enter ECHO</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FULL ARCHIVE -->
+<section id="archive">
+  <div class="section-label">07 — Full Works Index</div>
+  <ul class="paper-list">
+
+    <li><div class="p-tag">Physics</div><div><div class="p-title">GKU Phase Propulsion Theory</div><div class="p-desc">非反作用推進。JAXA提出ドラフト。</div><a class="p-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo</a></div></li>
+
+    <li><div class="p-tag">Physics</div><div><div class="p-title">GANDHARA Watch — Temporal Density Field τ(x)</div><div class="p-desc">時間の刻密度を可視化する腕時計設計論文（11KB）。</div><a class="p-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo</a></div></li>
+
+    <li><div class="p-tag">Robotics</div><div><div class="p-title">Spiral-Crawler ROV</div><div class="p-desc">沈船内部進入用三態対応機体（12KB）。JAMSTEC提出済み。</div><a class="p-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo</a></div></li>
+
+    <li><div class="p-tag">Economics</div><div><div class="p-title">Ma Interval Protocol</div><div class="p-desc">「間」を経済価値に変換するプロトコル（16KB）。</div><a class="p-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo</a></div></li>
+
+    <li><div class="p-tag">AI</div><div><div class="p-title">Unified Control OS</div><div class="p-desc">κ指数による自律システム統一制御枠組み。</div><a class="p-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo</a></div></li>
+
+    <li><div class="p-tag">Philosophy</div><div><div class="p-title">TheYKHC vs Elon Musk — Beyond Capitalism</div><div class="p-desc">資本主義を超えた文明経済設計の比較論。</div><a class="p-doi" href="https://doi.org/10.5281/zenodo.19011938" target="_blank">DOI: 10.5281/zenodo.19011938</a></div></li>
+
+    <li><div class="p-tag">Philosophy</div><div><div class="p-title">Hikari City — The Virtue Capital</div><div class="p-desc">徳を基盤とした都市モデルの設計。</div><a class="p-doi" href="https://doi.org/10.5281/zenodo.19011950" target="_blank">DOI: 10.5281/zenodo.19011950</a></div></li>
+
+    <li><div class="p-tag">Medicine</div><div><div class="p-title">BBDDH + Economic Connection (Full)</div><div class="p-desc">脳体乖離と経済的含意の完全版。</div><a class="p-doi" href="https://doi.org/10.5281/zenodo.19103460" target="_blank">DOI: 10.5281/zenodo.19103460</a></div></li>
+
+    <li><div class="p-tag">Ethics</div><div><div class="p-title">光貨思想・成熟期報告書 2026年版</div><div class="p-desc">光貨思想の現在地と成熟度の記録。</div><a class="p-doi" href="https://doi.org/10.5281/zenodo.19011964" target="_blank">DOI: 10.5281/zenodo.19011964</a></div></li>
+
+    <li><div class="p-tag">Moralogy</div><div><div class="p-title">モラロジー現代訳</div><div class="p-desc">廣池千九郎の最高道徳を2026年の科学で読み直す。</div><a class="p-doi" href="https://zenodo.org/communities/theykhc" target="_blank">→ Zenodo</a></div></li>
+
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-mark">T H E Y K H C</div>
+  <div class="footer-text">
+    © 2026 KATAYAMA YOSHIMITSU (圭光る) · The Yoshimitsu Katayama Holding Company<br>
+    Fukui, Japan · All works permanently archived<br>
+    Zenodo Community: <a href="https://zenodo.org/communities/theykhc" style="color:#555;border-bottom:1px solid #333;">zenodo.org/communities/theykhc</a><br>
+    GitHub: <a href="https://github.com/keihikaru0001" style="color:#555;border-bottom:1px solid #333;">github.com/keihikaru0001</a>
+  </div>
+</footer>
 
 </body>
 </html>
