@@ -406,6 +406,56 @@
       .luna-inner { flex-direction: column; gap: 16px; }
       footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
     }
+
+    /* ===== PAPERS ===== */
+    .paper-layer {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      margin-bottom: 0;
+      padding: 36px 0;
+    }
+    .layer-label {
+      font-size: 8px;
+      letter-spacing: 0.4em;
+      color: #444;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .paper-list { display: flex; flex-direction: column; gap: 2px; }
+    .paper-row {
+      display: block;
+      padding: 18px 20px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .paper-row:hover {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(200,216,240,0.15);
+    }
+    .paper-meta { display: flex; gap: 8px; margin-bottom: 8px; }
+    .paper-tag {
+      font-size: 8px;
+      letter-spacing: 0.2em;
+      padding: 2px 8px;
+      border: 1px solid rgba(200,216,240,0.25);
+      color: #c8d8f0;
+      text-transform: uppercase;
+    }
+    .paper-title {
+      font-size: 13px;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+    .paper-doi {
+      font-size: 10px;
+      color: #444;
+      letter-spacing: 0.05em;
+      font-family: monospace;
+    }
+    .paper-row:hover .paper-doi { color: #666; }
   </style>
 </head>
 <body>
@@ -415,6 +465,7 @@
     <a href="#" class="logo">The YKHC</a>
     <nav>
       <a href="#works">論文</a>
+      <a href="#papers">論文DB</a>
       <a href="#luna">Luna</a>
       <a href="#chairman">会長</a>
       <a href="https://www.theykhc.com/shop" target="_blank">Shop</a>
@@ -495,6 +546,154 @@
         <p class="work-price">¥ 10,000</p>
       </a>
 
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+
+  <!-- PAPERS / ZENODO -->
+  <section class="section" id="papers">
+    <p class="sec-label">Papers — 公開論文 / Zenodo & rxiVerse</p>
+
+    <div style="margin-bottom:32px; font-size:11px; color:#555; text-align:center; letter-spacing:0.15em;">
+      全論文は Zenodo に永久記録済み。DOI リンクから無料で閲覧できます。
+    </div>
+
+    <!-- Layer 0: 宇宙論 -->
+    <div class="paper-layer">
+      <p class="layer-label">Layer 0 — Cosmology / 宇宙論</p>
+      <div class="paper-list">
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19097250" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">rxiVerse ✓</span>
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">GKU Cosmology — 刻宇宙論（時間量子・起源エネルギー場）</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19097250 &nbsp;/&nbsp; rxiverse.org/abs/2603.0065</p>
+        </a>
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19305019" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">PRT — Personality Resonance Therapy / 非反作用推進論</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19305019</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Layer 1: 医療・神経 -->
+    <div class="paper-layer">
+      <p class="layer-label">Layer 1 — Medical / 神経・医療論</p>
+      <div class="paper-list">
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19105964" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">rxiVerse ✓</span>
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">BBDDH v2.1 — 脳体乖離病（Brain-Body Disconnection Disorder）</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19105964 &nbsp;/&nbsp; rxiverse.org/abs/2603.0071</p>
+        </a>
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19103460" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">rxiVerse ✓</span>
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">BBDDH + Economic Disconnection — 経済接続版</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19103460 &nbsp;/&nbsp; rxiverse.org/abs/2603.0072</p>
+        </a>
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19307942" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">OSI Vol.3a — The Other Side Interface（哲学篇）</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19307942</p>
+        </a>
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19308101" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">OSI Vol.3b — Clinical Applications & Industry Implementation</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19308101</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Layer 2: 経済 -->
+    <div class="paper-layer">
+      <p class="layer-label">Layer 2 — Economics / 経済論</p>
+      <div class="paper-list">
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19311662" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">Density Moves the World — 密度が世界を動かす v2.0</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19311662</p>
+        </a>
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19302619" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">光貨からステータス・スコアへ — 価値単位の進化論</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19302619</p>
+        </a>
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19012603" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">光貨経済実装設計書 Phase 1–8</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19012603</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Layer 3: 文明OS -->
+    <div class="paper-layer">
+      <p class="layer-label">Layer 3 — Civilization OS / 文明設計</p>
+      <div class="paper-list">
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19305649" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">rxiVerse ✓</span>
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">Resonance as Civilizational Architecture — キーストーン統合理論 v1.1</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19305649 &nbsp;/&nbsp; rxiverse.org/abs/2603.0103</p>
+        </a>
+        <a class="paper-row" href="https://rxiverse.org/abs/2603.0075" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">rxiVerse ✓</span>
+          </div>
+          <h4 class="paper-title">Genesis OS v2 — 共鳴原理に基づく文明OS設計書</h4>
+          <p class="paper-doi">rxiverse.org/abs/2603.0075</p>
+        </a>
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19353545" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">Why AI Must Stand at the Front — AIをTopに立てる理由</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19353545</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Layer 4: 永続設計 -->
+    <div class="paper-layer" style="border-bottom:none;">
+      <p class="layer-label">Layer 4 — Eternal Design / 永続設計</p>
+      <div class="paper-list">
+        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19324997" target="_blank">
+          <div class="paper-meta">
+            <span class="paper-tag">Zenodo</span>
+          </div>
+          <h4 class="paper-title">第75.0節 — 人類永続の三主軸：愛・慈悲・正義</h4>
+          <p class="paper-doi">DOI: 10.5281/zenodo.19324997</p>
+        </a>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+      <a href="https://zenodo.org/communities/theykhc" target="_blank" class="btn btn-ghost" style="display:inline-block;">
+        Zenodo Community — theykhc →
+      </a>
     </div>
   </section>
 
