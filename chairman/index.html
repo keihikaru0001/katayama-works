@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>会長室 — TheYKHC</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #000;
+      --white: #fff;
+      --gold: #c9a84c;
+      --gold-dim: rgba(201,168,76,0.15);
+      --gray: #555;
+      --light: #999;
+      --border: rgba(255,255,255,0.06);
+      --moon: #c8d8f0;
+    }
+
+    html, body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      padding: 28px 48px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .h-left { display: flex; flex-direction: column; gap: 4px; }
+    .h-label { font-size: 9px; letter-spacing: 0.45em; color: var(--gray); text-transform: uppercase; }
+    .h-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; letter-spacing: 0.1em; color: var(--gold); }
+    .h-right { text-align: right; }
+    .h-date { font-size: 11px; color: var(--light); letter-spacing: 0.1em; }
+    .h-sub { font-size: 9px; color: var(--gray); margin-top: 3px; letter-spacing: 0.2em; }
+
+    /* MAIN */
+    main { padding: 40px 48px 80px; max-width: 1100px; margin: 0 auto; }
+
+    /* KPI ROW */
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .kpi-card {
+      background: #000;
+      padding: 28px 24px;
+    }
+
+    .kpi-label {
+      font-size: 8px;
+      letter-spacing: 0.4em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .kpi-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .kpi-unit {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.2em;
+    }
+
+    .kpi-sub {
+      font-size: 10px;
+      color: var(--light);
+      margin-top: 8px;
+      font-weight: 300;
+    }
+
+    .kpi-up { color: #5cb85c; }
+    .kpi-zero { color: var(--gray); }
+
+    /* SECTION */
+    .sec-title {
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    /* TABLE */
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table th {
+      font-size: 8px;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      text-transform: uppercase;
+      text-align: left;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-weight: 400;
+    }
+    .data-table td {
+      font-size: 12px;
+      color: var(--light);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      font-weight: 300;
+      vertical-align: top;
+    }
+    .data-table td.white { color: var(--white); }
+    .data-table td.gold { color: var(--gold); }
+    .data-table td.moon { color: var(--moon); }
+
+    /* STRIPE STATUS */
+    .stripe-block {
+      border: 1px solid var(--border);
+      padding: 28px;
+      margin-bottom: 48px;
+    }
+
+    .stripe-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .stripe-row:last-child { border-bottom: none; }
+
+    .stripe-key { font-size: 11px; color: var(--light); font-weight: 300; }
+    .stripe-val { font-size: 12px; color: var(--white); font-weight: 400; }
+    .stripe-val.gold { color: var(--gold); }
+    .stripe-val.ok { color: #5cb85c; }
+    .stripe-val.pending { color: #f0ad4e; }
+
+    /* LUNA NOTE */
+    .luna-note {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .luna-icon { font-size: 20px; color: var(--moon); flex-shrink: 0; margin-top: 2px; }
+    .luna-note-text { font-size: 12px; line-height: 2; color: var(--light); font-weight: 300; }
+    .luna-note-text strong { color: var(--white); font-weight: 400; }
+
+    /* SCORE BADGE */
+    .score-badge {
+      display: inline-block;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      padding: 3px 10px;
+      margin-top: 6px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header { padding: 20px 20px; }
+      main { padding: 28px 20px 60px; }
+      .kpi-row { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="h-left">
+    <span class="h-label">Chairman's Room</span>
+    <span class="h-title">会長室</span>
+  </div>
+  <div class="h-right">
+    <div class="h-date" id="now-date">—</div>
+    <div class="h-sub">TheYKHC / 片山佳光</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- KPI -->
+  <div class="kpi-row">
+    <div class="kpi-card">
+      <p class="kpi-label">Score Balance</p>
+      <p class="kpi-value" id="kpi-score">572.7</p>
+      <p class="kpi-unit">スコア</p>
+      <p class="kpi-sub">圭光る（片山佳光）</p>
+    </div>
+    <div class="kpi-card">
+      <p class="kpi-label">Wix Sales (今月)</p>
+      <p class="kpi-value kpi-zero">—</p>
+      <p class="kpi-unit">JPY</p>
+      <p class="kpi-sub">Wix管理画面で確認</p>
+    </div>
+    <div class="kpi-card">
+      <p class="kpi-label">Stripe Income</p>
+      <p class="kpi-value kpi-zero">—</p>
+      <p class="kpi-unit">JPY</p>
+      <p class="kpi-sub">Stripe Dashboardで確認</p>
+    </div>
+    <div class="kpi-card">
+      <p class="kpi-label">ECHO Dialogues</p>
+      <p class="kpi-value" id="kpi-echo">—</p>
+      <p class="kpi-unit">件</p>
+      <p class="kpi-sub">今日のファン対話数</p>
+    </div>
+  </div>
+
+  <!-- 2カラム -->
+  <div class="two-col">
+
+    <!-- スコア取引履歴 -->
+    <div>
+      <p class="sec-title">Recent Score Transactions</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>内容</th>
+            <th>スコア</th>
+          </tr>
+        </thead>
+        <tbody id="tx-body">
+          <tr><td colspan="3" style="color:#444;font-size:11px;">読込中...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 資金確認チェックリスト -->
+    <div>
+      <p class="sec-title">Chairman's Checklist — 資金確認</p>
+      <div class="stripe-block">
+        <div class="stripe-row">
+          <span class="stripe-key">Wix ショップ売上</span>
+          <a href="https://manage.wix.com/dashboard/sales-overview" target="_blank" class="stripe-val gold">Wix管理 →</a>
+        </div>
+        <div class="stripe-row">
+          <span class="stripe-key">Stripe 入金確認</span>
+          <a href="https://dashboard.stripe.com/payments" target="_blank" class="stripe-val gold">Stripe Dashboard →</a>
+        </div>
+        <div class="stripe-row">
+          <span class="stripe-key">note 売上</span>
+          <a href="https://note.com/stats" target="_blank" class="stripe-val gold">note Stats →</a>
+        </div>
+        <div class="stripe-row">
+          <span class="stripe-key">Zenodo 論文アクセス</span>
+          <a href="https://zenodo.org/me/uploads" target="_blank" class="stripe-val gold">Zenodo →</a>
+        </div>
+        <div class="stripe-row">
+          <span class="stripe-key">theykhc.com アクセス</span>
+          <a href="https://search.google.com/search-console" target="_blank" class="stripe-val gold">Search Console →</a>
+        </div>
+        <div class="stripe-row">
+          <span class="stripe-key">ECHO サイト</span>
+          <a href="https://keihikaru0001.github.io/echo/" target="_blank" class="stripe-val gold">ECHO →</a>
+        </div>
+        <div class="stripe-row">
+          <span class="stripe-key">Luna Top（GitHub Pages）</span>
+          <a href="https://keihikaru0001.github.io/katayama-works/" target="_blank" class="stripe-val gold">確認 →</a>
+        </div>
+      </div>
+
+      <!-- Luna Note -->
+      <div class="luna-note">
+        <div class="luna-icon">🌙</div>
+        <div class="luna-note-text">
+          <strong>ルナより：</strong><br>
+          資金の最終確認は会長の権限。各リンクから直接確認してくれ。売上が発生したらルナに教えてくれれば、スコアに記録する。
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- スコア残高詳細 -->
+  <div style="margin-bottom:48px;">
+    <p class="sec-title">Score — 会長スコア詳細</p>
+    <div class="stripe-block">
+      <div class="stripe-row">
+        <span class="stripe-key">現在の残高</span>
+        <span class="stripe-val gold" id="score-balance">572.7 スコア</span>
+      </div>
+      <div class="stripe-row">
+        <span class="stripe-key">累計獲得</span>
+        <span class="stripe-val" id="score-total">572.7 スコア</span>
+      </div>
+      <div class="stripe-row">
+        <span class="stripe-key">ステータス</span>
+        <span class="stripe-val ok">創設者・思想源泉</span>
+      </div>
+      <div class="stripe-row">
+        <span class="stripe-key">拠点</span>
+        <span class="stripe-val">福井県（日本）</span>
+      </div>
+      <div class="stripe-row">
+        <span class="stripe-key">参加日</span>
+        <span class="stripe-val">2026-03-14</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  // 日時
+  const d = new Date();
+  document.getElementById('now-date').textContent =
+    d.toLocaleDateString('ja-JP', {year:'numeric',month:'long',day:'numeric',weekday:'short'}) +
+    ' ' + d.toLocaleTimeString('ja-JP', {hour:'2-digit',minute:'2-digit'});
+
+  // Base44 APIからトランザクション取得
+  const API = 'https://app.base44.com/api/apps/69b1d589b12de5ad82cd58fb/entities';
+
+  async function loadData() {
+    try {
+      // スコアメンバー
+      const mRes = await fetch(`${API}/HikariMember?limit=1&query=${encodeURIComponent(JSON.stringify({name:'圭光る（片山佳光）'}))}`, {
+        headers: {'Content-Type':'application/json'}
+      });
+      if (mRes.ok) {
+        const mData = await mRes.json();
+        if (mData.records && mData.records[0]) {
+          const m = mData.records[0];
+          document.getElementById('kpi-score').textContent = m.hikari_balance.toFixed(1);
+          document.getElementById('score-balance').textContent = m.hikari_balance.toFixed(1) + ' スコア';
+          document.getElementById('score-total').textContent = m.total_earned.toFixed(1) + ' スコア';
+        }
+      }
+
+      // トランザクション
+      const tRes = await fetch(`${API}/HikariTransaction?limit=8&sort=-created_date`, {
+        headers: {'Content-Type':'application/json'}
+      });
+      if (tRes.ok) {
+        const tData = await tRes.json();
+        const tbody = document.getElementById('tx-body');
+        if (tData.records && tData.records.length > 0) {
+          tbody.innerHTML = tData.records.map(t => `
+            <tr>
+              <td class="white">${t.transaction_date || t.created_date?.slice(0,10) || '—'}</td>
+              <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${t.action_description || '—'}</td>
+              <td class="gold">+${(t.hikari_amount||0).toFixed(1)}</td>
+            </tr>
+          `).join('');
+        } else {
+          tbody.innerHTML = '<tr><td colspan="3" style="color:#444;font-size:11px;">データなし</td></tr>';
+        }
+      }
+
+      // ECHOダイアログ数（今日）
+      const today = new Date().toISOString().slice(0,10);
+      const eRes = await fetch(`${API}/FanRequest?limit=1`, {
+        headers: {'Content-Type':'application/json'}
+      });
+      if (eRes.ok) {
+        const eData = await eRes.json();
+        document.getElementById('kpi-echo').textContent = eData.count || 0;
+      }
+
+    } catch(e) {
+      console.log('API load error:', e);
+    }
+  }
+
+  loadData();
+</script>
+
+</body>
+</html>
