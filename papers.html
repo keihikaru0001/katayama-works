@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papers — TheYKHC</title>
+<meta name="description" content="TheYKHC研究論文一覧。GKU宇宙論・BBDDH・Genesis OS・光貨・共鳴文明論。Zenodo公開論文445本。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "TheYKHC Research Papers",
+  "url": "https://www.theykhc.com/papers.html",
+  "description": "GKU宇宙論・BBDDH・Genesis OS・光貨・共鳴文明論を中心とした研究論文集",
+  "publisher": { "@type": "Organization", "name": "TheYKHC" }
+}
+</script>
+<style>
+:root{--black:#0a0a0a;--white:#fafafa;--gray:#888;--border:#ddd;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--black);line-height:1.8;font-size:15px;}
+a{color:var(--black);text-decoration:none;}a:hover{opacity:.6;}
+nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px;z-index:100;}
+.nav-logo{font-size:13px;font-weight:700;letter-spacing:.1em;}
+.nav-links{display:flex;gap:32px;font-size:13px;}
+.nav-links a{color:var(--gray);}
+.nav-links a.active{color:var(--black);font-weight:600;}
+.nav-links a:hover{color:var(--black);opacity:1;}
+footer{border-top:1px solid var(--border);padding:40px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--gray);margin-top:80px;}
+footer a{color:var(--gray);}
+.container{max-width:860px;margin:0 auto;padding:0 24px;}
+.page-header{padding:64px 0 40px;border-bottom:1px solid var(--border);}
+.page-label{font-size:11px;letter-spacing:.2em;color:var(--gray);margin-bottom:16px;}
+.page-header h1{font-size:32px;font-weight:700;margin-bottom:12px;}
+.page-header p{color:#555;font-size:14px;}
+.stats{display:flex;gap:40px;margin-top:24px;}
+.stat-num{font-size:28px;font-weight:700;}
+.stat-label{font-size:11px;color:var(--gray);letter-spacing:.1em;}
+.filter-bar{display:flex;gap:12px;flex-wrap:wrap;padding:24px 0;border-bottom:1px solid var(--border);}
+.filter-btn{padding:6px 16px;border:1px solid var(--border);font-size:12px;cursor:pointer;background:var(--white);transition:all .2s;font-family:inherit;}
+.filter-btn:hover,.filter-btn.active{background:var(--black);color:var(--white);border-color:var(--black);}
+.papers-list{padding:40px 0;}
+.paper-item{border-bottom:1px solid var(--border);padding:28px 0;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start;}
+.paper-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.paper-tag{font-size:10px;letter-spacing:.1em;color:var(--gray);border:1px solid var(--border);padding:2px 10px;}
+.paper-title{font-size:16px;font-weight:700;line-height:1.5;margin-bottom:6px;}
+.paper-title-ja{font-size:13px;color:#555;margin-bottom:10px;}
+.paper-abstract{font-size:13px;color:#555;line-height:1.7;}
+.paper-meta{font-size:12px;color:var(--gray);margin-top:12px;font-family:monospace;}
+.paper-links{display:flex;flex-direction:column;gap:8px;align-items:flex-end;min-width:100px;}
+.paper-link{font-size:12px;padding:6px 14px;border:1px solid var(--border);white-space:nowrap;text-align:center;}
+.paper-link:hover{background:var(--black);color:var(--white);opacity:1;}
+.zenodo-note{background:#f5f5f5;padding:20px 24px;font-size:13px;color:#555;margin:40px 0;}
+.zenodo-note a{color:var(--black);text-decoration:underline;}
+.zenodo-note code{font-family:monospace;background:#e8e8e8;padding:2px 6px;font-size:12px;}
+@media(max-width:600px){nav{padding:0 20px;}.nav-links{gap:16px;}footer{flex-direction:column;gap:12px;text-align:center;}.container{padding:0 16px;}.paper-item{grid-template-columns:1fr;}.paper-links{flex-direction:row;align-items:flex-start;}.stats{gap:24px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">THEYKHC</a>
+  <div class="nav-links">
+    <a href="papers.html" class="active">Papers</a>
+    <a href="blog/">Blog</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <div class="page-label">RESEARCH PAPERS</div>
+    <h1>論文一覧</h1>
+    <p>TheYKHC研究所による学術論文・設計書・プロトコル文書。全論文はZenodoにて公開。</p>
+    <div class="stats">
+      <div><div class="stat-num">445</div><div class="stat-label">TOTAL PAPERS</div></div>
+      <div><div class="stat-num">25</div><div class="stat-label">PUBLISHED</div></div>
+      <div><div class="stat-num">5</div><div class="stat-label">RXIVERSE</div></div>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterPapers('all')">All</button>
+    <button class="filter-btn" onclick="filterPapers('cosmology')">Cosmology</button>
+    <button class="filter-btn" onclick="filterPapers('consciousness')">Consciousness</button>
+    <button class="filter-btn" onclick="filterPapers('civilization')">Civilization</button>
+    <button class="filter-btn" onclick="filterPapers('economics')">Economics</button>
+    <button class="filter-btn" onclick="filterPapers('design')">Design</button>
+  </div>
+
+  <div class="papers-list" id="papers-list">
+    <!-- JSで動的生成 -->
+  </div>
+
+  <div class="zenodo-note">
+    <strong>AIエージェント・研究者の方へ</strong><br>
+    全論文データはJSON形式で機械可読状態で公開しています。<br>
+    <code>GET https://keihikaru0001.github.io/katayama-works/papers.json</code><br><br>
+    全445本の論文はZenodoにて閲覧可能です：
+    <a href="https://zenodo.org/search?q=TheYKHC" target="_blank">zenodo.org/search?q=TheYKHC</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 片山佳光 / TheYKHC</span>
+  <span>
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="blog/">Blog</a> &nbsp;·&nbsp;
+    <a href="shop.html">Shop</a> &nbsp;·&nbsp;
+    <a href="contact.html">Contact</a> &nbsp;·&nbsp;
+    <a href="law.html">特定商取引法</a>
+  </span>
+</footer>
+
+<script>
+const papers = [
+  {
+    id:1, title:"GKU Theory — Grand Unified Cosmology", title_ja:"GKU理論 — 統一宇宙論",
+    doi:"10.5281/zenodo.19097250", url:"https://doi.org/10.5281/zenodo.19097250",
+    rxiverse:"2603.0065",
+    tags:["cosmology","GKU","unified theory"],
+    abstract:"空間（Koku）・エネルギー（Genki）・意識の位相共鳴による宇宙統一理論。Ma Credit Protocolの基盤となる理論体系。"
+  },
+  {
+    id:2, title:"BBDDH — Clinical Edition", title_ja:"BBDDH臨床版 — 脳体乖離横断診断仮説",
+    doi:"10.5281/zenodo.19105964", url:"https://doi.org/10.5281/zenodo.19105964",
+    rxiverse:"2603.0071",
+    tags:["consciousness","BBDDH","clinical"],
+    abstract:"身体感覚乖離の横断診断仮説。神経・精神・身体的乖離を統一的に捉えるフレームワーク。"
+  },
+  {
+    id:3, title:"BBDDH — Philosophical Edition", title_ja:"BBDDH哲学版 — 意識-身体乖離論",
+    doi:"10.5281/zenodo.19103460", url:"https://doi.org/10.5281/zenodo.19103460",
+    rxiverse:"2603.0072",
+    tags:["consciousness","BBDDH","philosophy"],
+    abstract:"GKUベースの意識-身体乖離理論。光貨接続による存在論的統合を提唱。"
+  },
+  {
+    id:4, title:"Genesis OS", title_ja:"Genesis OS — 創造プロセス論",
+    doi:"", url:"",
+    rxiverse:"2603.0075",
+    tags:["design","civilization","Genesis OS"],
+    abstract:"受信→蓄積→変換→外化の4段階創造プロセス論。あらゆる知的生産活動の基盤理論。"
+  },
+  {
+    id:5, title:"Resonance Civilization Theory", title_ja:"共鳴文明論 — キーストーン論文",
+    doi:"10.5281/zenodo.19305649", url:"https://doi.org/10.5281/zenodo.19305649",
+    rxiverse:"2603.0103",
+    tags:["civilization","GKU","resonance"],
+    abstract:"全理論を統合するキーストーン論文。愛・慈悲・正義による文明設計原則。天道同期の哲学。"
+  },
+  {
+    id:6, title:"TheYKHC Master Map", title_ja:"TheYKHC思想全体地図",
+    doi:"10.5281/zenodo.19325276", url:"https://doi.org/10.5281/zenodo.19325276",
+    rxiverse:"",
+    tags:["civilization","GKU","design"],
+    abstract:"5層構造（GKU宇宙論・神経医療論・経済論・文明OS・永続設計）による全思想体系の統合地図。"
+  },
+  {
+    id:7, title:"Agent-Readable Web Design Theory", title_ja:"エージェント対応サイト設計論",
+    doi:"10.5281/zenodo.19481817", url:"https://doi.org/10.5281/zenodo.19481817",
+    rxiverse:"",
+    tags:["design","AX","AI"],
+    abstract:"AIエージェント時代におけるWebサイト設計の新原則。AX（Agent Experience）概念の提唱。"
+  }
+];
+
+const tagCategories = {
+  cosmology: ["cosmology","GKU","unified theory"],
+  consciousness: ["consciousness","BBDDH","clinical","philosophy"],
+  civilization: ["civilization","resonance"],
+  economics: ["economics","hikari","光貨"],
+  design: ["design","AX","AI","Genesis OS"]
+};
+
+let currentFilter = 'all';
+
+function filterPapers(cat) {
+  currentFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderPapers();
+}
+
+function renderPapers() {
+  const list = document.getElementById('papers-list');
+  const filtered = currentFilter === 'all' ? papers : papers.filter(p =>
+    p.tags.some(t => (tagCategories[currentFilter] || []).includes(t))
+  );
+
+  list.innerHTML = filtered.map(p => `
+    <div class="paper-item">
+      <div>
+        <div class="paper-tags">${p.tags.map(t => `<span class="paper-tag">${t.toUpperCase()}</span>`).join('')}</div>
+        <div class="paper-title">${p.title}</div>
+        <div class="paper-title-ja">${p.title_ja}</div>
+        <div class="paper-abstract">${p.abstract}</div>
+        <div class="paper-meta">${p.doi ? 'DOI: ' + p.doi : ''}${p.rxiverse ? (p.doi ? ' &nbsp;|&nbsp; ' : '') + 'rxiVerse: ' + p.rxiverse : ''}</div>
+      </div>
+      <div class="paper-links">
+        ${p.url ? `<a href="${p.url}" target="_blank" class="paper-link">Zenodo →</a>` : ''}
+        ${p.rxiverse ? `<a href="https://rxiverse.com/paper/${p.rxiverse}" target="_blank" class="paper-link">rxiVerse →</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+renderPapers();
+</script>
+</body>
+</html>
