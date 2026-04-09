@@ -1,0 +1,220 @@
+{
+  "schema": "https://schema.org/ScholarlyArticle",
+  "publisher": {
+    "name": "TheYKHC",
+    "url": "https://www.theykhc.com",
+    "author": "Katayama Yoshihikaru (片山佳光)"
+  },
+  "description": "A unified theory system integrating cosmology, neuroscience, economics, and civilization design. All papers are permanently archived on Zenodo.",
+  "papers": [
+    {
+      "id": 1,
+      "title": "GKU Theory — Grand Unified Cosmology",
+      "title_ja": "GKU理論 — 統一宇宙論",
+      "doi": "10.5281/zenodo.19097250",
+      "url": "https://doi.org/10.5281/zenodo.19097250",
+      "rxiverse": "2603.0065",
+      "tags": [
+        "cosmology",
+        "GKU",
+        "unified theory",
+        "Koku",
+        "Genki",
+        "Ma Credit Protocol"
+      ],
+      "abstract": "A unified cosmological theory integrating space (Koku), energy (Genki), and consciousness through phase resonance. Proposes the Ma Credit Protocol as the foundation for a resonance-based civilization."
+    },
+    {
+      "id": 2,
+      "title": "BBDDH Clinical Version — Brain-Body Dissociation Disorder Hypothesis",
+      "title_ja": "BBDDH臨床版 — 脳体乖離病横断診断仮説",
+      "doi": "10.5281/zenodo.19105964",
+      "url": "https://doi.org/10.5281/zenodo.19105964",
+      "rxiverse": "2603.0071",
+      "tags": [
+        "BBDDH",
+        "neuroscience",
+        "brain-body dissociation",
+        "clinical",
+        "psychiatry"
+      ],
+      "abstract": "A cross-diagnostic hypothesis proposing that brain-body dissociation is the root cause of multiple modern psychiatric and somatic disorders. Introduces linguistic neural regulation as a therapeutic approach."
+    },
+    {
+      "id": 3,
+      "title": "BBDDH Philosophical Version",
+      "title_ja": "BBDDH哲学版 — GKUベース意識-身体乖離＋光貨接続",
+      "doi": "10.5281/zenodo.19103460",
+      "url": "https://doi.org/10.5281/zenodo.19103460",
+      "rxiverse": "2603.0072",
+      "tags": [
+        "BBDDH",
+        "philosophy",
+        "GKU",
+        "Hikari currency",
+        "consciousness"
+      ],
+      "abstract": "Philosophical extension of BBDDH grounded in GKU cosmology. Connects consciousness-body dissociation with the Hikari currency system and resonance civilization theory."
+    },
+    {
+      "id": 4,
+      "title": "Genesis OS — The Creative Process Protocol",
+      "title_ja": "Genesis OS — 受信→蓄積→変換→外化の創造プロセス論",
+      "doi": null,
+      "url": "https://rxiverse.org/abs/2603.0075",
+      "rxiverse": "2603.0075",
+      "tags": [
+        "Genesis OS",
+        "creativity",
+        "process theory",
+        "civilization OS"
+      ],
+      "abstract": "A systematic model of the creative process: Reception → Accumulation → Transformation → Externalization. Provides the operating system layer for civilizational design."
+    },
+    {
+      "id": 5,
+      "title": "Resonance Civilization Theory — Keystone Paper",
+      "title_ja": "共鳴文明論 — 全理論統合キーストーン論文",
+      "doi": "10.5281/zenodo.19305649",
+      "url": "https://doi.org/10.5281/zenodo.19305649",
+      "rxiverse": "2603.0103",
+      "tags": [
+        "resonance",
+        "civilization",
+        "unified theory",
+        "keystone",
+        "GKU",
+        "BBDDH",
+        "PRT",
+        "Hikari"
+      ],
+      "abstract": "The keystone paper integrating all theories: GKU cosmology, BBDDH neuroscience, PRT phase resonance, and Hikari currency. Defines the design principles of a resonance-based civilization."
+    },
+    {
+      "id": 6,
+      "title": "PRT v2 — Phase Resonance Theory",
+      "title_ja": "PRT v2 — 位相共鳴理論",
+      "doi": "10.5281/zenodo.19305019",
+      "url": "https://doi.org/10.5281/zenodo.19305019",
+      "rxiverse": null,
+      "tags": [
+        "PRT",
+        "phase resonance",
+        "physics",
+        "consciousness"
+      ],
+      "abstract": "Phase Resonance Theory v2. Proposes that phase resonance is the fundamental mechanism underlying consciousness, matter, and civilizational coherence."
+    },
+    {
+      "id": 7,
+      "title": "OSI Philosophical Version",
+      "title_ja": "OSI哲学篇",
+      "doi": "10.5281/zenodo.19307942",
+      "url": "https://doi.org/10.5281/zenodo.19307942",
+      "rxiverse": null,
+      "tags": [
+        "OSI",
+        "philosophy",
+        "civilization",
+        "identity"
+      ],
+      "abstract": "Philosophical foundations of the OSI (Ontological Structure of Identity) framework. Explores the nature of self, identity, and civilizational consciousness."
+    },
+    {
+      "id": 8,
+      "title": "OSI Clinical & Industrial Proposal",
+      "title_ja": "OSI臨床・産業提言篇",
+      "doi": "10.5281/zenodo.19308101",
+      "url": "https://doi.org/10.5281/zenodo.19308101",
+      "rxiverse": null,
+      "tags": [
+        "OSI",
+        "clinical",
+        "industry",
+        "application"
+      ],
+      "abstract": "Clinical and industrial applications of the OSI framework. Practical proposals for implementing OSI principles in healthcare and organizational design."
+    },
+    {
+      "id": 9,
+      "title": "Hikari Currency → Status Score",
+      "title_ja": "光貨→ステータス・スコア",
+      "doi": "10.5281/zenodo.19302619",
+      "url": "https://doi.org/10.5281/zenodo.19302619",
+      "rxiverse": null,
+      "tags": [
+        "Hikari",
+        "currency",
+        "status score",
+        "economics",
+        "resonance economy"
+      ],
+      "abstract": "Defines the Hikari (光貨) currency system and its conversion to Status Scores. A new economic paradigm where virtue, contribution, and resonance are the sources of value."
+    },
+    {
+      "id": 10,
+      "title": "Hikari Currency Economic Implementation Design",
+      "title_ja": "光貨経済実装設計書",
+      "doi": "10.5281/zenodo.19012603",
+      "url": "https://doi.org/10.5281/zenodo.19012603",
+      "rxiverse": null,
+      "tags": [
+        "Hikari",
+        "economics",
+        "implementation",
+        "civilization"
+      ],
+      "abstract": "Detailed implementation design for the Hikari currency economy. Covers infrastructure, governance, and integration with existing economic systems."
+    },
+    {
+      "id": 11,
+      "title": "Density Moves the World v2.0",
+      "title_ja": "密度が世界を動かす v2.0",
+      "doi": "10.5281/zenodo.19311662",
+      "url": "https://doi.org/10.5281/zenodo.19311662",
+      "rxiverse": null,
+      "tags": [
+        "density",
+        "Densitas",
+        "civilization",
+        "information theory"
+      ],
+      "abstract": "Proposes that informational and consciousness density is the primary driver of civilizational change. V2.0 integrates GKU and Hikari frameworks."
+    },
+    {
+      "id": 12,
+      "title": "TheYKHC Master Map — Complete Thought Architecture",
+      "title_ja": "TheYKHC思想全体地図",
+      "doi": "10.5281/zenodo.19325276",
+      "url": "https://doi.org/10.5281/zenodo.19325276",
+      "rxiverse": null,
+      "tags": [
+        "master map",
+        "unified theory",
+        "architecture",
+        "TheYKHC"
+      ],
+      "abstract": "A complete 5-layer map of the TheYKHC thought system: GKU cosmology → BBDDH/PRT neuroscience → Hikari economics → Genesis OS civilization → Three Pillars of Perpetual Design (Love, Compassion, Justice)."
+    },
+    {
+      "id": 13,
+      "title": "Chapter 75.0 — Three Pillars of Human Perpetuation",
+      "title_ja": "第75.0節 人類永続の三主軸",
+      "doi": "10.5281/zenodo.19324997",
+      "url": "https://doi.org/10.5281/zenodo.19324997",
+      "rxiverse": null,
+      "tags": [
+        "perpetuation",
+        "love",
+        "compassion",
+        "justice",
+        "entropy",
+        "civilization"
+      ],
+      "abstract": "The three pillars that allow civilization to transcend entropy: Love, Compassion, and Justice. When implemented in the Hikari OS core, civilization synchronizes with the Heavenly Way (天道)."
+    }
+  ],
+  "total_zenodo_papers": 445,
+  "public_papers": 25,
+  "last_updated": "2026-04-09"
+}
