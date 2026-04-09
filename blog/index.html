@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — TheYKHC</title>
+<meta name="description" content="TheYKHC ブログ。GKU宇宙論・光貨・BBDDH・Genesis OSに関する考察・随筆。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--white:#fafafa;--gray:#888;--border:#ddd;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--black);line-height:1.8;font-size:15px;}
+a{color:var(--black);text-decoration:none;}a:hover{opacity:.6;}
+nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px;z-index:100;}
+.nav-logo{font-size:13px;font-weight:700;letter-spacing:.1em;}
+.nav-links{display:flex;gap:32px;font-size:13px;}
+.nav-links a{color:var(--gray);}
+.nav-links a.active{color:var(--black);font-weight:600;}
+.nav-links a:hover{color:var(--black);opacity:1;}
+footer{border-top:1px solid var(--border);padding:40px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--gray);margin-top:80px;}
+footer a{color:var(--gray);}
+.container{max-width:860px;margin:0 auto;padding:0 24px;}
+.page-header{padding:64px 0 40px;border-bottom:1px solid var(--border);}
+.page-label{font-size:11px;letter-spacing:.2em;color:var(--gray);margin-bottom:16px;}
+.page-header h1{font-size:32px;font-weight:700;margin-bottom:12px;}
+.blog-list{padding:40px 0;}
+.blog-item{display:grid;grid-template-columns:80px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--border);}
+.blog-item:hover .blog-title{opacity:.6;}
+.blog-date{font-size:12px;color:var(--gray);padding-top:4px;font-family:monospace;}
+.blog-tag{font-size:10px;letter-spacing:.1em;color:var(--gray);margin-bottom:8px;}
+.blog-title{font-size:17px;font-weight:700;line-height:1.5;margin-bottom:6px;transition:opacity .2s;}
+.blog-excerpt{font-size:13px;color:#555;line-height:1.7;}
+.empty-state{padding:80px 0;text-align:center;color:var(--gray);font-size:14px;}
+@media(max-width:600px){nav{padding:0 20px;}.nav-links{gap:16px;}footer{flex-direction:column;gap:12px;text-align:center;}.container{padding:0 16px;}.blog-item{grid-template-columns:1fr;gap:8px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">THEYKHC</a>
+  <div class="nav-links">
+    <a href="../papers.html">Papers</a>
+    <a href="index.html" class="active">Blog</a>
+    <a href="../shop.html">Shop</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="page-header">
+    <div class="page-label">BLOG</div>
+    <h1>ブログ</h1>
+    <p style="color:#555;font-size:14px;">GKU宇宙論・光貨・BBDDH・Genesis OSに関する考察・随筆。</p>
+  </div>
+
+  <div class="blog-list" id="blog-list">
+    <!-- 記事はこちらに追加 -->
+    <div class="blog-item">
+      <div class="blog-date">2026-04-09</div>
+      <div>
+        <div class="blog-tag">WEB DESIGN / AX</div>
+        <a href="2026-04-09-ax.html">
+          <div class="blog-title">AIエージェントが読めないWebサイトという問題</div>
+        </a>
+        <div class="blog-excerpt">WixベースのサイトはAIクローラーからほぼ見えない。この問題に気づいた時、私はサイト全体をGitHub Pagesで作り直すことを決めた。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 片山佳光 / TheYKHC</span>
+  <span>
+    <a href="../index.html">Home</a> &nbsp;·&nbsp;
+    <a href="../papers.html">Papers</a> &nbsp;·&nbsp;
+    <a href="../shop.html">Shop</a> &nbsp;·&nbsp;
+    <a href="../contact.html">Contact</a> &nbsp;·&nbsp;
+    <a href="../law.html">特定商取引法</a>
+  </span>
+</footer>
+
+</body>
+</html>
