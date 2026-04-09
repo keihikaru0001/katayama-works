@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>購入完了 — TheYKHC</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0a0a0a;--white:#fafafa;--gray:#888;--border:#ddd;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--black);line-height:1.8;font-size:15px;}
+a{color:var(--black);text-decoration:none;}a:hover{opacity:.6;}
+nav{position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--border);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:56px;z-index:100;}
+.nav-logo{font-size:13px;font-weight:700;letter-spacing:.1em;}
+.nav-links{display:flex;gap:32px;font-size:13px;}
+.nav-links a{color:var(--gray);}
+.nav-links a:hover{color:var(--black);opacity:1;}
+footer{border-top:1px solid var(--border);padding:40px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--gray);margin-top:80px;}
+footer a{color:var(--gray);}
+.container{max-width:640px;margin:0 auto;padding:0 24px;}
+.thanks-section{padding:120px 0 80px;text-align:center;}
+.thanks-icon{font-size:48px;margin-bottom:32px;}
+.thanks-label{font-size:11px;letter-spacing:.2em;color:var(--gray);margin-bottom:16px;}
+.thanks-title{font-size:28px;font-weight:700;margin-bottom:20px;}
+.thanks-desc{font-size:14px;color:#555;line-height:1.9;margin-bottom:48px;}
+.download-box{border:1px solid var(--border);padding:32px;margin-bottom:48px;text-align:left;}
+.download-label{font-size:11px;letter-spacing:.2em;color:var(--gray);margin-bottom:12px;}
+.download-title{font-size:16px;font-weight:700;margin-bottom:16px;}
+.btn-download{display:inline-block;padding:12px 32px;background:var(--black);color:var(--white);font-size:13px;letter-spacing:.05em;}
+.btn-download:hover{background:#333;color:var(--white);}
+.nav-back{display:inline-block;font-size:13px;color:var(--gray);border-bottom:1px solid var(--border);padding-bottom:2px;}
+@media(max-width:600px){nav{padding:0 20px;}.nav-links{gap:16px;}footer{flex-direction:column;gap:12px;text-align:center;}.container{padding:0 16px;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">THEYKHC</a>
+  <div class="nav-links">
+    <a href="papers.html">Papers</a>
+    <a href="blog/">Blog</a>
+    <a href="shop.html">Shop</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="thanks-section">
+    <div class="thanks-icon">◎</div>
+    <div class="thanks-label">PURCHASE COMPLETE</div>
+    <h1 class="thanks-title">ご購入ありがとうございます</h1>
+    <p class="thanks-desc">
+      決済が完了しました。<br>
+      下のボタンからPDFをダウンロードしてください。<br>
+      領収書はStripeからメールで届きます。
+    </p>
+
+    <div class="download-box">
+      <div class="download-label">YOUR DOWNLOAD</div>
+      <div class="download-title">GKU宇宙論完全版 — Complete Edition</div>
+      <a href="https://keihikaru0001.github.io/katayama-works/GKU_Complete_JP_EN.pdf" class="btn-download" download>PDFをダウンロード</a>
+    </div>
+
+    <a href="index.html" class="nav-back">← トップページに戻る</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 TheYKHC — The Yoshimitsu Katayama Holding Company</span>
+  <div>
+    <a href="law.html">特定商取引法</a> &nbsp;·&nbsp;
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
