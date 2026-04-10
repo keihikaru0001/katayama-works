@@ -20,7 +20,7 @@
 }
 </script>
 <style>
-:root { --black:#0a0a0a; --white:#fafafa; --gray:#888; --border:#ddd; }
+:root { --black:#0a0a0a; --white:#fafafa; --gray:#888; --border:#ddd; --gold:#c9a227; }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Noto Sans JP',sans-serif;background:var(--white);color:var(--black);line-height:1.8;font-size:15px;}
 a{color:var(--black);text-decoration:none;}
@@ -42,6 +42,8 @@ footer a{color:var(--gray);}
 .btn:hover{background:var(--black);color:var(--white);opacity:1;}
 .btn-fill{background:var(--black);color:var(--white);}
 .btn-fill:hover{background:#333;opacity:1;}
+.btn-gold{background:var(--gold);color:#000;border-color:var(--gold);}
+.btn-gold:hover{background:#b8911e;opacity:1;}
 .section{padding:64px 0;}
 .section-label{font-size:11px;letter-spacing:.2em;color:var(--gray);margin-bottom:32px;}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;}
@@ -51,12 +53,16 @@ footer a{color:var(--gray);}
 .card h3{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.5;}
 .card p{font-size:13px;color:#555;line-height:1.7;}
 .card-doi{font-size:11px;color:var(--gray);margin-top:12px;font-family:monospace;}
+.card-link{font-size:12px;color:var(--gold);margin-top:12px;font-weight:700;letter-spacing:.05em;}
 .featured{background:#0a0a0a;color:#fafafa;padding:64px 40px;margin:64px 0;text-align:center;}
 .featured h2{font-size:22px;margin-bottom:16px;}
 .featured p{font-size:14px;color:#aaa;margin-bottom:32px;}
 .featured .btn{border-color:#fafafa;color:#fafafa;}
 .featured .btn:hover{background:#fafafa;color:#0a0a0a;}
-@media(max-width:600px){nav{padding:0 20px;}.nav-links{gap:16px;}footer{flex-direction:column;gap:12px;text-align:center;}.container{padding:0 16px;}.hero{padding:80px 0 60px;}.featured{padding:48px 20px;}}
+.hikari-banner{background:#0a0a0a;color:#fafafa;border:1px solid var(--gold);padding:36px 40px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.hikari-banner-text h3{font-size:18px;color:var(--gold);margin-bottom:8px;}
+.hikari-banner-text p{font-size:13px;color:#aaa;line-height:1.7;}
+@media(max-width:600px){nav{padding:0 20px;}.nav-links{gap:16px;}footer{flex-direction:column;gap:12px;text-align:center;}.container{padding:0 16px;}.hero{padding:80px 0 60px;}.featured{padding:48px 20px;}.hikari-banner{flex-direction:column;text-align:center;padding:28px 20px;}}
 </style>
 </head>
 <body>
@@ -105,6 +111,17 @@ footer a{color:var(--gray);}
       </div>
     </div>
     <div style="margin-top:32px;"><a href="papers.html" class="btn">全論文を見る →</a></div>
+  </div>
+</div>
+
+<!-- Hikari Engine バナー -->
+<div class="container">
+  <div class="hikari-banner">
+    <div class="hikari-banner-text">
+      <h3>✦ Hikari Engine — Interactive Presentation</h3>
+      <p>分母ゼロの法則（V = N/D → ∞）と共鳴経済の倫理学。<br>光貨エンジンの理論をインタラクティブなプレゼン形式で体験する。</p>
+    </div>
+    <a href="https://hikari-engine-resonate.base44.app" target="_blank" class="btn btn-gold">体験する →</a>
   </div>
 </div>
 
