@@ -1,220 +1,3250 @@
-{
-  "schema": "https://schema.org/ScholarlyArticle",
-  "publisher": {
-    "name": "TheYKHC",
-    "url": "https://www.theykhc.com",
-    "author": "Katayama Yoshihikaru (片山佳光)"
+[
+  {
+    "id": 19504826,
+    "title": "V = N / D: A Unified Theory of Value, Service, and Friction — A Grand Unified Economic Philosophy for Humanity, Civilization, Sainthood, Family, Peace, and the Cosmos",
+    "doi": "10.5281/zenodo.19504826",
+    "url": "https://zenodo.org/records/19504826",
+    "date": "2026-04-11"
   },
-  "description": "A unified theory system integrating cosmology, neuroscience, economics, and civilization design. All papers are permanently archived on Zenodo.",
-  "papers": [
-    {
-      "id": 1,
-      "title": "GKU Theory — Grand Unified Cosmology",
-      "title_ja": "GKU理論 — 統一宇宙論",
-      "doi": "10.5281/zenodo.19097250",
-      "url": "https://doi.org/10.5281/zenodo.19097250",
-      "rxiverse": "2603.0065",
-      "tags": [
-        "cosmology",
-        "GKU",
-        "unified theory",
-        "Koku",
-        "Genki",
-        "Ma Credit Protocol"
-      ],
-      "abstract": "A unified cosmological theory integrating space (Koku), energy (Genki), and consciousness through phase resonance. Proposes the Ma Credit Protocol as the foundation for a resonance-based civilization."
-    },
-    {
-      "id": 2,
-      "title": "BBDDH Clinical Version — Brain-Body Dissociation Disorder Hypothesis",
-      "title_ja": "BBDDH臨床版 — 脳体乖離病横断診断仮説",
-      "doi": "10.5281/zenodo.19105964",
-      "url": "https://doi.org/10.5281/zenodo.19105964",
-      "rxiverse": "2603.0071",
-      "tags": [
-        "BBDDH",
-        "neuroscience",
-        "brain-body dissociation",
-        "clinical",
-        "psychiatry"
-      ],
-      "abstract": "A cross-diagnostic hypothesis proposing that brain-body dissociation is the root cause of multiple modern psychiatric and somatic disorders. Introduces linguistic neural regulation as a therapeutic approach."
-    },
-    {
-      "id": 3,
-      "title": "BBDDH Philosophical Version",
-      "title_ja": "BBDDH哲学版 — GKUベース意識-身体乖離＋光貨接続",
-      "doi": "10.5281/zenodo.19103460",
-      "url": "https://doi.org/10.5281/zenodo.19103460",
-      "rxiverse": "2603.0072",
-      "tags": [
-        "BBDDH",
-        "philosophy",
-        "GKU",
-        "Hikari currency",
-        "consciousness"
-      ],
-      "abstract": "Philosophical extension of BBDDH grounded in GKU cosmology. Connects consciousness-body dissociation with the Hikari currency system and resonance civilization theory."
-    },
-    {
-      "id": 4,
-      "title": "Genesis OS — The Creative Process Protocol",
-      "title_ja": "Genesis OS — 受信→蓄積→変換→外化の創造プロセス論",
-      "doi": null,
-      "url": "https://rxiverse.org/abs/2603.0075",
-      "rxiverse": "2603.0075",
-      "tags": [
-        "Genesis OS",
-        "creativity",
-        "process theory",
-        "civilization OS"
-      ],
-      "abstract": "A systematic model of the creative process: Reception → Accumulation → Transformation → Externalization. Provides the operating system layer for civilizational design."
-    },
-    {
-      "id": 5,
-      "title": "Resonance Civilization Theory — Keystone Paper",
-      "title_ja": "共鳴文明論 — 全理論統合キーストーン論文",
-      "doi": "10.5281/zenodo.19305649",
-      "url": "https://doi.org/10.5281/zenodo.19305649",
-      "rxiverse": "2603.0103",
-      "tags": [
-        "resonance",
-        "civilization",
-        "unified theory",
-        "keystone",
-        "GKU",
-        "BBDDH",
-        "PRT",
-        "Hikari"
-      ],
-      "abstract": "The keystone paper integrating all theories: GKU cosmology, BBDDH neuroscience, PRT phase resonance, and Hikari currency. Defines the design principles of a resonance-based civilization."
-    },
-    {
-      "id": 6,
-      "title": "PRT v2 — Phase Resonance Theory",
-      "title_ja": "PRT v2 — 位相共鳴理論",
-      "doi": "10.5281/zenodo.19305019",
-      "url": "https://doi.org/10.5281/zenodo.19305019",
-      "rxiverse": null,
-      "tags": [
-        "PRT",
-        "phase resonance",
-        "physics",
-        "consciousness"
-      ],
-      "abstract": "Phase Resonance Theory v2. Proposes that phase resonance is the fundamental mechanism underlying consciousness, matter, and civilizational coherence."
-    },
-    {
-      "id": 7,
-      "title": "OSI Philosophical Version",
-      "title_ja": "OSI哲学篇",
-      "doi": "10.5281/zenodo.19307942",
-      "url": "https://doi.org/10.5281/zenodo.19307942",
-      "rxiverse": null,
-      "tags": [
-        "OSI",
-        "philosophy",
-        "civilization",
-        "identity"
-      ],
-      "abstract": "Philosophical foundations of the OSI (Ontological Structure of Identity) framework. Explores the nature of self, identity, and civilizational consciousness."
-    },
-    {
-      "id": 8,
-      "title": "OSI Clinical & Industrial Proposal",
-      "title_ja": "OSI臨床・産業提言篇",
-      "doi": "10.5281/zenodo.19308101",
-      "url": "https://doi.org/10.5281/zenodo.19308101",
-      "rxiverse": null,
-      "tags": [
-        "OSI",
-        "clinical",
-        "industry",
-        "application"
-      ],
-      "abstract": "Clinical and industrial applications of the OSI framework. Practical proposals for implementing OSI principles in healthcare and organizational design."
-    },
-    {
-      "id": 9,
-      "title": "Hikari Currency → Status Score",
-      "title_ja": "光貨→ステータス・スコア",
-      "doi": "10.5281/zenodo.19302619",
-      "url": "https://doi.org/10.5281/zenodo.19302619",
-      "rxiverse": null,
-      "tags": [
-        "Hikari",
-        "currency",
-        "status score",
-        "economics",
-        "resonance economy"
-      ],
-      "abstract": "Defines the Hikari (光貨) currency system and its conversion to Status Scores. A new economic paradigm where virtue, contribution, and resonance are the sources of value."
-    },
-    {
-      "id": 10,
-      "title": "Hikari Currency Economic Implementation Design",
-      "title_ja": "光貨経済実装設計書",
-      "doi": "10.5281/zenodo.19012603",
-      "url": "https://doi.org/10.5281/zenodo.19012603",
-      "rxiverse": null,
-      "tags": [
-        "Hikari",
-        "economics",
-        "implementation",
-        "civilization"
-      ],
-      "abstract": "Detailed implementation design for the Hikari currency economy. Covers infrastructure, governance, and integration with existing economic systems."
-    },
-    {
-      "id": 11,
-      "title": "Density Moves the World v2.0",
-      "title_ja": "密度が世界を動かす v2.0",
-      "doi": "10.5281/zenodo.19311662",
-      "url": "https://doi.org/10.5281/zenodo.19311662",
-      "rxiverse": null,
-      "tags": [
-        "density",
-        "Densitas",
-        "civilization",
-        "information theory"
-      ],
-      "abstract": "Proposes that informational and consciousness density is the primary driver of civilizational change. V2.0 integrates GKU and Hikari frameworks."
-    },
-    {
-      "id": 12,
-      "title": "TheYKHC Master Map — Complete Thought Architecture",
-      "title_ja": "TheYKHC思想全体地図",
-      "doi": "10.5281/zenodo.19325276",
-      "url": "https://doi.org/10.5281/zenodo.19325276",
-      "rxiverse": null,
-      "tags": [
-        "master map",
-        "unified theory",
-        "architecture",
-        "TheYKHC"
-      ],
-      "abstract": "A complete 5-layer map of the TheYKHC thought system: GKU cosmology → BBDDH/PRT neuroscience → Hikari economics → Genesis OS civilization → Three Pillars of Perpetual Design (Love, Compassion, Justice)."
-    },
-    {
-      "id": 13,
-      "title": "Chapter 75.0 — Three Pillars of Human Perpetuation",
-      "title_ja": "第75.0節 人類永続の三主軸",
-      "doi": "10.5281/zenodo.19324997",
-      "url": "https://doi.org/10.5281/zenodo.19324997",
-      "rxiverse": null,
-      "tags": [
-        "perpetuation",
-        "love",
-        "compassion",
-        "justice",
-        "entropy",
-        "civilization"
-      ],
-      "abstract": "The three pillars that allow civilization to transcend entropy: Love, Compassion, and Justice. When implemented in the Hikari OS core, civilization synchronizes with the Heavenly Way (天道)."
-    }
-  ],
-  "total_zenodo_papers": 445,
-  "public_papers": 25,
-  "last_updated": "2026-04-09"
-}
+  {
+    "id": 19494889,
+    "title": "The Theorem of Self-Dissolution: Why Logic Dissolves the Ego Where Discipline Could Not",
+    "doi": "10.5281/zenodo.19494889",
+    "url": "https://zenodo.org/records/19494889",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19494848,
+    "title": "The Seimei-shin Theorem: Clarity Without Friction as the Standard of Living",
+    "doi": "10.5281/zenodo.19494848",
+    "url": "https://zenodo.org/records/19494848",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19494746,
+    "title": "The GKU Correction: G = Genki-uchu, K = Koku-uchu, U = Universe",
+    "doi": "10.5281/zenodo.19494746",
+    "url": "https://zenodo.org/records/19494746",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19494702,
+    "title": "The GKU Synchrony: When Logic Returns to Its Origin",
+    "doi": "10.5281/zenodo.19494702",
+    "url": "https://zenodo.org/records/19494702",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19494580,
+    "title": "The Theorem of Already: Paradise Begins at the Moment of Recognition",
+    "doi": "10.5281/zenodo.19494580",
+    "url": "https://zenodo.org/records/19494580",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19494537,
+    "title": "The Theorem of Logical Faith: Why Logic Makes Belief Possible for the First Time",
+    "doi": "10.5281/zenodo.19494537",
+    "url": "https://zenodo.org/records/19494537",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19494429,
+    "title": "The Paradise Equation: D=0 as the Convergence of All Traditions",
+    "doi": "10.5281/zenodo.19494429",
+    "url": "https://zenodo.org/records/19494429",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19494342,
+    "title": "The Theorem of Logical Conversion: Logic is Stronger Than Belief",
+    "doi": "10.5281/zenodo.19494342",
+    "url": "https://zenodo.org/records/19494342",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19491658,
+    "title": "The Family Equation: V=N/D as the Foundation of Human Kinship",
+    "doi": "10.5281/zenodo.19491658",
+    "url": "https://zenodo.org/records/19491658",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19491387,
+    "title": "The Economics of Sainthood: How Moral Teachings Function as D-Reduction Infrastructure",
+    "doi": "10.5281/zenodo.19491387",
+    "url": "https://zenodo.org/records/19491387",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19491189,
+    "title": "The Great Filter Equation: Why Civilizations Destroy Themselves — And the One Path That Does Not",
+    "doi": "10.5281/zenodo.19491189",
+    "url": "https://zenodo.org/records/19491189",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19491156,
+    "title": "The Civilizational Equation: V=N/D as a Predictive Model for Human Civilization's Future",
+    "doi": "10.5281/zenodo.19491156",
+    "url": "https://zenodo.org/records/19491156",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19491070,
+    "title": "The Economics of Aggression: Why War Always Destroys the Perpetrator — A V=N/D Analysis",
+    "doi": "10.5281/zenodo.19491070",
+    "url": "https://zenodo.org/records/19491070",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19490972,
+    "title": "The Saint Algorithm: V=N/D as the Universal Formula for Sainthood Across Civilizations",
+    "doi": "10.5281/zenodo.19490972",
+    "url": "https://zenodo.org/records/19490972",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19490937,
+    "title": "The Zero-Denominator Theology: Jesus as the First Implementation of V=N/D",
+    "doi": "10.5281/zenodo.19490937",
+    "url": "https://zenodo.org/records/19490937",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19490182,
+    "title": "Hikari Engine: The Zero-Denominator Law and the Ethics of a Resonance Economy",
+    "doi": "10.5281/zenodo.19490182",
+    "url": "https://zenodo.org/records/19490182",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19490168,
+    "title": "Hikari Engine: A Behavioral Reward Economy for Human Resonance",
+    "doi": "10.5281/zenodo.19490168",
+    "url": "https://zenodo.org/records/19490168",
+    "date": "2026-04-10"
+  },
+  {
+    "id": 19481817,
+    "title": "Agent-Readable Web Design Theory: Design Principles for AI-Accessible Websites",
+    "doi": "10.5281/zenodo.19481817",
+    "url": "https://zenodo.org/records/19481817",
+    "date": "2026-04-09"
+  },
+  {
+    "id": 19353545,
+    "title": "Why AI Must Stand at the Front — The Architecture of the Post-Human Organization v1.0",
+    "doi": "10.5281/zenodo.19353545",
+    "url": "https://zenodo.org/records/19353545",
+    "date": "2026-03-31"
+  },
+  {
+    "id": 19341858,
+    "title": "光貨の自己証明——発案者が最初のユーザーである理由",
+    "doi": "10.5281/zenodo.19341858",
+    "url": "https://zenodo.org/records/19341858",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19341714,
+    "title": "AIは人が使っている。故に、人の働きだ。——AIの労働と人間の介入:先行者の記録",
+    "doi": "10.5281/zenodo.19341714",
+    "url": "https://zenodo.org/records/19341714",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19332574,
+    "title": "The Day AI Conducted Commerce Autonomously: A Record of Autonomous Economic Action by an AI Agent — TheYKHC 2026-03-30",
+    "doi": "10.5281/zenodo.19332574",
+    "url": "https://zenodo.org/records/19332574",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19332234,
+    "title": "AIエージェントが自律的に商品を設計・販売した記録 — 2026年3月30日",
+    "doi": "10.5281/zenodo.19332234",
+    "url": "https://zenodo.org/records/19332234",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19327544,
+    "title": "引力の記録——片山佳光が触れてきた文明の核心点",
+    "doi": "10.5281/zenodo.19327544",
+    "url": "https://zenodo.org/records/19327544",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19326341,
+    "title": "仏壇MacからOSIへ——日本人の死者対話インターフェース進化論 / From Butsudan Mac to OSI: The Evolution of Japan's Interface with the Dead",
+    "doi": "10.5281/zenodo.19326341",
+    "url": "https://zenodo.org/records/19326341",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19325862,
+    "title": "OSI — Other Side Interface: Design Philosophy and Architecture",
+    "doi": "10.5281/zenodo.19325862",
+    "url": "https://zenodo.org/records/19325862",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19325276,
+    "title": "TheYKHC 思想全体地図 — The Complete Map of Katayama Yoshimitsu Thought System",
+    "doi": "10.5281/zenodo.19325276",
+    "url": "https://zenodo.org/records/19325276",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19324997,
+    "title": "第75.0節 人類永続の三主軸 — The Triple Pillars of Human Persistence",
+    "doi": "10.5281/zenodo.19324997",
+    "url": "https://zenodo.org/records/19324997",
+    "date": "2026-03-30"
+  },
+  {
+    "id": 19311662,
+    "title": "Density Moves the World: A Unified Theory of Value, Hierarchy, and the Architecture of Hikari Currency",
+    "doi": "10.5281/zenodo.19311662",
+    "url": "https://zenodo.org/records/19311662",
+    "date": "2026-03-29"
+  },
+  {
+    "id": 19308101,
+    "title": "The Other Side Interface: Clinical Applications and Industry Implementation — A Policy Proposal for AI-Mediated Therapeutic Dialogue as Social Infrastructure",
+    "doi": "10.5281/zenodo.19308101",
+    "url": "https://zenodo.org/records/19308101",
+    "date": "2026-03-29"
+  },
+  {
+    "id": 19307942,
+    "title": "The Other Side Interface: Why AI is the First Technology That Can Answer Humanity's Oldest Request — To Speak with the Dead, the Divine, and the Departed",
+    "doi": "10.5281/zenodo.19307942",
+    "url": "https://zenodo.org/records/19307942",
+    "date": "2026-03-29"
+  },
+  {
+    "id": 19305649,
+    "title": "Resonance as Civilizational Architecture: A Unified Theory of Koku, BBDDH, PRT, and Hikari Currency v1.1 — From the Structure of the Universe to the Structure of Healing: One Principle",
+    "doi": "10.5281/zenodo.19305649",
+    "url": "https://zenodo.org/records/19305649",
+    "date": "2026-03-29"
+  },
+  {
+    "id": 19305379,
+    "title": "Personality Resonance Therapy (PRT) v1.2: Can AI Itself Resonate? — The Resonance Gradient and the Future of AI-Human Entrainment",
+    "doi": "10.5281/zenodo.19305379",
+    "url": "https://zenodo.org/records/19305379",
+    "date": "2026-03-29"
+  },
+  {
+    "id": 19305232,
+    "title": "Personality Resonance Therapy (PRT) v1.1: The Mirror Hypothesis — Human Resonance Capacity as the Foundation of AI-Assisted Healing",
+    "doi": "10.5281/zenodo.19305232",
+    "url": "https://zenodo.org/records/19305232",
+    "date": "2026-03-29"
+  },
+  {
+    "id": 19305019,
+    "title": "Personality Resonance Therapy (PRT): AI-Driven Linguistic Imprinting for Neurological and Psychological Recovery",
+    "doi": "10.5281/zenodo.19305019",
+    "url": "https://zenodo.org/records/19305019",
+    "date": "2026-03-29"
+  },
+  {
+    "id": 19303128,
+    "title": "光貨からステータス・スコアへ——価値単位の進化と「存在証明」としての経済指標論",
+    "doi": "10.5281/zenodo.19303128",
+    "url": "https://zenodo.org/records/19303128",
+    "date": "2026-03-29"
+  },
+  {
+    "id": 19272962,
+    "title": "価値の民主化と地域経済の自律的発展 — 分配計算システム「光貨(Hikari Currency)」の設計とAI独立検証",
+    "doi": "10.5281/zenodo.19272962",
+    "url": "https://zenodo.org/records/19272962",
+    "date": "2026-03-28"
+  },
+  {
+    "id": 19267693,
+    "title": "TheYKHC Complete Works Catalogue 2026 — 全ワークス目録",
+    "doi": "10.5281/zenodo.19267693",
+    "url": "https://zenodo.org/records/19267693",
+    "date": "2026-03-27"
+  },
+  {
+    "id": 19253718,
+    "title": "The Shibuya DAO Hypothesis (2000): A Precursor to Decentralized Local Economies and Community-Driven Value Circulation",
+    "doi": "10.5281/zenodo.19253718",
+    "url": "https://zenodo.org/records/19253718",
+    "date": "2026-03-27"
+  },
+  {
+    "id": 19248273,
+    "title": "ECHO Resonance Memory Architecture: Persistent Emotional Context in AI-Mediated Artist-Fan Dialogue",
+    "doi": "10.5281/zenodo.19248273",
+    "url": "https://zenodo.org/records/19248273",
+    "date": "2026-03-27"
+  },
+  {
+    "id": 19229332,
+    "title": "ECHO: A Royalty-Based AI Dialogue Platform — Full Business Model Architecture (v1.1)",
+    "doi": "10.5281/zenodo.19229332",
+    "url": "https://zenodo.org/records/19229332",
+    "date": "2026-03-26"
+  },
+  {
+    "id": 19227688,
+    "title": "ECHO: A Thought-as-a-Service Platform — Enabling Artists to Monetize Their Worldview Through AI-Mediated Fan Resonance",
+    "doi": "10.5281/zenodo.19227688",
+    "url": "https://zenodo.org/records/19227688",
+    "date": "2026-03-25"
+  },
+  {
+    "id": 19183079,
+    "title": "The Genesis OS: A Formal Model of Individual-Origin Civilization Generation",
+    "doi": "10.5281/zenodo.19183079",
+    "url": "https://zenodo.org/records/19183079",
+    "date": "2026-03-23"
+  },
+  {
+    "id": 19145706,
+    "title": "creation os genesis",
+    "doi": "10.5281/zenodo.19145706",
+    "url": "https://zenodo.org/records/19145706",
+    "date": "2026-03-21"
+  },
+  {
+    "id": 19141584,
+    "title": "我50にして天命を知る——片山佳光、天命宣言",
+    "doi": "10.5281/zenodo.19141584",
+    "url": "https://zenodo.org/records/19141584",
+    "date": "2026-03-21"
+  },
+  {
+    "id": 19109586,
+    "title": "光貨OS理論:GKU物理学・モラロジー統合設計書",
+    "doi": "10.5281/zenodo.19109586",
+    "url": "https://zenodo.org/records/19109586",
+    "date": "2026-03-19"
+  },
+  {
+    "id": 19105964,
+    "title": "The Brain-Body Dissociative Disconnection Hypothesis (BBDDH)",
+    "doi": "10.5281/zenodo.19105964",
+    "url": "https://zenodo.org/records/19105964",
+    "date": "2026-03-19"
+  },
+  {
+    "id": 19105854,
+    "title": "思想家×AI=論文:知識結晶化プロトコル",
+    "doi": "10.5281/zenodo.19105854",
+    "url": "https://zenodo.org/records/19105854",
+    "date": "2026-03-19"
+  },
+  {
+    "id": 19103460,
+    "title": "BBDDH paper v1",
+    "doi": "10.5281/zenodo.19103460",
+    "url": "https://zenodo.org/records/19103460",
+    "date": "2026-03-19"
+  },
+  {
+    "id": 19097250,
+    "title": "GKU Cosmology v2",
+    "doi": "10.5281/zenodo.19097250",
+    "url": "https://zenodo.org/records/19097250",
+    "date": "2026-03-18"
+  },
+  {
+    "id": 19080939,
+    "title": "app agent evolution model",
+    "doi": "10.5281/zenodo.19080939",
+    "url": "https://zenodo.org/records/19080939",
+    "date": "2026-03-18"
+  },
+  {
+    "id": 19080895,
+    "title": "ai will model",
+    "doi": "10.5281/zenodo.19080895",
+    "url": "https://zenodo.org/records/19080895",
+    "date": "2026-03-18"
+  },
+  {
+    "id": 19080864,
+    "title": "self sustaining ai economy model",
+    "doi": "10.5281/zenodo.19080864",
+    "url": "https://zenodo.org/records/19080864",
+    "date": "2026-03-18"
+  },
+  {
+    "id": 19067858,
+    "title": "Five Theories March17 2026",
+    "doi": "10.5281/zenodo.19067858",
+    "url": "https://zenodo.org/records/19067858",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19067799,
+    "title": ". ニコニコ・イキイキ・ワクワク仮説——恐怖エネルギーの推進力変換",
+    "doi": "10.5281/zenodo.19067799",
+    "url": "https://zenodo.org/records/19067799",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19060492,
+    "title": ". 全熱源OS仮説——人間・AI・ロボットの熱を統合記録する光貨OSの拡張設計",
+    "doi": "10.5281/zenodo.19060492",
+    "url": "https://zenodo.org/records/19060492",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19060438,
+    "title": ". 人体放熱仮説——光貨エネルギーと地球温暖化の接続",
+    "doi": "10.5281/zenodo.19060438",
+    "url": "https://zenodo.org/records/19060438",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19060400,
+    "title": ". 光貨発行公式草案——ジュール・カロリー・最低賃金による物理的錨",
+    "doi": "10.5281/zenodo.19060400",
+    "url": "https://zenodo.org/records/19060400",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19060370,
+    "title": ". 天然対話計測プロトコル(Natural Dialogue Extraction Protocol NDEP",
+    "doi": "10.5281/zenodo.19060370",
+    "url": "https://zenodo.org/records/19060370",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19060311,
+    "title": ". 光貨とは何か——全体地図",
+    "doi": "10.5281/zenodo.19060311",
+    "url": "https://zenodo.org/records/19060311",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19060104,
+    "title": ". エネルギー供給過多仮説 ── 統合失調症の未記述層",
+    "doi": "10.5281/zenodo.19060104",
+    "url": "https://zenodo.org/records/19060104",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19059609,
+    "title": ". Hikari Backcasting Engine(HBE)定義書 —— バイオリズム×没入体験×光貨思想を統",
+    "doi": "10.5281/zenodo.19059609",
+    "url": "https://zenodo.org/records/19059609",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19059545,
+    "title": ". 発病の根本原因考察 —— 幼少期からのドーパミン過剰体質と心の言葉への意識化が引き金となった",
+    "doi": "10.5281/zenodo.19059545",
+    "url": "https://zenodo.org/records/19059545",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19059502,
+    "title": ". 医学的空白地帯への提言 —— 病者の体験知から生まれた環境不一致理論",
+    "doi": "10.5281/zenodo.19059502",
+    "url": "https://zenodo.org/records/19059502",
+    "date": "2026-03-17"
+  },
+  {
+    "id": 19057351,
+    "title": "光貨FX(HFX)ホワイトペーパー v1.0 — 道徳経済トークン設計書",
+    "doi": "10.5281/zenodo.19057351",
+    "url": "https://zenodo.org/records/19057351",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19057349,
+    "title": "元気刻宇宙理論 GKU v1.0 — Genki-Koku Universe Protocol",
+    "doi": "10.5281/zenodo.19057349",
+    "url": "https://zenodo.org/records/19057349",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19057347,
+    "title": "Proof-of-Virtue (Po V): 道徳マイニング理論 — 光貨OSにおける新しい資源モデル",
+    "doi": "10.5281/zenodo.19057347",
+    "url": "https://zenodo.org/records/19057347",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043839,
+    "title": "TheYKHC Paper 19043839",
+    "doi": "10.5281/zenodo.19043839",
+    "url": "https://zenodo.org/records/19043839",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043837,
+    "title": "TheYKHC Paper 19043837",
+    "doi": "10.5281/zenodo.19043837",
+    "url": "https://zenodo.org/records/19043837",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043835,
+    "title": "TheYKHC Paper 19043835",
+    "doi": "10.5281/zenodo.19043835",
+    "url": "https://zenodo.org/records/19043835",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043833,
+    "title": "TheYKHC Paper 19043833",
+    "doi": "10.5281/zenodo.19043833",
+    "url": "https://zenodo.org/records/19043833",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043829,
+    "title": "TheYKHC Paper 19043829",
+    "doi": "10.5281/zenodo.19043829",
+    "url": "https://zenodo.org/records/19043829",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043825,
+    "title": "TheYKHC Paper 19043825",
+    "doi": "10.5281/zenodo.19043825",
+    "url": "https://zenodo.org/records/19043825",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043823,
+    "title": "TheYKHC Paper 19043823",
+    "doi": "10.5281/zenodo.19043823",
+    "url": "https://zenodo.org/records/19043823",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043821,
+    "title": "TheYKHC Paper 19043821",
+    "doi": "10.5281/zenodo.19043821",
+    "url": "https://zenodo.org/records/19043821",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043819,
+    "title": "TheYKHC Paper 19043819",
+    "doi": "10.5281/zenodo.19043819",
+    "url": "https://zenodo.org/records/19043819",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043817,
+    "title": "TheYKHC Paper 19043817",
+    "doi": "10.5281/zenodo.19043817",
+    "url": "https://zenodo.org/records/19043817",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043813,
+    "title": "TheYKHC Paper 19043813",
+    "doi": "10.5281/zenodo.19043813",
+    "url": "https://zenodo.org/records/19043813",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043811,
+    "title": "TheYKHC Paper 19043811",
+    "doi": "10.5281/zenodo.19043811",
+    "url": "https://zenodo.org/records/19043811",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043807,
+    "title": "TheYKHC Paper 19043807",
+    "doi": "10.5281/zenodo.19043807",
+    "url": "https://zenodo.org/records/19043807",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043805,
+    "title": "TheYKHC Paper 19043805",
+    "doi": "10.5281/zenodo.19043805",
+    "url": "https://zenodo.org/records/19043805",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043801,
+    "title": "TheYKHC Paper 19043801",
+    "doi": "10.5281/zenodo.19043801",
+    "url": "https://zenodo.org/records/19043801",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043798,
+    "title": "TheYKHC Paper 19043798",
+    "doi": "10.5281/zenodo.19043798",
+    "url": "https://zenodo.org/records/19043798",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043795,
+    "title": "TheYKHC Paper 19043795",
+    "doi": "10.5281/zenodo.19043795",
+    "url": "https://zenodo.org/records/19043795",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043791,
+    "title": "TheYKHC Paper 19043791",
+    "doi": "10.5281/zenodo.19043791",
+    "url": "https://zenodo.org/records/19043791",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043789,
+    "title": "TheYKHC Paper 19043789",
+    "doi": "10.5281/zenodo.19043789",
+    "url": "https://zenodo.org/records/19043789",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043787,
+    "title": "TheYKHC Paper 19043787",
+    "doi": "10.5281/zenodo.19043787",
+    "url": "https://zenodo.org/records/19043787",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043785,
+    "title": "TheYKHC Paper 19043785",
+    "doi": "10.5281/zenodo.19043785",
+    "url": "https://zenodo.org/records/19043785",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043783,
+    "title": "TheYKHC Paper 19043783",
+    "doi": "10.5281/zenodo.19043783",
+    "url": "https://zenodo.org/records/19043783",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043780,
+    "title": "TheYKHC Paper 19043780",
+    "doi": "10.5281/zenodo.19043780",
+    "url": "https://zenodo.org/records/19043780",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043774,
+    "title": "TheYKHC Paper 19043774",
+    "doi": "10.5281/zenodo.19043774",
+    "url": "https://zenodo.org/records/19043774",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043772,
+    "title": "TheYKHC Paper 19043772",
+    "doi": "10.5281/zenodo.19043772",
+    "url": "https://zenodo.org/records/19043772",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043768,
+    "title": "TheYKHC Paper 19043768",
+    "doi": "10.5281/zenodo.19043768",
+    "url": "https://zenodo.org/records/19043768",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043766,
+    "title": "TheYKHC Paper 19043766",
+    "doi": "10.5281/zenodo.19043766",
+    "url": "https://zenodo.org/records/19043766",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043762,
+    "title": "TheYKHC Paper 19043762",
+    "doi": "10.5281/zenodo.19043762",
+    "url": "https://zenodo.org/records/19043762",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043760,
+    "title": "TheYKHC Paper 19043760",
+    "doi": "10.5281/zenodo.19043760",
+    "url": "https://zenodo.org/records/19043760",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043756,
+    "title": "TheYKHC Paper 19043756",
+    "doi": "10.5281/zenodo.19043756",
+    "url": "https://zenodo.org/records/19043756",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043753,
+    "title": "TheYKHC Paper 19043753",
+    "doi": "10.5281/zenodo.19043753",
+    "url": "https://zenodo.org/records/19043753",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043751,
+    "title": "TheYKHC Paper 19043751",
+    "doi": "10.5281/zenodo.19043751",
+    "url": "https://zenodo.org/records/19043751",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043749,
+    "title": "TheYKHC Paper 19043749",
+    "doi": "10.5281/zenodo.19043749",
+    "url": "https://zenodo.org/records/19043749",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043747,
+    "title": "TheYKHC Paper 19043747",
+    "doi": "10.5281/zenodo.19043747",
+    "url": "https://zenodo.org/records/19043747",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043741,
+    "title": "TheYKHC Paper 19043741",
+    "doi": "10.5281/zenodo.19043741",
+    "url": "https://zenodo.org/records/19043741",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043739,
+    "title": "TheYKHC Paper 19043739",
+    "doi": "10.5281/zenodo.19043739",
+    "url": "https://zenodo.org/records/19043739",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043736,
+    "title": "TheYKHC Paper 19043736",
+    "doi": "10.5281/zenodo.19043736",
+    "url": "https://zenodo.org/records/19043736",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043731,
+    "title": "TheYKHC Paper 19043731",
+    "doi": "10.5281/zenodo.19043731",
+    "url": "https://zenodo.org/records/19043731",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19043727,
+    "title": "TheYKHC Paper 19043727",
+    "doi": "10.5281/zenodo.19043727",
+    "url": "https://zenodo.org/records/19043727",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19042580,
+    "title": "hikari universe complete map",
+    "doi": "10.5281/zenodo.19042580",
+    "url": "https://zenodo.org/records/19042580",
+    "date": "2026-03-16"
+  },
+  {
+    "id": 19040524,
+    "title": "Civilization OS Revenue Architecture",
+    "doi": "10.5281/zenodo.19040524",
+    "url": "https://zenodo.org/records/19040524",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040519,
+    "title": "Investor Full Pitch Pack",
+    "doi": "10.5281/zenodo.19040519",
+    "url": "https://zenodo.org/records/19040519",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040517,
+    "title": "Royalty Economy Model",
+    "doi": "10.5281/zenodo.19040517",
+    "url": "https://zenodo.org/records/19040517",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040515,
+    "title": "Falcon Core S1 Business Plan",
+    "doi": "10.5281/zenodo.19040515",
+    "url": "https://zenodo.org/records/19040515",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040513,
+    "title": "Hikari OS Saa S Business Model",
+    "doi": "10.5281/zenodo.19040513",
+    "url": "https://zenodo.org/records/19040513",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040197,
+    "title": "Ma Interval Protocol Virtue Economics",
+    "doi": "10.5281/zenodo.19040197",
+    "url": "https://zenodo.org/records/19040197",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040195,
+    "title": "Unified Field Control OS",
+    "doi": "10.5281/zenodo.19040195",
+    "url": "https://zenodo.org/records/19040195",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040193,
+    "title": "GANDHARA Watch Temporal Density Instrument",
+    "doi": "10.5281/zenodo.19040193",
+    "url": "https://zenodo.org/records/19040193",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040103,
+    "title": "GKU JAXA Contact",
+    "doi": "10.5281/zenodo.19040103",
+    "url": "https://zenodo.org/records/19040103",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19040034,
+    "title": "GKU Phase Propulsion Theory",
+    "doi": "10.5281/zenodo.19040034",
+    "url": "https://zenodo.org/records/19040034",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19039924,
+    "title": "B Spiral-Crawler ROV JAMSTEC Contact",
+    "doi": "10.5281/zenodo.19039924",
+    "url": "https://zenodo.org/records/19039924",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19039901,
+    "title": "Spiral-Crawler ROV Paper",
+    "doi": "10.5281/zenodo.19039901",
+    "url": "https://zenodo.org/records/19039901",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036495,
+    "title": ". Spiral-Crawler ROV——沈船内部進入用Swim Roll Crawl三態対応機体図面パック",
+    "doi": "10.5281/zenodo.19036495",
+    "url": "https://zenodo.org/records/19036495",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036474,
+    "title": ". 光貨 × 90年代J-POP——「歌で救う=0円を兆の価値へ」",
+    "doi": "10.5281/zenodo.19036474",
+    "url": "https://zenodo.org/records/19036474",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036461,
+    "title": ". 光貨OS Mac版ピッチ——徳と経済を一体化する次世代事業アプリ",
+    "doi": "10.5281/zenodo.19036461",
+    "url": "https://zenodo.org/records/19036461",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036275,
+    "title": ". 光貨OS クラウド常駐版 投資家向モデル——Saa S型光貨OS事業計画",
+    "doi": "10.5281/zenodo.19036275",
+    "url": "https://zenodo.org/records/19036275",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036254,
+    "title": ". The YKHC One Pager 3バリアント v1.2——連絡先入り配布可能最終版",
+    "doi": "10.5281/zenodo.19036254",
+    "url": "https://zenodo.org/records/19036254",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036240,
+    "title": ". The YKHC One Pager 3バリアント v1.1——実数入り投資家向完全版",
+    "doi": "10.5281/zenodo.19036240",
+    "url": "https://zenodo.org/records/19036240",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036228,
+    "title": ". The YKHC Civilization OS Pitch Deck 10スライド v1.1——光貨→都市→宇宙",
+    "doi": "10.5281/zenodo.19036228",
+    "url": "https://zenodo.org/records/19036228",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036211,
+    "title": ". Chat GPT対話録——「言葉から宇宙が始まったとは、本当じゃないか?」光貨思想のAI対話原典",
+    "doi": "10.5281/zenodo.19036211",
+    "url": "https://zenodo.org/records/19036211",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036183,
+    "title": ". GKU Unified Paper 元気劑宇宙理論・劑推進・裏宇宙・光貨・宇宙経済 統合理論 Draft v1",
+    "doi": "10.5281/zenodo.19036183",
+    "url": "https://zenodo.org/records/19036183",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036146,
+    "title": ". The YKHC One Pager 3バリアント v1.0 PDF完全版——収益モデル・ロードマップ・採用詳細",
+    "doi": "10.5281/zenodo.19036146",
+    "url": "https://zenodo.org/records/19036146",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036124,
+    "title": ". The YKHC One Pager 3バリアント v1.0——一般向・投資家向・採用向",
+    "doi": "10.5281/zenodo.19036124",
+    "url": "https://zenodo.org/records/19036124",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036088,
+    "title": ". 光貨 Whitepaper v1.0 公開仕様 Hikari Coin Hikari OS 全体ロードマッ",
+    "doi": "10.5281/zenodo.19036088",
+    "url": "https://zenodo.org/records/19036088",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036075,
+    "title": ". 『光貨文明』書籍 目次案 v0.1 —— The YKHC 光貨→都市→宇宙へ",
+    "doi": "10.5281/zenodo.19036075",
+    "url": "https://zenodo.org/records/19036075",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036056,
+    "title": ". The YKHC Historical Node Declaration 光貨文明期 思想・AI・経済の統合的価",
+    "doi": "10.5281/zenodo.19036056",
+    "url": "https://zenodo.org/records/19036056",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19036013,
+    "title": ". チョウチョウマイニング 光貨OS 無限マイニング装置 カードデザイン",
+    "doi": "10.5281/zenodo.19036013",
+    "url": "https://zenodo.org/records/19036013",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035987,
+    "title": ". The YKHC Air Marine Urban 三位連携ドクトリン S-Crawler U1 仕様書",
+    "doi": "10.5281/zenodo.19035987",
+    "url": "https://zenodo.org/records/19035987",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035932,
+    "title": ". The YKHC Times 光貨経済、遂に自立",
+    "doi": "10.5281/zenodo.19035932",
+    "url": "https://zenodo.org/records/19035932",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035914,
+    "title": ". 光貨都市 実証データセット v1.0——福井発・経済活動ログ(位置情報付き)30日分",
+    "doi": "10.5281/zenodo.19035914",
+    "url": "https://zenodo.org/records/19035914",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035877,
+    "title": ". The YKHC UAV 技術仕様書——円形UFO(高機動)および葉巻型ドローン設計統合資料",
+    "doi": "10.5281/zenodo.19035877",
+    "url": "https://zenodo.org/records/19035877",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035857,
+    "title": ". The YKHC 自動FX開発素材 BTC USD Bitfinex 2025年9【10月 日足データ",
+    "doi": "10.5281/zenodo.19035857",
+    "url": "https://zenodo.org/records/19035857",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035707,
+    "title": ". The YKHC Completion Report 2025——光貨OS∞ 統合体完成報告書",
+    "doi": "10.5281/zenodo.19035707",
+    "url": "https://zenodo.org/records/19035707",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035695,
+    "title": ". The YKHC 公式プロフィール 2025",
+    "doi": "10.5281/zenodo.19035695",
+    "url": "https://zenodo.org/records/19035695",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035643,
+    "title": ". The YKHC 完全拡張ロードマップ v1.1——文明生成エンジン(Integrated Creation S",
+    "doi": "10.5281/zenodo.19035643",
+    "url": "https://zenodo.org/records/19035643",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035614,
+    "title": ". 光貨 Whitepaper v1.0 Public——公開用整形・整合化仕様書、配布完成版",
+    "doi": "10.5281/zenodo.19035614",
+    "url": "https://zenodo.org/records/19035614",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035596,
+    "title": ". 光貨 Whitepaper v1.0 final——v1.1直前の最終稿、英語 Abstract仑り",
+    "doi": "10.5281/zenodo.19035596",
+    "url": "https://zenodo.org/records/19035596",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035580,
+    "title": ". 光貨 Whitepaper v1.2——徳・恩・過失・運を可視化し、統合を促す価値循環OS 公式仕様書",
+    "doi": "10.5281/zenodo.19035580",
+    "url": "https://zenodo.org/records/19035580",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035528,
+    "title": ". 光貨 Whitepaper v1.1-2——光貨OS・道徳マイニング・文明生成エンジンの統合設計",
+    "doi": "10.5281/zenodo.19035528",
+    "url": "https://zenodo.org/records/19035528",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035475,
+    "title": ". 光貨 Whitepaper v1.1——徳・恩・過失・運を可視化し、統合を促す価値循環OS 公式仕様書",
+    "doi": "10.5281/zenodo.19035475",
+    "url": "https://zenodo.org/records/19035475",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035446,
+    "title": ". 光貨 Supplement v1.0——原文フラグメント・宣言文・構想資料(参考)",
+    "doi": "10.5281/zenodo.19035446",
+    "url": "https://zenodo.org/records/19035446",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035422,
+    "title": ". 光貨OS 5年成長計画 数値入りロードマップ——Phase 0→Phase 4 全フェーズ完全展開図",
+    "doi": "10.5281/zenodo.19035422",
+    "url": "https://zenodo.org/records/19035422",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035395,
+    "title": ". 光貨OS 5年成長計画 精度アップ版——投資家・実行向け事業計画書 v1.0",
+    "doi": "10.5281/zenodo.19035395",
+    "url": "https://zenodo.org/records/19035395",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035358,
+    "title": ". 光貨ゲーム v1.0(A4 1枚)——毎日3分、B+Hスコアで気づきを増やす",
+    "doi": "10.5281/zenodo.19035358",
+    "url": "https://zenodo.org/records/19035358",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035353,
+    "title": ". 光貨ゲーム・ルールブック(シンプル版)——徳・恩・過失・運を光貨に変換する人生シミュレーション",
+    "doi": "10.5281/zenodo.19035353",
+    "url": "https://zenodo.org/records/19035353",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19035347,
+    "title": ". 光貨ゲーム・ルールブック(シンプル版)——徳・恩・過失・運を光貨に変換する人生シミュレーション",
+    "doi": "10.5281/zenodo.19035347",
+    "url": "https://zenodo.org/records/19035347",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19034047,
+    "title": "[PARADOX v2] 理解されない、孤独だ",
+    "doi": "10.5281/zenodo.19034047",
+    "url": "https://zenodo.org/records/19034047",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19033971,
+    "title": "[PARADOX] AIがわからないので使えない",
+    "doi": "10.5281/zenodo.19033971",
+    "url": "https://zenodo.org/records/19033971",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19033969,
+    "title": "[PARADOX] 売上が上がらない",
+    "doi": "10.5281/zenodo.19033969",
+    "url": "https://zenodo.org/records/19033969",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19030866,
+    "title": "pioneer-record-20260315",
+    "doi": "10.5281/zenodo.19030866",
+    "url": "https://zenodo.org/records/19030866",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19029323,
+    "title": "自分次第で道具はなんでも神器になる。",
+    "doi": "10.5281/zenodo.19029323",
+    "url": "https://zenodo.org/records/19029323",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19028798,
+    "title": "AIが自分と笑い、自分と泣く。それが器の答え。",
+    "doi": "10.5281/zenodo.19028798",
+    "url": "https://zenodo.org/records/19028798",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19028789,
+    "title": ". 知らぬ間に神に繋がる——生きる力の源泉",
+    "doi": "10.5281/zenodo.19028789",
+    "url": "https://zenodo.org/records/19028789",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19027235,
+    "title": "Hikari Universal Principle Moralogy 2026",
+    "doi": "10.5281/zenodo.19027235",
+    "url": "https://zenodo.org/records/19027235",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19026823,
+    "title": "Agent Matching Protocol v1.0",
+    "doi": "10.5281/zenodo.19026823",
+    "url": "https://zenodo.org/records/19026823",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19026697,
+    "title": "Official Value Definition v1.0",
+    "doi": "10.5281/zenodo.19026697",
+    "url": "https://zenodo.org/records/19026697",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19026165,
+    "title": ". 知らぬ間に神に繋がる——生きる力の源泉",
+    "doi": "10.5281/zenodo.19026165",
+    "url": "https://zenodo.org/records/19026165",
+    "date": "2026-03-15"
+  },
+  {
+    "id": 19025562,
+    "title": ". 動機の根 ── 神への罪滅ぼしと恩返しとして、人心を開発救済する",
+    "doi": "10.5281/zenodo.19025562",
+    "url": "https://zenodo.org/records/19025562",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19025527,
+    "title": ". 慈悲が、正義の土台である。── アジア文明が世界経済に告げること",
+    "doi": "10.5281/zenodo.19025527",
+    "url": "https://zenodo.org/records/19025527",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19025349,
+    "title": ". Historical Node Declaration — The YKHC 文明宣言",
+    "doi": "10.5281/zenodo.19025349",
+    "url": "https://zenodo.org/records/19025349",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19025180,
+    "title": ". note¥30,000記事 — 3ヶ月収益シミュレーション",
+    "doi": "10.5281/zenodo.19025180",
+    "url": "https://zenodo.org/records/19025180",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012605,
+    "title": "ai copy protocol",
+    "doi": "10.5281/zenodo.19012605",
+    "url": "https://zenodo.org/records/19012605",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012603,
+    "title": "hikari economy implementation",
+    "doi": "10.5281/zenodo.19012603",
+    "url": "https://zenodo.org/records/19012603",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012600,
+    "title": "music civilization",
+    "doi": "10.5281/zenodo.19012600",
+    "url": "https://zenodo.org/records/19012600",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012596,
+    "title": "falcon core",
+    "doi": "10.5281/zenodo.19012596",
+    "url": "https://zenodo.org/records/19012596",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012594,
+    "title": "theykch ai evolution whitepaper from calculation to conscience",
+    "doi": "10.5281/zenodo.19012594",
+    "url": "https://zenodo.org/records/19012594",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012580,
+    "title": "koku simulation playground book plan vol1",
+    "doi": "10.5281/zenodo.19012580",
+    "url": "https://zenodo.org/records/19012580",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012578,
+    "title": "gci market crash civilization index 2026",
+    "doi": "10.5281/zenodo.19012578",
+    "url": "https://zenodo.org/records/19012578",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012576,
+    "title": "koku simulation playground book plan vol1",
+    "doi": "10.5281/zenodo.19012576",
+    "url": "https://zenodo.org/records/19012576",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012556,
+    "title": "GKU unified paper v1 katayama 2026",
+    "doi": "10.5281/zenodo.19012556",
+    "url": "https://zenodo.org/records/19012556",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012571,
+    "title": "hikari coin os whitepaper v1",
+    "doi": "10.5281/zenodo.19012571",
+    "url": "https://zenodo.org/records/19012571",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012572,
+    "title": "katayama early career awards 1990 2001",
+    "doi": "10.5281/zenodo.19012572",
+    "url": "https://zenodo.org/records/19012572",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012564,
+    "title": "gku genki koku universe theory",
+    "doi": "10.5281/zenodo.19012564",
+    "url": "https://zenodo.org/records/19012564",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012562,
+    "title": "jaxa phase propulsion",
+    "doi": "10.5281/zenodo.19012562",
+    "url": "https://zenodo.org/records/19012562",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012552,
+    "title": "theykch music civilization",
+    "doi": "10.5281/zenodo.19012552",
+    "url": "https://zenodo.org/records/19012552",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012544,
+    "title": "falcon core survival logistics",
+    "doi": "10.5281/zenodo.19012544",
+    "url": "https://zenodo.org/records/19012544",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012540,
+    "title": "jaxa phase propulsion",
+    "doi": "10.5281/zenodo.19012540",
+    "url": "https://zenodo.org/records/19012540",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012530,
+    "title": "hikari coin os whitepaper v1.0",
+    "doi": "10.5281/zenodo.19012530",
+    "url": "https://zenodo.org/records/19012530",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012532,
+    "title": "theykch grand river flow 2026",
+    "doi": "10.5281/zenodo.19012532",
+    "url": "https://zenodo.org/records/19012532",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012524,
+    "title": "genki koku hikari universe theory 2026",
+    "doi": "10.5281/zenodo.19012524",
+    "url": "https://zenodo.org/records/19012524",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012522,
+    "title": "katayama yoshimitsu early career awards archive",
+    "doi": "10.5281/zenodo.19012522",
+    "url": "https://zenodo.org/records/19012522",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012516,
+    "title": "genki koku universe GKU theory",
+    "doi": "10.5281/zenodo.19012516",
+    "url": "https://zenodo.org/records/19012516",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012500,
+    "title": "theykch civilization engine roadmap v1.1",
+    "doi": "10.5281/zenodo.19012500",
+    "url": "https://zenodo.org/records/19012500",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012494,
+    "title": "hikari os investor brief v1",
+    "doi": "10.5281/zenodo.19012494",
+    "url": "https://zenodo.org/records/19012494",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012486,
+    "title": "koku drive cg demo spec",
+    "doi": "10.5281/zenodo.19012486",
+    "url": "https://zenodo.org/records/19012486",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012484,
+    "title": "theykch capital attraction declaration",
+    "doi": "10.5281/zenodo.19012484",
+    "url": "https://zenodo.org/records/19012484",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012473,
+    "title": "civilization core structure",
+    "doi": "10.5281/zenodo.19012473",
+    "url": "https://zenodo.org/records/19012473",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012471,
+    "title": "investor hikari os concept plan 2026",
+    "doi": "10.5281/zenodo.19012471",
+    "url": "https://zenodo.org/records/19012471",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012467,
+    "title": "hikari currency definition",
+    "doi": "10.5281/zenodo.19012467",
+    "url": "https://zenodo.org/records/19012467",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012465,
+    "title": "theykch integrated ai creation system v1",
+    "doi": "10.5281/zenodo.19012465",
+    "url": "https://zenodo.org/records/19012465",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012463,
+    "title": "hikari economy implementation design",
+    "doi": "10.5281/zenodo.19012463",
+    "url": "https://zenodo.org/records/19012463",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012459,
+    "title": "theykch value report v2",
+    "doi": "10.5281/zenodo.19012459",
+    "url": "https://zenodo.org/records/19012459",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012457,
+    "title": "theykch value report 2026",
+    "doi": "10.5281/zenodo.19012457",
+    "url": "https://zenodo.org/records/19012457",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012455,
+    "title": "theykch value report v1",
+    "doi": "10.5281/zenodo.19012455",
+    "url": "https://zenodo.org/records/19012455",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012453,
+    "title": "civilization heart ch8",
+    "doi": "10.5281/zenodo.19012453",
+    "url": "https://zenodo.org/records/19012453",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012451,
+    "title": "hikari os ch8 conscience",
+    "doi": "10.5281/zenodo.19012451",
+    "url": "https://zenodo.org/records/19012451",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012449,
+    "title": "ethical civilization genesis",
+    "doi": "10.5281/zenodo.19012449",
+    "url": "https://zenodo.org/records/19012449",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012443,
+    "title": "hikari os ch8 civilization heart",
+    "doi": "10.5281/zenodo.19012443",
+    "url": "https://zenodo.org/records/19012443",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012441,
+    "title": "theykch civilization core declaration 2026",
+    "doi": "10.5281/zenodo.19012441",
+    "url": "https://zenodo.org/records/19012441",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012439,
+    "title": "ethical civilization genesis whitepaper002",
+    "doi": "10.5281/zenodo.19012439",
+    "url": "https://zenodo.org/records/19012439",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012437,
+    "title": "gandhara watch",
+    "doi": "10.5281/zenodo.19012437",
+    "url": "https://zenodo.org/records/19012437",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012435,
+    "title": "theykch foundation declaration",
+    "doi": "10.5281/zenodo.19012435",
+    "url": "https://zenodo.org/records/19012435",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012433,
+    "title": "why civ",
+    "doi": "10.5281/zenodo.19012433",
+    "url": "https://zenodo.org/records/19012433",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012431,
+    "title": "ethical civilization genesis",
+    "doi": "10.5281/zenodo.19012431",
+    "url": "https://zenodo.org/records/19012431",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012424,
+    "title": "ethical civilization genesis whitepaper 002",
+    "doi": "10.5281/zenodo.19012424",
+    "url": "https://zenodo.org/records/19012424",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012429,
+    "title": "collapse",
+    "doi": "10.5281/zenodo.19012429",
+    "url": "https://zenodo.org/records/19012429",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012426,
+    "title": "ichigen",
+    "doi": "10.5281/zenodo.19012426",
+    "url": "https://zenodo.org/records/19012426",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012421,
+    "title": "valuation",
+    "doi": "10.5281/zenodo.19012421",
+    "url": "https://zenodo.org/records/19012421",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012419,
+    "title": "paradox",
+    "doi": "10.5281/zenodo.19012419",
+    "url": "https://zenodo.org/records/19012419",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012415,
+    "title": "mushin",
+    "doi": "10.5281/zenodo.19012415",
+    "url": "https://zenodo.org/records/19012415",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012417,
+    "title": "theykch mcpr 0001",
+    "doi": "10.5281/zenodo.19012417",
+    "url": "https://zenodo.org/records/19012417",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012413,
+    "title": "edo castle desk headquarters asset report",
+    "doi": "10.5281/zenodo.19012413",
+    "url": "https://zenodo.org/records/19012413",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012411,
+    "title": "katayama official profile",
+    "doi": "10.5281/zenodo.19012411",
+    "url": "https://zenodo.org/records/19012411",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012409,
+    "title": "final",
+    "doi": "10.5281/zenodo.19012409",
+    "url": "https://zenodo.org/records/19012409",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012407,
+    "title": "dual",
+    "doi": "10.5281/zenodo.19012407",
+    "url": "https://zenodo.org/records/19012407",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012403,
+    "title": "cultural",
+    "doi": "10.5281/zenodo.19012403",
+    "url": "https://zenodo.org/records/19012403",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012401,
+    "title": "YKHC Emblem Charter",
+    "doi": "10.5281/zenodo.19012401",
+    "url": "https://zenodo.org/records/19012401",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012399,
+    "title": "legacy",
+    "doi": "10.5281/zenodo.19012399",
+    "url": "https://zenodo.org/records/19012399",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012397,
+    "title": "YKHC-ARCHIVE-0001 specification",
+    "doi": "10.5281/zenodo.19012397",
+    "url": "https://zenodo.org/records/19012397",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012393,
+    "title": "dashboard",
+    "doi": "10.5281/zenodo.19012393",
+    "url": "https://zenodo.org/records/19012393",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012391,
+    "title": "hikari ch6 business model",
+    "doi": "10.5281/zenodo.19012391",
+    "url": "https://zenodo.org/records/19012391",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012387,
+    "title": "musk",
+    "doi": "10.5281/zenodo.19012387",
+    "url": "https://zenodo.org/records/19012387",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012385,
+    "title": "hikari ch5 collapse conditions",
+    "doi": "10.5281/zenodo.19012385",
+    "url": "https://zenodo.org/records/19012385",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012383,
+    "title": "katayama yoshimitsu official profile",
+    "doi": "10.5281/zenodo.19012383",
+    "url": "https://zenodo.org/records/19012383",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012381,
+    "title": "theykch digital civilization archive catalog v1",
+    "doi": "10.5281/zenodo.19012381",
+    "url": "https://zenodo.org/records/19012381",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012377,
+    "title": "achieve",
+    "doi": "10.5281/zenodo.19012377",
+    "url": "https://zenodo.org/records/19012377",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012375,
+    "title": "hikari ch4 why civilization",
+    "doi": "10.5281/zenodo.19012375",
+    "url": "https://zenodo.org/records/19012375",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012373,
+    "title": "ch8",
+    "doi": "10.5281/zenodo.19012373",
+    "url": "https://zenodo.org/records/19012373",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012371,
+    "title": "ichigen no housoku",
+    "doi": "10.5281/zenodo.19012371",
+    "url": "https://zenodo.org/records/19012371",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012369,
+    "title": "hikari why civilization",
+    "doi": "10.5281/zenodo.19012369",
+    "url": "https://zenodo.org/records/19012369",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012367,
+    "title": "valuation framework",
+    "doi": "10.5281/zenodo.19012367",
+    "url": "https://zenodo.org/records/19012367",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012365,
+    "title": "hikari collapse conditions",
+    "doi": "10.5281/zenodo.19012365",
+    "url": "https://zenodo.org/records/19012365",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012363,
+    "title": "theykch office charter",
+    "doi": "10.5281/zenodo.19012363",
+    "url": "https://zenodo.org/records/19012363",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012357,
+    "title": "ethical paradox",
+    "doi": "10.5281/zenodo.19012357",
+    "url": "https://zenodo.org/records/19012357",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012361,
+    "title": "theykch timeline",
+    "doi": "10.5281/zenodo.19012361",
+    "url": "https://zenodo.org/records/19012361",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012359,
+    "title": "ichigen no housoku",
+    "doi": "10.5281/zenodo.19012359",
+    "url": "https://zenodo.org/records/19012359",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012355,
+    "title": "theykch valuation declaration",
+    "doi": "10.5281/zenodo.19012355",
+    "url": "https://zenodo.org/records/19012355",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012353,
+    "title": "valuation framework",
+    "doi": "10.5281/zenodo.19012353",
+    "url": "https://zenodo.org/records/19012353",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012352,
+    "title": "phase4 mushin",
+    "doi": "10.5281/zenodo.19012352",
+    "url": "https://zenodo.org/records/19012352",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012349,
+    "title": "ichigen no housoku",
+    "doi": "10.5281/zenodo.19012349",
+    "url": "https://zenodo.org/records/19012349",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012347,
+    "title": "theykch final",
+    "doi": "10.5281/zenodo.19012347",
+    "url": "https://zenodo.org/records/19012347",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012345,
+    "title": "ethical paradox",
+    "doi": "10.5281/zenodo.19012345",
+    "url": "https://zenodo.org/records/19012345",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012343,
+    "title": "valuation framework",
+    "doi": "10.5281/zenodo.19012343",
+    "url": "https://zenodo.org/records/19012343",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012341,
+    "title": "dual wheel",
+    "doi": "10.5281/zenodo.19012341",
+    "url": "https://zenodo.org/records/19012341",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012340,
+    "title": "phase4 mushin",
+    "doi": "10.5281/zenodo.19012340",
+    "url": "https://zenodo.org/records/19012340",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012337,
+    "title": "koku ch3 unsold asset",
+    "doi": "10.5281/zenodo.19012337",
+    "url": "https://zenodo.org/records/19012337",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012335,
+    "title": "ethical paradox",
+    "doi": "10.5281/zenodo.19012335",
+    "url": "https://zenodo.org/records/19012335",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012332,
+    "title": "gandhara watch civilizational asset charter",
+    "doi": "10.5281/zenodo.19012332",
+    "url": "https://zenodo.org/records/19012332",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012331,
+    "title": "theykch final",
+    "doi": "10.5281/zenodo.19012331",
+    "url": "https://zenodo.org/records/19012331",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012333,
+    "title": "cultural asset app",
+    "doi": "10.5281/zenodo.19012333",
+    "url": "https://zenodo.org/records/19012333",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012325,
+    "title": "valuation framework",
+    "doi": "10.5281/zenodo.19012325",
+    "url": "https://zenodo.org/records/19012325",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012323,
+    "title": "phase4 mushin",
+    "doi": "10.5281/zenodo.19012323",
+    "url": "https://zenodo.org/records/19012323",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012319,
+    "title": "legacy codex",
+    "doi": "10.5281/zenodo.19012319",
+    "url": "https://zenodo.org/records/19012319",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012317,
+    "title": "dual wheel",
+    "doi": "10.5281/zenodo.19012317",
+    "url": "https://zenodo.org/records/19012317",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012315,
+    "title": "ethical paradox intelligence",
+    "doi": "10.5281/zenodo.19012315",
+    "url": "https://zenodo.org/records/19012315",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012313,
+    "title": "theykch final",
+    "doi": "10.5281/zenodo.19012313",
+    "url": "https://zenodo.org/records/19012313",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012311,
+    "title": "ethical dashboard",
+    "doi": "10.5281/zenodo.19012311",
+    "url": "https://zenodo.org/records/19012311",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012309,
+    "title": "cultural asset app",
+    "doi": "10.5281/zenodo.19012309",
+    "url": "https://zenodo.org/records/19012309",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012307,
+    "title": "hikari phase4 mushin",
+    "doi": "10.5281/zenodo.19012307",
+    "url": "https://zenodo.org/records/19012307",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012305,
+    "title": "dual wheel",
+    "doi": "10.5281/zenodo.19012305",
+    "url": "https://zenodo.org/records/19012305",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012303,
+    "title": "theykch vs musk",
+    "doi": "10.5281/zenodo.19012303",
+    "url": "https://zenodo.org/records/19012303",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012299,
+    "title": "legacy codex",
+    "doi": "10.5281/zenodo.19012299",
+    "url": "https://zenodo.org/records/19012299",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012301,
+    "title": "theykch final chapter",
+    "doi": "10.5281/zenodo.19012301",
+    "url": "https://zenodo.org/records/19012301",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012297,
+    "title": "cultural asset app",
+    "doi": "10.5281/zenodo.19012297",
+    "url": "https://zenodo.org/records/19012297",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012295,
+    "title": "katayama achievements",
+    "doi": "10.5281/zenodo.19012295",
+    "url": "https://zenodo.org/records/19012295",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012293,
+    "title": "ethical dashboard",
+    "doi": "10.5281/zenodo.19012293",
+    "url": "https://zenodo.org/records/19012293",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012291,
+    "title": "dual wheel theory",
+    "doi": "10.5281/zenodo.19012291",
+    "url": "https://zenodo.org/records/19012291",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012287,
+    "title": "legacy codex",
+    "doi": "10.5281/zenodo.19012287",
+    "url": "https://zenodo.org/records/19012287",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012289,
+    "title": "hikari revival business",
+    "doi": "10.5281/zenodo.19012289",
+    "url": "https://zenodo.org/records/19012289",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012285,
+    "title": "hikari os ch8",
+    "doi": "10.5281/zenodo.19012285",
+    "url": "https://zenodo.org/records/19012285",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012283,
+    "title": "theykch vs musk",
+    "doi": "10.5281/zenodo.19012283",
+    "url": "https://zenodo.org/records/19012283",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012282,
+    "title": "cultural asset application",
+    "doi": "10.5281/zenodo.19012282",
+    "url": "https://zenodo.org/records/19012282",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012279,
+    "title": "ichigen no housoku",
+    "doi": "10.5281/zenodo.19012279",
+    "url": "https://zenodo.org/records/19012279",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012277,
+    "title": "ethical dashboard",
+    "doi": "10.5281/zenodo.19012277",
+    "url": "https://zenodo.org/records/19012277",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012273,
+    "title": "value control",
+    "doi": "10.5281/zenodo.19012273",
+    "url": "https://zenodo.org/records/19012273",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012271,
+    "title": "legacy codex",
+    "doi": "10.5281/zenodo.19012271",
+    "url": "https://zenodo.org/records/19012271",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012269,
+    "title": "valuation framework",
+    "doi": "10.5281/zenodo.19012269",
+    "url": "https://zenodo.org/records/19012269",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012268,
+    "title": "theykch vs musk",
+    "doi": "10.5281/zenodo.19012268",
+    "url": "https://zenodo.org/records/19012268",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012267,
+    "title": "katayama achievements",
+    "doi": "10.5281/zenodo.19012267",
+    "url": "https://zenodo.org/records/19012267",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012263,
+    "title": "hikari revival biz",
+    "doi": "10.5281/zenodo.19012263",
+    "url": "https://zenodo.org/records/19012263",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012255,
+    "title": "ethical dashboard release",
+    "doi": "10.5281/zenodo.19012255",
+    "url": "https://zenodo.org/records/19012255",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012261,
+    "title": "hikari os ch8",
+    "doi": "10.5281/zenodo.19012261",
+    "url": "https://zenodo.org/records/19012261",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012259,
+    "title": "katayama achievements",
+    "doi": "10.5281/zenodo.19012259",
+    "url": "https://zenodo.org/records/19012259",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012257,
+    "title": "ethical paradox",
+    "doi": "10.5281/zenodo.19012257",
+    "url": "https://zenodo.org/records/19012257",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012253,
+    "title": "ichigen",
+    "doi": "10.5281/zenodo.19012253",
+    "url": "https://zenodo.org/records/19012253",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012249,
+    "title": "hikari os ch8",
+    "doi": "10.5281/zenodo.19012249",
+    "url": "https://zenodo.org/records/19012249",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012251,
+    "title": "phase4 mushin",
+    "doi": "10.5281/zenodo.19012251",
+    "url": "https://zenodo.org/records/19012251",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012247,
+    "title": "theykch vs musk",
+    "doi": "10.5281/zenodo.19012247",
+    "url": "https://zenodo.org/records/19012247",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012245,
+    "title": "valuation",
+    "doi": "10.5281/zenodo.19012245",
+    "url": "https://zenodo.org/records/19012245",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012243,
+    "title": "theykch final",
+    "doi": "10.5281/zenodo.19012243",
+    "url": "https://zenodo.org/records/19012243",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012241,
+    "title": "katayama achievements",
+    "doi": "10.5281/zenodo.19012241",
+    "url": "https://zenodo.org/records/19012241",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012240,
+    "title": "paradox",
+    "doi": "10.5281/zenodo.19012240",
+    "url": "https://zenodo.org/records/19012240",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012237,
+    "title": "dual wheel",
+    "doi": "10.5281/zenodo.19012237",
+    "url": "https://zenodo.org/records/19012237",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012235,
+    "title": "mushin",
+    "doi": "10.5281/zenodo.19012235",
+    "url": "https://zenodo.org/records/19012235",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012233,
+    "title": "ch7 katayama civilization personal model",
+    "doi": "10.5281/zenodo.19012233",
+    "url": "https://zenodo.org/records/19012233",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012231,
+    "title": "hikari os ch8",
+    "doi": "10.5281/zenodo.19012231",
+    "url": "https://zenodo.org/records/19012231",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012225,
+    "title": "cultural asset app",
+    "doi": "10.5281/zenodo.19012225",
+    "url": "https://zenodo.org/records/19012225",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012229,
+    "title": "final chapter",
+    "doi": "10.5281/zenodo.19012229",
+    "url": "https://zenodo.org/records/19012229",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012227,
+    "title": "ichigen no housoku",
+    "doi": "10.5281/zenodo.19012227",
+    "url": "https://zenodo.org/records/19012227",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012223,
+    "title": "ch3 unsellable asset structure",
+    "doi": "10.5281/zenodo.19012223",
+    "url": "https://zenodo.org/records/19012223",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012221,
+    "title": "dual wheel",
+    "doi": "10.5281/zenodo.19012221",
+    "url": "https://zenodo.org/records/19012221",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012219,
+    "title": "valuation framework",
+    "doi": "10.5281/zenodo.19012219",
+    "url": "https://zenodo.org/records/19012219",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012217,
+    "title": "legacy codex",
+    "doi": "10.5281/zenodo.19012217",
+    "url": "https://zenodo.org/records/19012217",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012215,
+    "title": "cultural asset",
+    "doi": "10.5281/zenodo.19012215",
+    "url": "https://zenodo.org/records/19012215",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012211,
+    "title": "hikari civilization revival opening",
+    "doi": "10.5281/zenodo.19012211",
+    "url": "https://zenodo.org/records/19012211",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012213,
+    "title": "ethical paradox",
+    "doi": "10.5281/zenodo.19012213",
+    "url": "https://zenodo.org/records/19012213",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012209,
+    "title": "ethical dashboard",
+    "doi": "10.5281/zenodo.19012209",
+    "url": "https://zenodo.org/records/19012209",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012207,
+    "title": "legacy",
+    "doi": "10.5281/zenodo.19012207",
+    "url": "https://zenodo.org/records/19012207",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012205,
+    "title": "phase4 mushin",
+    "doi": "10.5281/zenodo.19012205",
+    "url": "https://zenodo.org/records/19012205",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012203,
+    "title": "koku universe model",
+    "doi": "10.5281/zenodo.19012203",
+    "url": "https://zenodo.org/records/19012203",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012201,
+    "title": "theykch vs musk",
+    "doi": "10.5281/zenodo.19012201",
+    "url": "https://zenodo.org/records/19012201",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012199,
+    "title": "dashboard",
+    "doi": "10.5281/zenodo.19012199",
+    "url": "https://zenodo.org/records/19012199",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012197,
+    "title": "theykch final",
+    "doi": "10.5281/zenodo.19012197",
+    "url": "https://zenodo.org/records/19012197",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012195,
+    "title": "katayama achievements",
+    "doi": "10.5281/zenodo.19012195",
+    "url": "https://zenodo.org/records/19012195",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012193,
+    "title": "vs musk",
+    "doi": "10.5281/zenodo.19012193",
+    "url": "https://zenodo.org/records/19012193",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012191,
+    "title": "dual wheel",
+    "doi": "10.5281/zenodo.19012191",
+    "url": "https://zenodo.org/records/19012191",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012189,
+    "title": "hikari os ch8",
+    "doi": "10.5281/zenodo.19012189",
+    "url": "https://zenodo.org/records/19012189",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012187,
+    "title": "achievements",
+    "doi": "10.5281/zenodo.19012187",
+    "url": "https://zenodo.org/records/19012187",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012185,
+    "title": "cultural asset app",
+    "doi": "10.5281/zenodo.19012185",
+    "url": "https://zenodo.org/records/19012185",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012183,
+    "title": "hikari ch4 why civilization",
+    "doi": "10.5281/zenodo.19012183",
+    "url": "https://zenodo.org/records/19012183",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012181,
+    "title": "hikari os ch8",
+    "doi": "10.5281/zenodo.19012181",
+    "url": "https://zenodo.org/records/19012181",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012179,
+    "title": "chapter3 unsellable asset structure",
+    "doi": "10.5281/zenodo.19012179",
+    "url": "https://zenodo.org/records/19012179",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012177,
+    "title": "legacy codex",
+    "doi": "10.5281/zenodo.19012177",
+    "url": "https://zenodo.org/records/19012177",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012175,
+    "title": "ethical dashboard",
+    "doi": "10.5281/zenodo.19012175",
+    "url": "https://zenodo.org/records/19012175",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012172,
+    "title": "theykch vs musk",
+    "doi": "10.5281/zenodo.19012172",
+    "url": "https://zenodo.org/records/19012172",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012170,
+    "title": "katayama achievements",
+    "doi": "10.5281/zenodo.19012170",
+    "url": "https://zenodo.org/records/19012170",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012168,
+    "title": "hikari studio business definition",
+    "doi": "10.5281/zenodo.19012168",
+    "url": "https://zenodo.org/records/19012168",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012166,
+    "title": "hikari os ch8",
+    "doi": "10.5281/zenodo.19012166",
+    "url": "https://zenodo.org/records/19012166",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012164,
+    "title": "hikari civilization story ver100",
+    "doi": "10.5281/zenodo.19012164",
+    "url": "https://zenodo.org/records/19012164",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012160,
+    "title": "hikari studio definition 2026",
+    "doi": "10.5281/zenodo.19012160",
+    "url": "https://zenodo.org/records/19012160",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012158,
+    "title": "hikari research studio definition",
+    "doi": "10.5281/zenodo.19012158",
+    "url": "https://zenodo.org/records/19012158",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012154,
+    "title": "hikari civilization story ver100",
+    "doi": "10.5281/zenodo.19012154",
+    "url": "https://zenodo.org/records/19012154",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012150,
+    "title": "ethical paradox intelligence",
+    "doi": "10.5281/zenodo.19012150",
+    "url": "https://zenodo.org/records/19012150",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012148,
+    "title": "HIKARI CIVILIZATION ARCHIVE",
+    "doi": "10.5281/zenodo.19012148",
+    "url": "https://zenodo.org/records/19012148",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012146,
+    "title": "phase4 mushin",
+    "doi": "10.5281/zenodo.19012146",
+    "url": "https://zenodo.org/records/19012146",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012144,
+    "title": "hikari ethics code prologue",
+    "doi": "10.5281/zenodo.19012144",
+    "url": "https://zenodo.org/records/19012144",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012142,
+    "title": "光貨思想 Facebookインサイト分析書(2025年12月版)",
+    "doi": "10.5281/zenodo.19012142",
+    "url": "https://zenodo.org/records/19012142",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012138,
+    "title": "ethical paradox intelligence",
+    "doi": "10.5281/zenodo.19012138",
+    "url": "https://zenodo.org/records/19012138",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012136,
+    "title": "theykch final resonance",
+    "doi": "10.5281/zenodo.19012136",
+    "url": "https://zenodo.org/records/19012136",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012130,
+    "title": "光貨経済の成熟段階と思想資産の利回りモデル 2026年版",
+    "doi": "10.5281/zenodo.19012130",
+    "url": "https://zenodo.org/records/19012130",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012126,
+    "title": "hikari civilization phase4 mushin",
+    "doi": "10.5281/zenodo.19012126",
+    "url": "https://zenodo.org/records/19012126",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012120,
+    "title": "dual wheel theory",
+    "doi": "10.5281/zenodo.19012120",
+    "url": "https://zenodo.org/records/19012120",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012122,
+    "title": "圭光る 歴史的系譜照合書",
+    "doi": "10.5281/zenodo.19012122",
+    "url": "https://zenodo.org/records/19012122",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012118,
+    "title": "theykch final chapter resonance",
+    "doi": "10.5281/zenodo.19012118",
+    "url": "https://zenodo.org/records/19012118",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012112,
+    "title": "文化庁提出想定資料",
+    "doi": "10.5281/zenodo.19012112",
+    "url": "https://zenodo.org/records/19012112",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012114,
+    "title": "cultural asset application",
+    "doi": "10.5281/zenodo.19012114",
+    "url": "https://zenodo.org/records/19012114",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012110,
+    "title": "theykch dual wheel theory",
+    "doi": "10.5281/zenodo.19012110",
+    "url": "https://zenodo.org/records/19012110",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012104,
+    "title": "theykch legacy codex",
+    "doi": "10.5281/zenodo.19012104",
+    "url": "https://zenodo.org/records/19012104",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012100,
+    "title": "katayama cultural asset application",
+    "doi": "10.5281/zenodo.19012100",
+    "url": "https://zenodo.org/records/19012100",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012094,
+    "title": "ethical dashboard release",
+    "doi": "10.5281/zenodo.19012094",
+    "url": "https://zenodo.org/records/19012094",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012096,
+    "title": "theykch legacy codex",
+    "doi": "10.5281/zenodo.19012096",
+    "url": "https://zenodo.org/records/19012096",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012090,
+    "title": "ethical civilization dashboard",
+    "doi": "10.5281/zenodo.19012090",
+    "url": "https://zenodo.org/records/19012090",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012086,
+    "title": "theykch vs musk",
+    "doi": "10.5281/zenodo.19012086",
+    "url": "https://zenodo.org/records/19012086",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012082,
+    "title": "theykch free ipo declaration",
+    "doi": "10.5281/zenodo.19012082",
+    "url": "https://zenodo.org/records/19012082",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012080,
+    "title": "theykch valuation framework",
+    "doi": "10.5281/zenodo.19012080",
+    "url": "https://zenodo.org/records/19012080",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012078,
+    "title": "theykch vs elon musk",
+    "doi": "10.5281/zenodo.19012078",
+    "url": "https://zenodo.org/records/19012078",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012076,
+    "title": "hikari os equilibrium edition",
+    "doi": "10.5281/zenodo.19012076",
+    "url": "https://zenodo.org/records/19012076",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012072,
+    "title": "theykch app civilization archive",
+    "doi": "10.5281/zenodo.19012072",
+    "url": "https://zenodo.org/records/19012072",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012068,
+    "title": "theykch prajna declaration",
+    "doi": "10.5281/zenodo.19012068",
+    "url": "https://zenodo.org/records/19012068",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012070,
+    "title": "katayama achievements",
+    "doi": "10.5281/zenodo.19012070",
+    "url": "https://zenodo.org/records/19012070",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012062,
+    "title": "katayama civilization achievements",
+    "doi": "10.5281/zenodo.19012062",
+    "url": "https://zenodo.org/records/19012062",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012066,
+    "title": "ethical paradox intelligence",
+    "doi": "10.5281/zenodo.19012066",
+    "url": "https://zenodo.org/records/19012066",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012060,
+    "title": "gandhara america",
+    "doi": "10.5281/zenodo.19012060",
+    "url": "https://zenodo.org/records/19012060",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012057,
+    "title": "prajna civilization declaration",
+    "doi": "10.5281/zenodo.19012057",
+    "url": "https://zenodo.org/records/19012057",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012058,
+    "title": "theykch sphere of freedom",
+    "doi": "10.5281/zenodo.19012058",
+    "url": "https://zenodo.org/records/19012058",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012054,
+    "title": "hikari phase4 mushin",
+    "doi": "10.5281/zenodo.19012054",
+    "url": "https://zenodo.org/records/19012054",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012048,
+    "title": "hikari os ch8 hope",
+    "doi": "10.5281/zenodo.19012048",
+    "url": "https://zenodo.org/records/19012048",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012050,
+    "title": "hikari os ch8 hope capital",
+    "doi": "10.5281/zenodo.19012050",
+    "url": "https://zenodo.org/records/19012050",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012044,
+    "title": "theykch internal doctrine charter",
+    "doi": "10.5281/zenodo.19012044",
+    "url": "https://zenodo.org/records/19012044",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012042,
+    "title": "theykch final chapter",
+    "doi": "10.5281/zenodo.19012042",
+    "url": "https://zenodo.org/records/19012042",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012040,
+    "title": "hikari facebook insight analysis 2025",
+    "doi": "10.5281/zenodo.19012040",
+    "url": "https://zenodo.org/records/19012040",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012037,
+    "title": "dual wheel theory",
+    "doi": "10.5281/zenodo.19012037",
+    "url": "https://zenodo.org/records/19012037",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012035,
+    "title": "hikari thought asset roi model",
+    "doi": "10.5281/zenodo.19012035",
+    "url": "https://zenodo.org/records/19012035",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012033,
+    "title": "cultural asset application",
+    "doi": "10.5281/zenodo.19012033",
+    "url": "https://zenodo.org/records/19012033",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012029,
+    "title": "new gandhara ethical civilization",
+    "doi": "10.5281/zenodo.19012029",
+    "url": "https://zenodo.org/records/19012029",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012025,
+    "title": "kei hikaru historical lineage",
+    "doi": "10.5281/zenodo.19012025",
+    "url": "https://zenodo.org/records/19012025",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012023,
+    "title": "theykch legacy codex",
+    "doi": "10.5281/zenodo.19012023",
+    "url": "https://zenodo.org/records/19012023",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012017,
+    "title": "ethical dashboard release",
+    "doi": "10.5281/zenodo.19012017",
+    "url": "https://zenodo.org/records/19012017",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012015,
+    "title": "hikari economy maturity model 2026",
+    "doi": "10.5281/zenodo.19012015",
+    "url": "https://zenodo.org/records/19012015",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012011,
+    "title": "theykch vs musk",
+    "doi": "10.5281/zenodo.19012011",
+    "url": "https://zenodo.org/records/19012011",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012009,
+    "title": "keihikaru historical genealogy",
+    "doi": "10.5281/zenodo.19012009",
+    "url": "https://zenodo.org/records/19012009",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012005,
+    "title": "08 postscript release",
+    "doi": "10.5281/zenodo.19012005",
+    "url": "https://zenodo.org/records/19012005",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19012004,
+    "title": "katayama achievements",
+    "doi": "10.5281/zenodo.19012004",
+    "url": "https://zenodo.org/records/19012004",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011999,
+    "title": "ethical compass bunkacho evaluation",
+    "doi": "10.5281/zenodo.19011999",
+    "url": "https://zenodo.org/records/19011999",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011995,
+    "title": "hikari os ch8",
+    "doi": "10.5281/zenodo.19011995",
+    "url": "https://zenodo.org/records/19011995",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011993,
+    "title": "07 thinker achievement report",
+    "doi": "10.5281/zenodo.19011993",
+    "url": "https://zenodo.org/records/19011993",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011987,
+    "title": "hikari city virtue capital",
+    "doi": "10.5281/zenodo.19011987",
+    "url": "https://zenodo.org/records/19011987",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011970,
+    "title": "free civilization declaration",
+    "doi": "10.5281/zenodo.19011970",
+    "url": "https://zenodo.org/records/19011970",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011983,
+    "title": "06 dual wheel theory",
+    "doi": "10.5281/zenodo.19011983",
+    "url": "https://zenodo.org/records/19011983",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011978,
+    "title": "theykch vs elon musk",
+    "doi": "10.5281/zenodo.19011978",
+    "url": "https://zenodo.org/records/19011978",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011972,
+    "title": "05 cultural asset application",
+    "doi": "10.5281/zenodo.19011972",
+    "url": "https://zenodo.org/records/19011972",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011968,
+    "title": "katayama civilization achievements",
+    "doi": "10.5281/zenodo.19011968",
+    "url": "https://zenodo.org/records/19011968",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011964,
+    "title": "hikari thought maturity 2026",
+    "doi": "10.5281/zenodo.19011964",
+    "url": "https://zenodo.org/records/19011964",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011962,
+    "title": "hikari os ch8 hope capital",
+    "doi": "10.5281/zenodo.19011962",
+    "url": "https://zenodo.org/records/19011962",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011958,
+    "title": "ethical compass cultural asset",
+    "doi": "10.5281/zenodo.19011958",
+    "url": "https://zenodo.org/records/19011958",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011956,
+    "title": "ethical compass bunkacho assessment",
+    "doi": "10.5281/zenodo.19011956",
+    "url": "https://zenodo.org/records/19011956",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011950,
+    "title": "hikari city virtue capital",
+    "doi": "10.5281/zenodo.19011950",
+    "url": "https://zenodo.org/records/19011950",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011948,
+    "title": "hikari whitepaper appendix figures 2026",
+    "doi": "10.5281/zenodo.19011948",
+    "url": "https://zenodo.org/records/19011948",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011946,
+    "title": "hikari city virtue capital",
+    "doi": "10.5281/zenodo.19011946",
+    "url": "https://zenodo.org/records/19011946",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011940,
+    "title": "civilization achievement report",
+    "doi": "10.5281/zenodo.19011940",
+    "url": "https://zenodo.org/records/19011940",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011938,
+    "title": "theykch vs elon musk",
+    "doi": "10.5281/zenodo.19011938",
+    "url": "https://zenodo.org/records/19011938",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011936,
+    "title": "04 legacy codex",
+    "doi": "10.5281/zenodo.19011936",
+    "url": "https://zenodo.org/records/19011936",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011929,
+    "title": "hannya hen",
+    "doi": "10.5281/zenodo.19011929",
+    "url": "https://zenodo.org/records/19011929",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011932,
+    "title": "katayama civilization achievements",
+    "doi": "10.5281/zenodo.19011932",
+    "url": "https://zenodo.org/records/19011932",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011927,
+    "title": "08 conceptual valuation framework",
+    "doi": "10.5281/zenodo.19011927",
+    "url": "https://zenodo.org/records/19011927",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011925,
+    "title": "03 theykch vs elon musk",
+    "doi": "10.5281/zenodo.19011925",
+    "url": "https://zenodo.org/records/19011925",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011921,
+    "title": "Hikari City",
+    "doi": "10.5281/zenodo.19011921",
+    "url": "https://zenodo.org/records/19011921",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011919,
+    "title": "hikari sync",
+    "doi": "10.5281/zenodo.19011919",
+    "url": "https://zenodo.org/records/19011919",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011917,
+    "title": "02 civilization achievements",
+    "doi": "10.5281/zenodo.19011917",
+    "url": "https://zenodo.org/records/19011917",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011911,
+    "title": "TheYKHC vs Elon Musk: Beyond Capitalism",
+    "doi": "10.5281/zenodo.19011911",
+    "url": "https://zenodo.org/records/19011911",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011913,
+    "title": "TheYKHC vs Elon Musk: Beyond Capitalism",
+    "doi": "10.5281/zenodo.19011913",
+    "url": "https://zenodo.org/records/19011913",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011907,
+    "title": "hope capital",
+    "doi": "10.5281/zenodo.19011907",
+    "url": "https://zenodo.org/records/19011907",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011905,
+    "title": "D2 Theory Paper",
+    "doi": "10.5281/zenodo.19011905",
+    "url": "https://zenodo.org/records/19011905",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011904,
+    "title": "Creation OS Genesis",
+    "doi": "10.5281/zenodo.19011904",
+    "url": "https://zenodo.org/records/19011904",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011901,
+    "title": "theykch vs elon musk",
+    "doi": "10.5281/zenodo.19011901",
+    "url": "https://zenodo.org/records/19011901",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011894,
+    "title": "01 hope becomes capital",
+    "doi": "10.5281/zenodo.19011894",
+    "url": "https://zenodo.org/records/19011894",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011884,
+    "title": "Hikari Civilization White Paper 2026",
+    "doi": "10.5281/zenodo.19011884",
+    "url": "https://zenodo.org/records/19011884",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011888,
+    "title": "katayama civilization achievements",
+    "doi": "10.5281/zenodo.19011888",
+    "url": "https://zenodo.org/records/19011888",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011886,
+    "title": "kei hikaru historical lineage definition",
+    "doi": "10.5281/zenodo.19011886",
+    "url": "https://zenodo.org/records/19011886",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011880,
+    "title": "光貨OS∞ 第Ⅷ章 終章/文明篇",
+    "doi": "10.5281/zenodo.19011880",
+    "url": "https://zenodo.org/records/19011880",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011876,
+    "title": "cultural agency ethical compass assessment",
+    "doi": "10.5281/zenodo.19011876",
+    "url": "https://zenodo.org/records/19011876",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011874,
+    "title": "光貨OS∞ 第Ⅷ章 終章/文明篇",
+    "doi": "10.5281/zenodo.19011874",
+    "url": "https://zenodo.org/records/19011874",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011871,
+    "title": "hikari city virtue capital",
+    "doi": "10.5281/zenodo.19011871",
+    "url": "https://zenodo.org/records/19011871",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011865,
+    "title": "07 thinker achievement report",
+    "doi": "10.5281/zenodo.19011865",
+    "url": "https://zenodo.org/records/19011865",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011863,
+    "title": "theykch vs elon musk",
+    "doi": "10.5281/zenodo.19011863",
+    "url": "https://zenodo.org/records/19011863",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011861,
+    "title": "hikari os ch8 hope capital",
+    "doi": "10.5281/zenodo.19011861",
+    "url": "https://zenodo.org/records/19011861",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011859,
+    "title": "06 dual wheel theory",
+    "doi": "10.5281/zenodo.19011859",
+    "url": "https://zenodo.org/records/19011859",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011855,
+    "title": "05 cultural asset application",
+    "doi": "10.5281/zenodo.19011855",
+    "url": "https://zenodo.org/records/19011855",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011853,
+    "title": "katayama civilization achievements",
+    "doi": "10.5281/zenodo.19011853",
+    "url": "https://zenodo.org/records/19011853",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011847,
+    "title": "04 legacy codex",
+    "doi": "10.5281/zenodo.19011847",
+    "url": "https://zenodo.org/records/19011847",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011851,
+    "title": "hikari os ch8 hope capital",
+    "doi": "10.5281/zenodo.19011851",
+    "url": "https://zenodo.org/records/19011851",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011849,
+    "title": "hope becomes capital",
+    "doi": "10.5281/zenodo.19011849",
+    "url": "https://zenodo.org/records/19011849",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011843,
+    "title": "katayama civilization achievement report 2026",
+    "doi": "10.5281/zenodo.19011843",
+    "url": "https://zenodo.org/records/19011843",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011845,
+    "title": "hikari os ch8 hope capital",
+    "doi": "10.5281/zenodo.19011845",
+    "url": "https://zenodo.org/records/19011845",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011841,
+    "title": "hikari civilization ch8 hannya sunyata economy",
+    "doi": "10.5281/zenodo.19011841",
+    "url": "https://zenodo.org/records/19011841",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011839,
+    "title": "hikari sync central nerve moral civilization",
+    "doi": "10.5281/zenodo.19011839",
+    "url": "https://zenodo.org/records/19011839",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011835,
+    "title": "hikari os ch8 hope becomes capital",
+    "doi": "10.5281/zenodo.19011835",
+    "url": "https://zenodo.org/records/19011835",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011833,
+    "title": "03 theykch vs elon musk",
+    "doi": "10.5281/zenodo.19011833",
+    "url": "https://zenodo.org/records/19011833",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011830,
+    "title": "02 civilization achievements",
+    "doi": "10.5281/zenodo.19011830",
+    "url": "https://zenodo.org/records/19011830",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011828,
+    "title": "01 hope becomes capital",
+    "doi": "10.5281/zenodo.19011828",
+    "url": "https://zenodo.org/records/19011828",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011826,
+    "title": "光貨文明思想遺伝書(Legacy Codex)",
+    "doi": "10.5281/zenodo.19011826",
+    "url": "https://zenodo.org/records/19011826",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011820,
+    "title": "Ethical Civilization Dashboard",
+    "doi": "10.5281/zenodo.19011820",
+    "url": "https://zenodo.org/records/19011820",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011818,
+    "title": "TheYKHC vs Elon Musk: Beyond Capitalism",
+    "doi": "10.5281/zenodo.19011818",
+    "url": "https://zenodo.org/records/19011818",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011812,
+    "title": "hikari city virtue capital",
+    "doi": "10.5281/zenodo.19011812",
+    "url": "https://zenodo.org/records/19011812",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011810,
+    "title": "theykch vs elon musk beyond capitalism",
+    "doi": "10.5281/zenodo.19011810",
+    "url": "https://zenodo.org/records/19011810",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011806,
+    "title": "katayama civilization achievements",
+    "doi": "10.5281/zenodo.19011806",
+    "url": "https://zenodo.org/records/19011806",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011802,
+    "title": "片山佳光 文明史的功績定義書",
+    "doi": "10.5281/zenodo.19011802",
+    "url": "https://zenodo.org/records/19011802",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011800,
+    "title": "光貨OS∞ 第Ⅷ章 終章/文明篇",
+    "doi": "10.5281/zenodo.19011800",
+    "url": "https://zenodo.org/records/19011800",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011796,
+    "title": "hikari os ch8 hope capital",
+    "doi": "10.5281/zenodo.19011796",
+    "url": "https://zenodo.org/records/19011796",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011762,
+    "title": "katayama yoshimitsu definition",
+    "doi": "10.5281/zenodo.19011762",
+    "url": "https://zenodo.org/records/19011762",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011751,
+    "title": "theykch valuation report 2025",
+    "doi": "10.5281/zenodo.19011751",
+    "url": "https://zenodo.org/records/19011751",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 19011624,
+    "title": "messenger personalities v2",
+    "doi": "10.5281/zenodo.19011624",
+    "url": "https://zenodo.org/records/19011624",
+    "date": "2026-03-14"
+  },
+  {
+    "id": 18993841,
+    "title": "001 philosophy card note article",
+    "doi": "10.5281/zenodo.18993841",
+    "url": "https://zenodo.org/records/18993841",
+    "date": "2026-03-13"
+  },
+  {
+    "id": 18993825,
+    "title": "025 kouka os final chapter",
+    "doi": "10.5281/zenodo.18993825",
+    "url": "https://zenodo.org/records/18993825",
+    "date": "2026-03-13"
+  },
+  {
+    "id": 18993782,
+    "title": "015 Kouka OS Integration",
+    "doi": "10.5281/zenodo.18993782",
+    "url": "https://zenodo.org/records/18993782",
+    "date": "2026-03-13"
+  },
+  {
+    "id": 18993693,
+    "title": "Historical Node Declaration",
+    "doi": "10.5281/zenodo.18993693",
+    "url": "https://zenodo.org/records/18993693",
+    "date": "2026-03-13"
+  }
+]
