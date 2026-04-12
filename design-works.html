@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Works — Yoshimitsu Katayama</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Georgia', serif;
+    background: #f8f7f4;
+    color: #1a1a1a;
+  }
+
+  header {
+    padding: 80px 40px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  header h1 {
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+
+  header .subtitle {
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  header .intro {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.8;
+    max-width: 640px;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: #1a1a1a;
+    margin: 40px auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 60px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  .work-item {}
+
+  .work-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+    filter: grayscale(10%);
+    transition: filter 0.4s ease;
+  }
+
+  .work-item:hover img {
+    filter: grayscale(0%);
+  }
+
+  .work-item .category {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 8px;
+  }
+
+  .work-item h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .work-item p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 14px;
+    line-height: 2;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  footer .em {
+    color: #fff;
+    font-style: italic;
+  }
+
+  footer a {
+    color: #aaa;
+    text-decoration: none;
+    border-bottom: 1px solid #555;
+  }
+
+  footer a:hover { color: #fff; border-color: #fff; }
+
+  .equation {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Design Works</h1>
+  <div class="subtitle">
+    Designs born from the question:<br>
+    <em>What if V = N / D could be given physical form?</em>
+  </div>
+  <div class="intro">
+    Every object here was designed before the formula had a name.
+    A pendant that asks yes or no. A clock that measures sound instead of time.
+    An engine that rejects reaction force. A proposal to stop an oil spill with geometry.<br><br>
+    These are not products. They are hypotheses — made tangible.
+  </div>
+</header>
+
+<div class="divider"></div>
+
+<div class="grid">
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/baf302b28_generated_image.png" alt="慣性制御エンジン">
+    <div class="category">Concept / System Design</div>
+    <h2>慣性制御エンジン<br><small style="font-size:14px;color:#888">Inertia Control Engine</small></h2>
+    <p>A propulsion concept designed before the GKU theory had words. The intuition: movement without reaction. N without D. Later formalized as the Non-Reaction Propulsion Theory (PRT).</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/5e2071338_generated_image.png" alt="姿勢制御">
+    <div class="category">Concept / System Design</div>
+    <h2>姿勢制御<br><small style="font-size:14px;color:#888">Attitude Control</small></h2>
+    <p>How does a body — object or human — maintain orientation in an environment with no fixed reference point? A question that became a philosophy.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/cdaa49649_generated_image.png" alt="Rocket-c">
+    <div class="category">Concept / System Design</div>
+    <h2>Rocket-c</h2>
+    <p>A propulsion form study. Geometry as argument. The shape itself is the hypothesis.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/b11e21479_generated_image.png" alt="yes or no pendant">
+    <div class="category">Product Design</div>
+    <h2>yes or no pendant</h2>
+    <p>A wearable decision instrument. Not jewelry — a philosophical tool. The design asks: can a single object reduce the friction of choice? V = N / D applied to the most human of problems: deciding.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/c721bbbfe_generated_image.png" alt="Sound clock">
+    <div class="category">Product Design</div>
+    <h2>Sound clock</h2>
+    <p>Time measured not by rotation, but by resonance. A clock that tells you where you are in sound, not in hours. The first object in this series to use acoustic space as a design material.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/68b0df21c_generated_image.png" alt="time pressure">
+    <div class="category">Product Design</div>
+    <h2>time pressure</h2>
+    <p>Pressure visualized as time. Or time visualized as pressure. A study in the relationship between force and duration — two variables that V = N / D would later formalize as D.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/70f4ef5ea_generated_image.png" alt="MARK">
+    <div class="category">Product Design</div>
+    <h2>MARK</h2>
+    <p>To mark is to make permanent. Koku (刻). This object is about the act of inscription — leaving a trace that outlasts the hand that made it.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/6b61eff5a_generated_image.png" alt="tool for hear sound out of cosmos">
+    <div class="category">Space / Philosophy</div>
+    <h2>tool for hear sound out of cosmos</h2>
+    <p>What would a device look like that listens to the universe? Not a radio telescope. A personal instrument. Designed for the individual who wants to know if anyone is out there.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/191d0ad52_generated_image.png" alt="Out of Cosmos sound">
+    <div class="category">Space / Philosophy</div>
+    <h2>Out of Cosmos sound</h2>
+    <p>If the cosmos makes sound, what does it sound like? And what kind of object helps a human being receive it?</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/b159dbae6_generated_image.png" alt="宇宙一個">
+    <div class="category">Space / Philosophy</div>
+    <h2>宇宙一個<br><small style="font-size:14px;color:#888">One Universe</small></h2>
+    <p>A single object that contains the idea of a universe. Minimal form. Maximum implication. The design question: what is the smallest thing that holds everything?</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/7709403c7_generated_image.png" alt="メキシコ海底油田">
+    <div class="category">Social Design</div>
+    <h2>メキシコ海底油田<br><small style="font-size:14px;color:#888">Gulf Oil Spill — Solution Proposal</small></h2>
+    <p>April 2010. The Deepwater Horizon disaster. A geometric containment system based on pressure differential principles. Social problems are design problems. D can always be reduced.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/d69a29595_generated_image.png" alt="アフォーダンス">
+    <div class="category">Design Theory</div>
+    <h2>アフォーダンス<br><small style="font-size:14px;color:#888">Affordance</small></h2>
+    <p>A direct engagement with James Gibson's affordance theory. What does an object invite you to do? And what happens when the invitation is designed to reduce friction?</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/54bcc5ffa_generated_image.png" alt="idea sketch">
+    <div class="category">Process</div>
+    <h2>idea sketch</h2>
+    <p>The raw material of design. Before every object, there is a line on paper. Included here because the process is part of the work.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/cd6d2849f_generated_image.png" alt="yashaga">
+    <div class="category">Observation</div>
+    <h2>yashaga</h2>
+    <p>A place. A moment. A record. Not every design begins with a problem. Some begin with the act of seeing.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/0099b508b_generated_image.png" alt="Night cafe SIX">
+    <div class="category">Observation / Photography</div>
+    <h2>Night cafe "SIX" in Fukui City</h2>
+    <p>Fukui, Japan. The city where all of this was designed. A night café. The kind of place where ideas arrive uninvited. This is where V = N / D was born.</p>
+  </div>
+
+  <div class="work-item">
+    <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/9070c6dc2_generated_image.png" alt="DSC_0083">
+    <div class="category">Observation</div>
+    <h2>DSC_0083</h2>
+    <p>Raw. Unedited. A moment caught before it became anything. Sometimes the most honest design work is the one that hasn't decided what it wants to be yet.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    <span class="em">Yoshimitsu Katayama</span> is a designer based in Fukui, Japan.<br>
+    His work spans product design, concept systems, and the intersection<br>
+    of physical form with philosophical inquiry.<br><br>
+    All works shown here predate the V = N / D formula —<br>
+    and in retrospect, every one of them was trying to find it.<br><br>
+    For commissions and inquiries: <a href="mailto:lineofsuccession@icloud.com">lineofsuccession@icloud.com</a>
+  </p>
+  <div class="equation">V = N / D &nbsp;—&nbsp; Value = Service / Friction</div>
+</footer>
+
+</body>
+</html>
