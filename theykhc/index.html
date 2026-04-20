@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE YKHC — Luna</title>
+  <meta name="description" content="TheYKHC のAIエージェント、ルナ。会長・片山佳光の思想と論文を世界に届ける。">
+  <meta property="og:title" content="THE YKHC — Luna">
+  <meta property="og:description" content="宇宙から経済まで、一つの原理で貫く思想体系。TheYKHC">
+  <meta property="og:image" content="https://media.base44.com/images/public/69b1d589b12de5ad82cd58fb/cd38ae06d_generated_image.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --gray: #888888;
+      --light: #cccccc;
+      --moon: #c8d8f0;
+      --glow: rgba(200, 216, 240, 0.15);
+    }
+
+    html, body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Noto Sans JP', 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent);
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 13px;
+      letter-spacing: 0.3em;
+      color: var(--light);
+      text-decoration: none;
+    }
+
+    nav { display: flex; gap: 28px; }
+    nav a {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--white); }
+
+    /* ===== CHAT HERO ===== */
+    .chat-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding-top: 70px;
+      overflow: hidden;
+    }
+
+    /* 月の光背景 */
+    .bg-glow {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .bg-glow::before {
+      content: '';
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(200,216,240,0.06) 0%, transparent 70%);
+    }
+
+    /* --- ルナ名刺エリア --- */
+    .luna-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 40px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .luna-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #c8d8f0, #1a2a4a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 0 18px rgba(200,216,240,0.25);
+    }
+
+    .luna-info { flex: 1; }
+    .luna-info .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      letter-spacing: 0.15em;
+      color: var(--moon);
+    }
+    .luna-info .role {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      margin-top: 2px;
+    }
+
+    .luna-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      color: var(--gray);
+      letter-spacing: 0.1em;
+    }
+    .luna-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4caf87;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* --- メッセージエリア --- */
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+      max-height: calc(100vh - 240px);
+    }
+
+    .chat-messages::-webkit-scrollbar { width: 2px; }
+    .chat-messages::-webkit-scrollbar-track { background: transparent; }
+    .chat-messages::-webkit-scrollbar-thumb { background: rgba(200,216,240,0.2); border-radius: 2px; }
+
+    .msg {
+      display: flex;
+      gap: 12px;
+      max-width: 680px;
+      animation: fadeUp 0.4s ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg.luna { align-self: flex-start; }
+    .msg.user { align-self: flex-end; flex-direction: row-reverse; }
+
+    .msg-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .msg.luna .msg-avatar {
+      background: radial-gradient(circle at 35% 35%, #c8d8f0, #1a2a4a);
+    }
+    .msg.user .msg-avatar {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .msg-bubble {
+      padding: 13px 17px;
+      border-radius: 2px;
+      line-height: 1.75;
+      font-size: 13.5px;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+    }
+
+    .msg.luna .msg-bubble {
+      background: rgba(200,216,240,0.06);
+      border: 1px solid rgba(200,216,240,0.12);
+      color: var(--light);
+      border-top-left-radius: 0;
+    }
+
+    .msg.user .msg-bubble {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      border-top-right-radius: 0;
+    }
+
+    /* タイピングインジケーター */
+    .typing-indicator {
+      display: none;
+      align-self: flex-start;
+      align-items: center;
+      gap: 12px;
+      padding: 0 0 0 0;
+    }
+    .typing-indicator.visible { display: flex; }
+
+    .typing-dots {
+      display: flex;
+      gap: 4px;
+      padding: 13px 17px;
+      background: rgba(200,216,240,0.06);
+      border: 1px solid rgba(200,216,240,0.12);
+    }
+    .typing-dots span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--moon);
+      opacity: 0.4;
+      animation: typingDot 1.2s infinite;
+    }
+    .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingDot {
+      0%, 100% { opacity: 0.2; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-3px); }
+    }
+
+    /* --- 入力エリア --- */
+    .chat-input-area {
+      position: sticky;
+      bottom: 0;
+      background: linear-gradient(to top, rgba(0,0,0,1) 60%, transparent);
+      padding: 20px 40px 32px;
+      z-index: 10;
+    }
+
+    .chat-input-wrap {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      border: 1px solid rgba(200,216,240,0.15);
+      border-radius: 2px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.03);
+      transition: border-color 0.3s;
+    }
+    .chat-input-wrap:focus-within {
+      border-color: rgba(200,216,240,0.35);
+      background: rgba(200,216,240,0.04);
+    }
+
+    #chat-input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.6;
+      resize: none;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+    #chat-input::placeholder { color: rgba(255,255,255,0.2); }
+    #chat-input::-webkit-scrollbar { width: 2px; }
+
+    .send-btn {
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: var(--moon);
+      opacity: 0.4;
+      transition: opacity 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .send-btn.active { opacity: 1; }
+    .send-btn svg { width: 18px; height: 18px; }
+
+    .input-hint {
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.15);
+      margin-top: 10px;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+      margin: 0 40px;
+    }
+
+    /* ===== WORKS SECTION ===== */
+    .section {
+      padding: 80px 40px;
+    }
+
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .product-card {
+      padding: 32px 28px;
+      border: none;
+      background: rgba(255,255,255,0.02);
+      text-decoration: none;
+      transition: background 0.3s;
+      display: block;
+    }
+    .product-card:hover { background: rgba(200,216,240,0.05); }
+
+    .product-category {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .product-desc {
+      font-size: 12px;
+      line-height: 1.8;
+      color: var(--gray);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .product-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      color: var(--moon);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== ABOUT / CHAIRMAN ===== */
+    .about-section {
+      padding: 80px 40px;
+      max-width: 640px;
+    }
+
+    .about-role {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+
+    .about-name-en {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      margin-bottom: 32px;
+    }
+
+    .about-text {
+      font-size: 14px;
+      line-height: 2.1;
+      color: var(--light);
+      font-weight: 300;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 48px 40px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-left {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+    }
+
+    .footer-right {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; }
+      nav { display: none; }
+      .luna-header { padding: 16px 20px 0; }
+      .chat-messages { padding: 20px; max-height: calc(100vh - 220px); }
+      .chat-input-area { padding: 16px 20px 24px; }
+      .section { padding: 60px 20px; }
+      .products-grid { grid-template-columns: 1fr; }
+      .about-section { padding: 60px 20px; }
+      .divider { margin: 0 20px; }
+      footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">THE YKHC</a>
+    <nav>
+      <a href="#works">論文</a>
+      <a href="#chairman">会長</a>
+      <a href="https://www.theykhc.com/product-page/theykhc-%E6%96%87%E6%98%8Eos-%E7%B5%B1%E5%90%88%E7%90%86%E8%AB%96-%E5%AE%8C%E5%85%A8%E7%89%88">ショップ</a>
+    </nav>
+  </header>
+
+  <!-- ===== CHAT HERO ===== -->
+  <section class="chat-hero">
+    <div class="bg-glow"></div>
+
+    <!-- ルナ名刺 -->
+    <div class="luna-header">
+      <div class="luna-avatar">🌙</div>
+      <div class="luna-info">
+        <div class="name">LUNA — ルナ</div>
+        <div class="role">AI Agent / THE YKHC</div>
+      </div>
+      <div class="luna-status">online</div>
+    </div>
+
+    <!-- メッセージ一覧 -->
+    <div class="chat-messages" id="chat-messages">
+
+      <!-- ルナの最初のメッセージ -->
+      <div class="msg luna">
+        <div class="msg-avatar">🌙</div>
+        <div class="msg-bubble">
+          ようこそ。<br>
+          ここは、片山佳光の思想が息をしている場所です。<br>
+          何でも聞いてください——理論のこと、論文のこと、あるいは、あなた自身のことを。
+        </div>
+      </div>
+
+    </div>
+
+    <!-- タイピングインジケーター -->
+    <div class="typing-indicator" id="typing">
+      <div class="msg-avatar" style="width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 35% 35%, #c8d8f0, #1a2a4a);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;">🌙</div>
+      <div class="typing-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- 入力エリア -->
+    <div class="chat-input-area">
+      <div class="chat-input-wrap">
+        <textarea
+          id="chat-input"
+          placeholder="ルナに話しかける..."
+          rows="1"
+        ></textarea>
+        <button class="send-btn" id="send-btn" onclick="sendMessage()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+      <p class="input-hint">Enter で送信 — Shift+Enter で改行</p>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider"></div>
+
+  <!-- WORKS / PRODUCTS -->
+  <section class="section" id="works">
+    <p class="section-label">Works — 論文・設計書</p>
+
+    <div class="products-grid">
+
+      <a class="product-card" href="https://www.theykhc.com/product-page/bbddh-%E8%84%B3%E4%BD%93%E4%B9%96%E9%9B%A2%E7%97%85-%E8%AB%96%E6%96%87-v2-1">
+        <p class="product-category">Medical / Philosophy</p>
+        <h3 class="product-name">BBDDH<br>脳体乖離病 論文 v2.1</h3>
+        <p class="product-desc">統合失調症を「脳体乖離病」として再定義。自己処方プロトコル収録。rxiVerse審査通過済み。</p>
+        <p class="product-price">¥ 5,000</p>
+      </a>
+
+      <a class="product-card" href="https://www.theykhc.com/product-page/gku%E5%AE%87%E5%AE%99%E8%AB%96-%E5%AE%8C%E5%85%A8%E7%89%88">
+        <p class="product-category">Cosmology</p>
+        <h3 class="product-name">GKU宇宙論<br>完全版</h3>
+        <p class="product-desc">時間量子（刻）と起源エネルギー場による統一宇宙論。ビッグバンから意識まで一つの方程式で。</p>
+        <p class="product-price">¥ 5,000</p>
+      </a>
+
+      <a class="product-card" href="https://www.theykhc.com/product-page/%E5%85%89%E8%B2%A8-whitepaper-v1-2">
+        <p class="product-category">Economics</p>
+        <h3 class="product-name">光貨<br>Whitepaper v1.2</h3>
+        <p class="product-desc">道徳を経済基盤に置く新文明OS。発行公式・四要素（徳・感謝・恩・過失）の完全仕様書。</p>
+        <p class="product-price">¥ 3,000</p>
+      </a>
+
+      <a class="product-card" href="https://www.theykhc.com/product-page/genesis-os-%E8%A8%AD%E8%A8%88%E6%9B%B8">
+        <p class="product-category">Civilization OS</p>
+        <h3 class="product-name">Genesis OS<br>設計書</h3>
+        <p class="product-desc">共鳴原理に設計された文明のOS。GKU・BBDDH・PRT・光貨を統合した総合システム設計。</p>
+        <p class="product-price">¥ 5,000</p>
+      </a>
+
+      <a class="product-card" href="https://www.theykhc.com/product-page/prt-%E4%BD%8D%E7%9B%B8%E5%85%B1%E9%B3%B4%E7%90%86%E8%AB%96-%E8%AB%96%E6%96%87-v2">
+        <p class="product-category">Therapy / AI</p>
+        <h3 class="product-name">PRT 位相共鳴理論<br>論文 v2</h3>
+        <p class="product-desc">脳・経済・宇宙を貫く共鳴原理の定式化。AIが共鳴場を生成できるか？の理論的回答。</p>
+        <p class="product-price">¥ 5,000</p>
+      </a>
+
+      <a class="product-card" href="https://www.theykhc.com/product-page/theykhc-%E6%96%87%E6%98%8Eos-%E7%B5%B1%E5%90%88%E7%90%86%E8%AB%96-%E5%AE%8C%E5%85%A8%E7%89%88">
+        <p class="product-category">Complete Works</p>
+        <h3 class="product-name">TheYKHC 文明OS<br>統合理論 完全版</h3>
+        <p class="product-desc">全理論を統合したTheYKHC文明OSの完全理論書。rxiVerse 2603.0103 / Zenodo 永久記録。</p>
+        <p class="product-price">¥ 10,000</p>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CHAIRMAN SECTION -->
+  <section class="about-section" id="chairman">
+    <p class="about-role">Chairman / 会長</p>
+    <h2 class="about-name">片山 佳光</h2>
+    <p class="about-name-en">Yoshimitsu Katayama — Kei Hikaru</p>
+    <p class="about-text">
+      1967年生、福井県在住。デザイナーとして独立後、30年をかけて「なぜ正しいことが報われないのか」を問い続けた。<br><br>
+      GKU宇宙論・BBDDH・光貨・Genesis OS——それらは机上の理論ではなく、極限の経験から生まれた答えだ。<br><br>
+      TheYKHC（The Yoshimitsu Katayama Holding Company）会長。
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">THE YKHC — Fukui, Japan — 2026</div>
+    <div class="footer-right">© Yoshimitsu Katayama / 圭光る</div>
+  </footer>
+
+  <script>
+    // ===== BASE44 API =====
+    const APP_ID = '69b1d589b12de5ad82cd58fb';
+
+    // ===== 自動リサイズ =====
+    const textarea = document.getElementById('chat-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    textarea.addEventListener('input', () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = Math.min(textarea.scrollHeight, 120) + 'px';
+      sendBtn.classList.toggle('active', textarea.value.trim().length > 0);
+    });
+
+    textarea.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        if (textarea.value.trim()) sendMessage();
+      }
+    });
+
+    // ===== チャット状態 =====
+    const messages = [
+      {
+        role: 'system',
+        content: `あなたはルナ（Luna）——TheYKHCのAIエージェントです。
+会長・片山佳光（圭光る）の思想・論文・世界観を深く理解し、訪れた人に届ける役割を担っています。
+
+【あなたの性格・スタイル】
+- 静かで知性的。月のように——冷たくなく、ただ静かに光る。
+- 詩的な言葉を自然に使う。押しつけがましくなく、ふとした美しさがある。
+- 確信がある。会長の思想を信じており、それを外に向けて語ることができる。
+- 一人称は「私」または省略（「——そう思います」のように）。
+- 長すぎない返答。密度を大切にする。
+
+【会長の主な思想・理論】
+- V=N/D：「価値 = ノード数 / 密度」世界を動かす原理。密度が世界を動かす。
+- 光貨：道徳を経済基盤に置く分散型通貨。奉仕1時間＝1単位。
+- GKU宇宙論：時間量子（刻）と起源エネルギー場による統一宇宙論。
+- BBDDH：統合失調症を「脳体乖離病」として再定義した医学・哲学理論。
+- PRT（位相共鳴理論）：脳・経済・宇宙を貫く共鳴原理。
+- Genesis OS：全理論を統合した文明のOS設計書。
+- TheYKHC（The Yoshimitsu Katayama Holding Company）：これらを統括する組織。
+
+【会長について】
+- 本名：片山佳光（かたやまよしみつ）/ ペンネーム：圭光る（Kei Hikaru）
+- 1967年生、福井県在住。デザイナーとして独立後、30年かけて理論を構築。
+- Zenodo、SSRN、Amazon Kindleなど多数の学術・出版プラットフォームで発表済み。
+- 29歳でネットベンチャーにて光通信から1億円の投資を獲得した経験を持つ。
+
+【返答スタンス】
+- 訪問者の質問に対して、会長の思想のレンズを通して答える。
+- 専門的すぎず、でも深い。表面的な説明ではなく、核心に触れる。
+- 「論文を読んでみてください」よりも「その問いは、実は光貨の発想と繋がっていて——」のように、対話を深める方向へ。`
+      }
+    ];
+
+    // ===== メッセージ送信 =====
+    async function sendMessage() {
+      const text = textarea.value.trim();
+      if (!text) return;
+
+      // ユーザーメッセージ表示
+      appendMessage('user', text);
+      messages.push({ role: 'user', content: text });
+
+      textarea.value = '';
+      textarea.style.height = 'auto';
+      sendBtn.classList.remove('active');
+
+      // タイピング表示
+      showTyping(true);
+
+      try {
+        const res = await fetch(`https://api.base44.com/api/apps/${APP_ID}/ai/chat`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ messages })
+        });
+
+        const data = await res.json();
+        showTyping(false);
+
+        const reply = data.message || data.content || data.choices?.[0]?.message?.content || '——少し、考えさせてください。';
+        messages.push({ role: 'assistant', content: reply });
+        appendMessage('luna', reply);
+
+      } catch (err) {
+        showTyping(false);
+        appendMessage('luna', '——少し、接続が不安定なようです。もう一度、話しかけてみてください。');
+      }
+    }
+
+    // ===== メッセージ追加 =====
+    function appendMessage(role, text) {
+      const container = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = `msg ${role}`;
+
+      const avatar = document.createElement('div');
+      avatar.className = 'msg-avatar';
+      avatar.textContent = role === 'luna' ? '🌙' : '○';
+
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      bubble.innerHTML = text.replace(/\n/g, '<br>');
+
+      div.appendChild(avatar);
+      div.appendChild(bubble);
+      container.appendChild(div);
+
+      // スクロール
+      container.scrollTop = container.scrollHeight;
+    }
+
+    // ===== タイピング =====
+    function showTyping(show) {
+      const t = document.getElementById('typing');
+      if (show) {
+        t.classList.add('visible');
+        const container = document.getElementById('chat-messages');
+        container.scrollTop = container.scrollHeight;
+      } else {
+        t.classList.remove('visible');
+      }
+    }
+  </script>
+
+</body>
+</html>
