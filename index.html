@@ -53,7 +53,6 @@ footer a{color:var(--gray);}
 .card h3{font-size:15px;font-weight:700;margin-bottom:8px;line-height:1.5;}
 .card p{font-size:13px;color:#555;line-height:1.7;}
 .card-doi{font-size:11px;color:var(--gray);margin-top:12px;font-family:monospace;}
-.card-link{font-size:12px;color:var(--gold);margin-top:12px;font-weight:700;letter-spacing:.05em;}
 .featured{background:#0a0a0a;color:#fafafa;padding:64px 40px;margin:64px 0;text-align:center;}
 .featured h2{font-size:22px;margin-bottom:16px;}
 .featured p{font-size:14px;color:#aaa;margin-bottom:32px;}
@@ -62,6 +61,14 @@ footer a{color:var(--gray);}
 .hikari-banner{background:#0a0a0a;color:#fafafa;border:1px solid var(--gold);padding:36px 40px;margin:40px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .hikari-banner-text h3{font-size:18px;color:var(--gold);margin-bottom:8px;}
 .hikari-banner-text p{font-size:13px;color:#aaa;line-height:1.7;}
+.amazon-section{border:1px solid var(--border);padding:40px;margin:40px 0;}
+.amazon-section h2{font-size:18px;margin-bottom:8px;}
+.amazon-section p{font-size:13px;color:#555;margin-bottom:24px;}
+.amazon-books{display:flex;flex-direction:column;gap:12px;}
+.amazon-book{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:12px;}
+.amazon-book:last-child{border-bottom:none;}
+.amazon-book-title{font-size:14px;font-weight:700;}
+.amazon-book-sub{font-size:12px;color:var(--gray);margin-top:4px;}
 @media(max-width:600px){nav{padding:0 20px;}.nav-links{gap:16px;}footer{flex-direction:column;gap:12px;text-align:center;}.container{padding:0 16px;}.hero{padding:80px 0 60px;}.featured{padding:48px 20px;}.hikari-banner{flex-direction:column;text-align:center;padding:28px 20px;}}
 </style>
 </head>
@@ -74,6 +81,7 @@ footer a{color:var(--gray);}
     <a href="blog/">Blog</a>
     <a href="shop.html">Shop</a>
     <a href="contact.html">Contact</a>
+    <a href="law.html">特商法</a>
   </div>
 </nav>
 
@@ -85,6 +93,7 @@ footer a{color:var(--gray);}
     <div class="hero-links">
       <a href="papers.html" class="btn btn-fill">論文を読む</a>
       <a href="https://zenodo.org/search?q=TheYKHC" class="btn" target="_blank">Zenodo</a>
+      <a href="https://www.amazon.co.jp/s?k=片山佳光" class="btn" target="_blank">Amazon</a>
     </div>
   </div>
 
@@ -122,6 +131,37 @@ footer a{color:var(--gray);}
       <p>分母ゼロの法則（V = N/D → ∞）と共鳴経済の倫理学。<br>光貨エンジンの理論をインタラクティブなプレゼン形式で体験する。</p>
     </div>
     <a href="https://hikari-engine-resonate.base44.app" target="_blank" class="btn btn-gold">体験する →</a>
+  </div>
+</div>
+
+<!-- Amazon書籍 -->
+<div class="container">
+  <div class="amazon-section">
+    <h2>📚 Amazon Kindle 出版</h2>
+    <p>片山佳光の思想体系をまとめた著作。Kindle Unlimitedでも読めます。</p>
+    <div class="amazon-books">
+      <div class="amazon-book">
+        <div>
+          <div class="amazon-book-title">V=N/D — 価値の方程式</div>
+          <div class="amazon-book-sub">英語版 / The Value Equation</div>
+        </div>
+        <a href="https://www.amazon.co.jp/dp/B0GX1HYWPD" target="_blank" class="btn btn-fill">読む →</a>
+      </div>
+      <div class="amazon-book">
+        <div>
+          <div class="amazon-book-title">朝食の食卓から宇宙へ</div>
+          <div class="amazon-book-sub">日常と宇宙をつなぐ思想エッセイ</div>
+        </div>
+        <a href="https://www.amazon.co.jp/dp/B0GX33NG9Z" target="_blank" class="btn btn-fill">読む →</a>
+      </div>
+      <div class="amazon-book">
+        <div>
+          <div class="amazon-book-title">食卓と宇宙のあいだ</div>
+          <div class="amazon-book-sub">V=N/D理論の実践的解説</div>
+        </div>
+        <a href="https://www.amazon.co.jp/dp/B0GX38ZZD4" target="_blank" class="btn btn-fill">読む →</a>
+      </div>
+    </div>
   </div>
 </div>
 
