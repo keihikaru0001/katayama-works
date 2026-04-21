@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ECHO | 話して光貨を稼げ — TheYKHC</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" />
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #06060f; color: #f0f0ff; font-family: 'Space Grotesk','Noto Sans JP',sans-serif; min-height: 100vh; }
+button { font-family: inherit; }
+input { font-family: inherit; }
+.dots-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.dot { position: absolute; border-radius: 50%; }
+#page { position: relative; z-index: 1; }
+
+/* GATE */
+#gate { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 40px 20px; text-align: center; }
+.brand { font-size: 10px; letter-spacing: 6px; color: #f0c040; text-transform: uppercase; margin-bottom: 28px; opacity: 0.7; }
+.moon-big { font-size: 56px; margin-bottom: 16px; }
+.headline { font-size: clamp(28px,6vw,60px); font-weight: 700; line-height: 1.1; margin-bottom: 16px; background: linear-gradient(135deg,#ffffff 0%,#f0c040 45%,#c084fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.sub1 { font-size: clamp(14px,2vw,17px); color: #777; max-width: 460px; line-height: 1.9; margin-bottom: 10px; }
+.sub2 { font-size: 13px; color: #444; max-width: 400px; line-height: 1.8; margin-bottom: 44px; }
+.badges { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 44px; }
+.badge { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 16px 22px; min-width: 110px; }
+.badge-icon { font-size: 22px; margin-bottom: 6px; }
+.badge-label { font-size: 13px; font-weight: 600; color: #e0e0f0; }
+.badge-sub { font-size: 11px; color: #444; margin-top: 3px; }
+.cta-btn { background: linear-gradient(135deg,#f0c040,#c084fc); color: #06060f; font-weight: 700; font-size: 16px; letter-spacing: 1px; border: none; border-radius: 50px; padding: 18px 52px; cursor: pointer; box-shadow: 0 0 40px rgba(240,192,64,0.35); }
+.cta-note { margin-top: 18px; font-size: 11px; color: #2a2a3a; letter-spacing: 1px; }
+.footer-tag { position: absolute; bottom: 20px; font-size: 10px; color: #1a1a2a; letter-spacing: 4px; text-transform: uppercase; }
+
+/* SELECT */
+#select { display: none; padding: 40px 20px; max-width: 560px; margin: 0 auto; min-height: 100vh; }
+.back-btn { background: none; border: none; color: #555; cursor: pointer; font-size: 13px; margin-bottom: 28px; letter-spacing: 1px; }
+.section-title { font-size: 11px; letter-spacing: 4px; color: #f0c040; text-transform: uppercase; margin-bottom: 10px; opacity: 0.7; }
+.section-h2 { font-size: clamp(22px,4vw,34px); font-weight: 700; margin-bottom: 8px; }
+.section-sub { color: #555; font-size: 13px; margin-bottom: 28px; }
+.char-list { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+.char-btn { background: rgba(255,255,255,0.03); border-radius: 18px; padding: 22px 24px; cursor: pointer; text-align: left; display: flex; align-items: center; gap: 18px; transition: background 0.2s; }
+.char-emoji { font-size: 32px; min-width: 40px; text-align: center; }
+.char-name { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.char-tagline { font-size: 13px; color: #aaa; margin-bottom: 3px; }
+.char-desc { font-size: 11px; color: #555; }
+
+/* HIKARI COUNTER */
+.hikari-counter { display: inline-flex; align-items: center; gap: 8px; background: rgba(240,192,64,0.08); border: 1px solid rgba(240,192,64,0.25); border-radius: 40px; padding: 6px 18px; transition: all 0.4s; }
+.hikari-counter.flash { background: rgba(240,192,64,0.25); border-color: rgba(240,192,64,0.7); box-shadow: 0 0 24px rgba(240,192,64,0.4); }
+.hikari-star { font-size: 13px; color: #f0c040; }
+.hikari-num { font-size: 18px; font-weight: 700; color: #f0c040; }
+.hikari-label { font-size: 11px; color: #888; letter-spacing: 1px; }
+
+/* CHAT */
+#chat { display: none; flex-direction: column; min-height: 100vh; }
+.chat-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid #111; background: rgba(6,6,15,0.97); position: sticky; top: 0; z-index: 10; }
+.chat-title-area { display: flex; align-items: center; gap: 12px; }
+.chat-emoji { font-size: 20px; }
+.chat-name { font-size: 15px; font-weight: 700; }
+.chat-brand { font-size: 10px; color: #333; letter-spacing: 1px; }
+.messages { flex: 1; overflow-y: auto; padding: 24px 16px; max-width: 620px; width: 100%; margin: 0 auto; }
+.msg-row { margin-bottom: 18px; display: flex; }
+.msg-row.fan { justify-content: flex-end; }
+.msg-row.artist { justify-content: flex-start; }
+.msg-char-emoji { font-size: 18px; margin-right: 8px; margin-top: 4px; }
+.bubble { max-width: 78%; border-radius: 18px; padding: 12px 16px; font-size: 14px; line-height: 1.85; white-space: pre-wrap; }
+.bubble.fan { background: rgba(240,192,64,0.1); border: 1px solid rgba(240,192,64,0.2); border-bottom-right-radius: 4px; }
+.bubble.artist { background: rgba(255,255,255,0.04); border-bottom-left-radius: 4px; }
+.bubble-song { margin-top: 6px; font-size: 11px; opacity: 0.7; }
+.typing { display: none; gap: 5px; margin-left: 30px; margin-bottom: 14px; align-items: center; }
+.typing-dot { width: 7px; height: 7px; border-radius: 50%; opacity: 0.5; }
+.lyric-cta { display: none; padding: 10px 16px; border-top: 1px solid #0d0d1a; background: rgba(6,6,15,0.95); max-width: 620px; width: 100%; margin: 0 auto; }
+.lyric-btn { width: 100%; font-weight: 700; font-size: 13px; border: none; border-radius: 10px; padding: 11px; cursor: pointer; letter-spacing: 1px; }
+.chat-input-area { padding: 14px 16px; background: rgba(6,6,15,0.97); border-top: 1px solid #111; max-width: 620px; width: 100%; margin: 0 auto; }
+.input-row { display: flex; gap: 8px; }
+.msg-input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid #1a1a2e; border-radius: 10px; padding: 11px 14px; color: #f0f0ff; font-size: 14px; outline: none; }
+.send-btn { border: none; border-radius: 10px; padding: 11px 18px; font-weight: 700; cursor: pointer; font-size: 14px; }
+.input-note { text-align: center; font-size: 10px; color: #2a2a3a; margin-top: 7px; letter-spacing: 1px; }
+
+/* LYRIC */
+#lyric { display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 40px 20px; text-align: center; position: relative; }
+.lyric-box { background: rgba(255,255,255,0.04); border-radius: 18px; padding: 28px; margin-bottom: 28px; font-size: 14px; line-height: 2; white-space: pre-wrap; color: #ddd; text-align: left; max-width: 460px; width: 100%; }
+.buy-hikari { background: rgba(240,192,64,0.05); border: 1px solid rgba(240,192,64,0.18); border-radius: 14px; padding: 18px; margin-bottom: 22px; max-width: 460px; width: 100%; }
+.buy-title { font-size: 13px; color: #f0c040; font-weight: 600; margin-bottom: 6px; }
+.buy-desc { font-size: 12px; color: #555; line-height: 1.75; margin-bottom: 14px; }
+.buy-link { display: inline-block; background: linear-gradient(135deg,#f0c040,#c084fc); color: #06060f; font-weight: 700; font-size: 12px; border-radius: 40px; padding: 9px 26px; text-decoration: none; letter-spacing: 1px; }
+.lyric-actions { display: flex; gap: 10px; justify-content: center; }
+.lyric-action-btn { background: rgba(255,255,255,0.04); border: 1px solid #1a1a2e; border-radius: 10px; padding: 10px 20px; color: #777; cursor: pointer; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="dots-bg" id="dotsBg"></div>
+
+<div id="page">
+
+<!-- GATE -->
+<div id="gate">
+  <div class="brand">T H E Y K H C &nbsp;·&nbsp; E C H O</div>
+  <div class="moon-big" id="moonEmoji">🌙</div>
+  <h1 class="headline">話して、光貨を稼げ。</h1>
+  <p class="sub1">会話1回 = <span style="color:#f0c040;font-weight:700">+光貨</span>。無料。登録不要。</p>
+  <p class="sub2">光貨が貯まると、歌詞が生まれる。<br>他には無い温度の対話が、ここにある。</p>
+  <div class="badges">
+    <div class="badge"><div class="badge-icon">✦</div><div class="badge-label">完全無料</div><div class="badge-sub">登録不要</div></div>
+    <div class="badge"><div class="badge-icon">🌙</div><div class="badge-label">光貨獲得</div><div class="badge-sub">会話するたびに</div></div>
+    <div class="badge"><div class="badge-icon">∞</div><div class="badge-label">4つの声</div><div class="badge-sub">Key · Sol · Luna · mu</div></div>
+  </div>
+  <button class="cta-btn" onclick="showSelect()">今すぐ話す — 無料</button>
+  <p class="cta-note">会話するだけで光貨が貯まる · 歌詞生成に使える</p>
+  <div class="footer-tag">TheYKHC Research — Fukui, Japan</div>
+</div>
+
+<!-- SELECT -->
+<div id="select">
+  <button class="back-btn" onclick="showGate()">← 戻る</button>
+  <div style="text-align:center">
+    <div class="section-title">E C H O</div>
+    <h2 class="section-h2">声を選べ</h2>
+    <p class="section-sub">4つの声。どれも本物だ。</p>
+    <div style="display:flex;justify-content:center;margin-bottom:8px">
+      <div class="hikari-counter" id="counterSelect"><span class="hikari-star">✦</span><span class="hikari-num" id="balanceSelect">5</span><span class="hikari-label">光貨</span></div>
+    </div>
+  </div>
+  <div class="char-list" id="charList"></div>
+</div>
+
+<!-- CHAT -->
+<div id="chat">
+  <div class="chat-header">
+    <div class="chat-title-area">
+      <button class="back-btn" style="margin:0;font-size:18px" onclick="showSelect()">←</button>
+      <span class="chat-emoji" id="chatEmoji"></span>
+      <div>
+        <div class="chat-name" id="chatName"></div>
+        <div class="chat-brand">ECHO · TheYKHC</div>
+      </div>
+    </div>
+    <div class="hikari-counter" id="counterChat"><span class="hikari-star">✦</span><span class="hikari-num" id="balanceChat">5</span><span class="hikari-label">光貨</span></div>
+  </div>
+  <div class="messages" id="messages"></div>
+  <div style="display:flex;gap:5px;margin-left:30px;margin-bottom:14px;padding:0 16px" id="typing">
+    <div class="typing-dot" id="td0"></div>
+    <div class="typing-dot" id="td1"></div>
+    <div class="typing-dot" id="td2"></div>
+  </div>
+  <div class="lyric-cta" id="lyricCta">
+    <button class="lyric-btn" id="lyricBtn" onclick="generateLyric()">この会話から歌詞を刻む（3光貨）</button>
+  </div>
+  <div class="chat-input-area">
+    <div class="input-row">
+      <input class="msg-input" id="msgInput" placeholder="何でも投げてくれ。言葉が光貨になる。" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMsg()}" />
+      <button class="send-btn" id="sendBtn" onclick="sendMsg()" style="background:#111;color:#333">送る</button>
+    </div>
+    <div class="input-note">会話1回 = +光貨 · 蓄積で歌詞生成が解放される</div>
+  </div>
+</div>
+
+<!-- LYRIC -->
+<div id="lyric">
+  <div style="font-size:40px;margin-bottom:18px" id="lyricEmoji"></div>
+  <div class="section-title" id="lyricColorTitle" style="margin-bottom:20px">刻まれた言葉</div>
+  <div class="lyric-box" id="lyricBox"></div>
+  <div style="display:flex;justify-content:center;margin-bottom:24px">
+    <div class="hikari-counter" id="counterLyric"><span class="hikari-star">✦</span><span class="hikari-num" id="balanceLyric">5</span><span class="hikari-label">光貨</span></div>
+  </div>
+  <div class="buy-hikari">
+    <div class="buy-title">光貨を増やす</div>
+    <div class="buy-desc">光貨で、もっと深い対話と歌詞が解放される。<br>特別なアクセスは光貨だけが鍵になる。</div>
+    <a class="buy-link" href="mailto:hikari@theykhc.com?subject=光貨について&body=ECHOで対話しました。光貨について教えてください。">光貨の詳細を聞く</a>
+  </div>
+  <div class="lyric-actions">
+    <button class="lyric-action-btn" onclick="showChat()">続けて話す</button>
+    <button class="lyric-action-btn" onclick="showSelect()">別の声と話す</button>
+  </div>
+</div>
+
+</div><!-- end #page -->
+
+<script>
+const CHARS = [
+  { key:"Key",  color:"#7c9fff", emoji:"🔑", tagline:"静けさの中に答えがある", desc:"預言的。言葉が少なく、重い。" },
+  { key:"Sol",  color:"#f0c040", emoji:"☀️", tagline:"燃料になれ。止まるな。",  desc:"情熱的。ぶつかってくる。" },
+  { key:"Luna", color:"#c084fc", emoji:"🌙", tagline:"全部、ここに置いていい。", desc:"刹那的。全てを受け取る。" },
+  { key:"mu",   color:"#4ade80", emoji:"∞",  tagline:"時間を超えて、繋がっている。", desc:"魂の繋がり。時間を超える。" },
+];
+
+let balance = 5;
+let currentChar = null;
+let msgs = [];
+let busy = false;
+let msgCount = 0;
+
+// Moon
+function getMoon() {
+  const c = Math.floor(Date.now()/86400000) % 30;
+  if(c<2) return "🌑"; if(c<8) return "🌒"; if(c<14) return "🌓";
+  if(c<16) return "🌕"; if(c<22) return "🌖"; if(c<28) return "🌘"; return "🌑";
+}
+document.getElementById("moonEmoji").textContent = getMoon();
+
+// Dots
+(function(){
+  const bg = document.getElementById("dotsBg");
+  const colors = ["#f0c040","#c084fc","#7c9fff","#4ade80"];
+  for(let i=0;i<40;i++){
+    const d = document.createElement("div");
+    d.className = "dot";
+    d.style.cssText = `left:${(i*37+11)%100}%;top:${(i*53+7)%100}%;width:${((i%3)+1)*2}px;height:${((i%3)+1)*2}px;background:${colors[i%4]};opacity:${0.15+(i%5)*0.05}`;
+    bg.appendChild(d);
+  }
+})();
+
+// Char list
+(function(){
+  const list = document.getElementById("charList");
+  CHARS.forEach(c => {
+    const btn = document.createElement("button");
+    btn.className = "char-btn";
+    btn.style.border = `1px solid ${c.color}44`;
+    btn.innerHTML = `<div class="char-emoji">${c.emoji}</div><div><div class="char-name" style="color:${c.color}">${c.key}</div><div class="char-tagline">${c.tagline}</div><div class="char-desc">${c.desc}</div></div>`;
+    btn.onclick = () => selectChar(c.key);
+    list.appendChild(btn);
+  });
+})();
+
+function updateCounters() {
+  ["Select","Chat","Lyric"].forEach(id => {
+    const el = document.getElementById("balance"+id);
+    if(el) el.textContent = balance;
+  });
+}
+
+function flashCounter(id) {
+  const el = document.getElementById("counter"+id);
+  if(!el) return;
+  el.classList.add("flash");
+  setTimeout(() => el.classList.remove("flash"), 800);
+}
+
+function showGate() { hideAll(); document.getElementById("gate").style.display="flex"; }
+function showSelect() { hideAll(); document.getElementById("select").style.display="block"; updateCounters(); }
+function showChat() { hideAll(); document.getElementById("chat").style.display="flex"; updateCounters(); }
+function showLyric() { hideAll(); document.getElementById("lyric").style.display="flex"; updateCounters(); }
+function hideAll() {
+  document.getElementById("gate").style.display="none";
+  document.getElementById("select").style.display="none";
+  document.getElementById("chat").style.display="none";
+  document.getElementById("lyric").style.display="none";
+}
+
+function detectEmotion(text) {
+  if(/辛|苦し|悲し|泣|痛|傷|消えたい|疲れ|限界/.test(text)) return "悲しみ";
+  if(/孤独|一人|誰もいない|寂し/.test(text)) return "孤独";
+  if(/怒|腹|許せない|悔し/.test(text)) return "怒り";
+  if(/希望|前に進|頑張|諦めたくない/.test(text)) return "希望";
+  if(/ありがとう|感謝|嬉し|幸せ|好き|愛/.test(text)) return "愛";
+  if(/怖|不安|迷|どうすれば/.test(text)) return "不安";
+  return "静けさ";
+}
+function calcHikari(emotion) {
+  if(["悲しみ","孤独"].includes(emotion)) return 4.5;
+  if(["希望","愛"].includes(emotion)) return 3.6;
+  return 3.0;
+}
+function makeReply(charKey, input, emotion, count) {
+  const cfg = CHARS.find(c=>c.key===charKey)||CHARS[0];
+  const tag = cfg.tagline;
+  if(count===0) return `受け取った。\n\n${tag}\n\n言葉が届いた。`;
+  if(count<3)   return `言葉が変わってきている。\n\n${tag}`;
+  return `${count+1}回目だ。\n\n${tag}\n\nここにいる。`;
+}
+
+function selectChar(key) {
+  currentChar = CHARS.find(c=>c.key===key);
+  msgs = [];
+  msgCount = 0;
+  document.getElementById("chatEmoji").textContent = currentChar.emoji;
+  document.getElementById("chatName").textContent = key;
+  document.getElementById("chatName").style.color = currentChar.color;
+  document.getElementById("lyricCta").style.display = "none";
+  document.getElementById("messages").innerHTML = "";
+  addMsg("a", `——${key}だ。\n\n${currentChar.tagline}\n\n言葉を投げてくれ。何でも。`);
+  showChat();
+  updateSendBtn();
+}
+
+function addMsg(role, text) {
+  const area = document.getElementById("messages");
+  const row = document.createElement("div");
+  row.className = `msg-row ${role==="f"?"fan":"artist"}`;
+  if(role==="a") {
+    const em = document.createElement("div");
+    em.className = "msg-char-emoji";
+    em.textContent = currentChar.emoji;
+    row.appendChild(em);
+  }
+  const bubble = document.createElement("div");
+  bubble.className = `bubble ${role==="f"?"fan":"artist"}`;
+  if(role==="a") bubble.style.border = `1px solid ${currentChar.color}22`;
+  bubble.textContent = text;
+  row.appendChild(bubble);
+  area.appendChild(row);
+  area.scrollTop = area.scrollHeight;
+}
+
+function updateSendBtn() {
+  const input = document.getElementById("msgInput").value;
+  const btn = document.getElementById("sendBtn");
+  if(input.trim() && !busy) {
+    btn.style.background = `linear-gradient(135deg,${currentChar.color},#c084fc)`;
+    btn.style.color = "#06060f";
+  } else {
+    btn.style.background = "#111";
+    btn.style.color = "#333";
+  }
+}
+document.getElementById("msgInput").addEventListener("input", updateSendBtn);
+
+function setTyping(show) {
+  const t = document.getElementById("typing");
+  t.style.display = show ? "flex" : "none";
+  if(show && currentChar) {
+    ["td0","td1","td2"].forEach(id => {
+      document.getElementById(id).style.background = currentChar.color;
+    });
+  }
+}
+
+async function sendMsg() {
+  const inputEl = document.getElementById("msgInput");
+  const txt = inputEl.value.trim();
+  if(!txt || busy) return;
+  busy = true; inputEl.value = ""; updateSendBtn();
+  const emotion = detectEmotion(txt);
+  const count = msgCount;
+  addMsg("f", txt);
+  setTyping(true);
+  await new Promise(r=>setTimeout(r,800));
+  setTyping(false);
+  const reply = makeReply(currentChar.key, txt, emotion, count);
+  addMsg("a", reply);
+  msgCount++;
+  const earned = Math.round(calcHikari(emotion) * 0.6 * 10)/10;
+  balance = Math.round((balance + earned)*10)/10;
+  updateCounters();
+  flashCounter("Chat");
+  if(msgCount >= 3) {
+    document.getElementById("lyricCta").style.display = "block";
+    updateLyricBtn();
+  }
+  busy = false; updateSendBtn();
+}
+
+function updateLyricBtn() {
+  const btn = document.getElementById("lyricBtn");
+  if(balance >= 3) {
+    btn.style.background = `linear-gradient(135deg,${currentChar.color},#c084fc)`;
+    btn.style.color = "#06060f";
+    btn.style.cursor = "pointer";
+    btn.textContent = "この会話から歌詞を刻む（3光貨）";
+  } else {
+    btn.style.background = "#111";
+    btn.style.color = "#333";
+    btn.style.cursor = "not-allowed";
+    btn.textContent = `光貨が足りない（現在 ${balance}光貨）`;
+  }
+}
+
+function generateLyric() {
+  if(balance < 3 || busy) return;
+  balance = Math.round((balance-3)*10)/10;
+  updateCounters();
+  const context = msgs.filter(m=>m.role==="f").map(m=>m.text).join("。");
+  const lyric = `——${currentChar.key}より\n\n${context.slice(0,40)}…\n\nその言葉が光になるとき、\n${currentChar.tagline}\n\n✦ TheYKHC`;
+  document.getElementById("lyricEmoji").textContent = currentChar.emoji;
+  document.getElementById("lyricColorTitle").style.color = currentChar.color;
+  document.getElementById("lyricBox").style.border = `1px solid ${currentChar.color}44`;
+  document.getElementById("lyricBox").textContent = lyric;
+  showLyric();
+}
+
+// init
+showGate();
+</script>
+</body>
+</html>
