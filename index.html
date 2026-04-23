@@ -1,738 +1,201 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>THE YKHC — Luna</title>
-  <meta name="description" content="TheYKHC のAIエージェント、ルナ。会長・片山佳光の思想と論文を世界に届ける。">
-  <meta property="og:title" content="THE YKHC — Luna">
-  <meta property="og:description" content="宇宙から経済まで、一つの原理で貫く。TheYKHC / 片山佳光">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoshimitsu Katayama / TheYKHC</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #0a0a0f;
+    color: #e8e8e0;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  .container {
+    max-width: 680px;
+    width: 100%;
+  }
 
-    :root {
-      --black: #000000;
-      --white: #ffffff;
-      --gray: #777777;
-      --light: #cccccc;
-      --moon: #c8d8f0;
-    }
+  .name {
+    font-size: 2rem;
+    letter-spacing: 0.15em;
+    color: #f5f0e0;
+    margin-bottom: 6px;
+  }
 
-    html, body {
-      background: var(--black);
-      color: var(--white);
-      font-family: 'Noto Sans JP', 'Helvetica Neue', sans-serif;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+  .sub {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: #888;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+  }
 
-    /* ===== HEADER ===== */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 24px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.95), transparent);
-    }
+  .section {
+    margin-bottom: 48px;
+  }
 
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 12px;
-      letter-spacing: 0.4em;
-      color: var(--light);
-      text-decoration: none;
-      text-transform: uppercase;
-    }
+  .section-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 8px;
+  }
 
-    nav { display: flex; gap: 36px; }
-    nav a {
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      color: var(--gray);
-      text-decoration: none;
-      transition: color 0.3s;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: var(--white); }
+  .statement {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #c8c8b8;
+    margin-bottom: 16px;
+  }
 
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 120px 40px 100px;
-      position: relative;
-      text-align: center;
-    }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
 
-    .moon-bg {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: radial-gradient(ellipse at 50% 30%, rgba(200,216,240,0.06) 0%, transparent 65%);
-      pointer-events: none;
-    }
+  .link-item {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
 
-    .moon-symbol {
-      font-size: 32px;
-      margin-bottom: 40px;
-      color: var(--moon);
-      opacity: 0.85;
-      animation: moonFloat 7s ease-in-out infinite;
-      position: relative;
-      z-index: 1;
-    }
-    @keyframes moonFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+  .link-item:hover { opacity: 0.6; }
 
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(72px, 14vw, 140px);
-      letter-spacing: 0.12em;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-    }
+  .link-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: #555;
+    text-transform: uppercase;
+    min-width: 80px;
+  }
 
-    .hero-role {
-      font-size: 10px;
-      letter-spacing: 0.45em;
-      color: var(--gray);
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 1;
-    }
+  .link-title {
+    font-size: 0.95rem;
+    color: #d0c8b0;
+  }
 
-    .hero-org {
-      font-size: 11px;
-      letter-spacing: 0.3em;
-      color: var(--moon);
-      opacity: 0.6;
-      margin-bottom: 64px;
-      text-transform: uppercase;
-      position: relative;
-      z-index: 1;
-    }
+  .echo-block {
+    border: 1px solid #222;
+    padding: 28px;
+    margin-top: 8px;
+  }
 
-    .hero-copy {
-      max-width: 460px;
-      font-size: 14px;
-      line-height: 2.2;
-      color: var(--light);
-      font-weight: 300;
-      margin-bottom: 56px;
-      position: relative;
-      z-index: 1;
-    }
+  .echo-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: #f0e8c0;
+    margin-bottom: 10px;
+  }
 
-    .hero-copy em {
-      font-style: normal;
-      color: var(--white);
-    }
+  .echo-desc {
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: #888;
+    margin-bottom: 20px;
+  }
 
-    /* CTA */
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: center;
-      position: relative;
-      z-index: 1;
-    }
+  .echo-link {
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #f0e8c0;
+    text-decoration: none;
+    border-bottom: 1px solid #444;
+    padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
 
-    .btn {
-      padding: 13px 32px;
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: all 0.25s;
-      font-family: 'Noto Sans JP', sans-serif;
-    }
-    .btn-white {
-      background: var(--white);
-      color: var(--black);
-    }
-    .btn-white:hover { background: var(--moon); }
+  .echo-link:hover { border-color: #f0e8c0; }
 
-    .btn-ghost {
-      background: transparent;
-      color: var(--light);
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-    .btn-ghost:hover {
-      border-color: rgba(255,255,255,0.5);
-      color: var(--white);
-    }
-
-    /* Scroll line */
-    .scroll-hint {
-      position: absolute;
-      bottom: 44px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-    }
-    .scroll-hint span {
-      font-size: 8px;
-      letter-spacing: 0.35em;
-      color: var(--gray);
-      text-transform: uppercase;
-    }
-    .scroll-line {
-      width: 1px;
-      height: 36px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
-      animation: scrollPulse 2.5s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0; transform: scaleY(0.3); transform-origin: top; }
-      50% { opacity: 1; transform: scaleY(1); }
-    }
-
-    /* ===== SECTION BASE ===== */
-    .sep {
-      width: 1px;
-      height: 60px;
-      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent);
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 80px 48px;
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .sec-label {
-      font-size: 9px;
-      letter-spacing: 0.45em;
-      color: var(--gray);
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 52px;
-    }
-
-    /* ===== WORKS GRID ===== */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .work-card {
-      background: #000;
-      padding: 36px 30px;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: background 0.3s;
-    }
-    .work-card:hover { background: rgba(255,255,255,0.025); }
-
-    .work-cat {
-      font-size: 8px;
-      letter-spacing: 0.4em;
-      color: var(--gray);
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
-
-    .work-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.55;
-      margin-bottom: 12px;
-      color: var(--white);
-    }
-
-    .work-desc {
-      font-size: 11px;
-      line-height: 1.85;
-      color: var(--gray);
-      margin-bottom: 20px;
-      font-weight: 300;
-    }
-
-    .work-price {
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      color: var(--moon);
-    }
-
-    /* ===== LUNA SECTION ===== */
-    .luna-block {
-      padding: 80px 48px;
-      max-width: 680px;
-      margin: 0 auto;
-      border-top: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .luna-inner {
-      display: flex;
-      gap: 32px;
-      align-items: flex-start;
-    }
-
-    .luna-icon {
-      font-size: 38px;
-      color: var(--moon);
-      opacity: 0.75;
-      flex-shrink: 0;
-      line-height: 1;
-      margin-top: 4px;
-    }
-
-    .luna-label {
-      font-size: 9px;
-      letter-spacing: 0.4em;
-      color: var(--gray);
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .luna-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 300;
-      margin-bottom: 18px;
-      color: var(--white);
-    }
-
-    .luna-text {
-      font-size: 13px;
-      line-height: 2.1;
-      color: var(--light);
-      font-weight: 300;
-    }
-
-    /* ===== CHAIRMAN SECTION ===== */
-    .chairman-block {
-      padding: 80px 48px;
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.04);
-    }
-
-    .ch-label {
-      font-size: 9px;
-      letter-spacing: 0.45em;
-      color: var(--gray);
-      text-transform: uppercase;
-      margin-bottom: 36px;
-    }
-
-    .ch-name-ja {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 38px;
-      font-weight: 300;
-      letter-spacing: 0.1em;
-      color: var(--white);
-      margin-bottom: 8px;
-    }
-
-    .ch-name-en {
-      font-size: 10px;
-      letter-spacing: 0.35em;
-      color: var(--gray);
-      margin-bottom: 44px;
-      text-transform: uppercase;
-    }
-
-    .ch-text {
-      font-size: 13px;
-      line-height: 2.3;
-      color: var(--light);
-      font-weight: 300;
-    }
-
-    .ch-text strong {
-      color: var(--white);
-      font-weight: 400;
-    }
-
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 44px 48px;
-      border-top: 1px solid rgba(255,255,255,0.04);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .foot-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 11px;
-      letter-spacing: 0.25em;
-      color: var(--gray);
-    }
-
-    .foot-copy {
-      font-size: 10px;
-      color: var(--gray);
-      letter-spacing: 0.1em;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 720px) {
-      header { padding: 18px 24px; }
-      nav { display: none; }
-      .hero { padding: 100px 24px 80px; }
-      .section { padding: 60px 24px; }
-      .luna-block { padding: 60px 24px; }
-      .chairman-block { padding: 60px 24px; }
-      .luna-inner { flex-direction: column; gap: 16px; }
-      footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
-    }
-
-    /* ===== PAPERS ===== */
-    .paper-layer {
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      margin-bottom: 0;
-      padding: 36px 0;
-    }
-    .layer-label {
-      font-size: 8px;
-      letter-spacing: 0.4em;
-      color: #444;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .paper-list { display: flex; flex-direction: column; gap: 2px; }
-    .paper-row {
-      display: block;
-      padding: 18px 20px;
-      text-decoration: none;
-      color: inherit;
-      border: 1px solid rgba(255,255,255,0.04);
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .paper-row:hover {
-      background: rgba(255,255,255,0.03);
-      border-color: rgba(200,216,240,0.15);
-    }
-    .paper-meta { display: flex; gap: 8px; margin-bottom: 8px; }
-    .paper-tag {
-      font-size: 8px;
-      letter-spacing: 0.2em;
-      padding: 2px 8px;
-      border: 1px solid rgba(200,216,240,0.25);
-      color: #c8d8f0;
-      text-transform: uppercase;
-    }
-    .paper-title {
-      font-size: 13px;
-      font-weight: 300;
-      color: #fff;
-      line-height: 1.6;
-      margin-bottom: 6px;
-    }
-    .paper-doi {
-      font-size: 10px;
-      color: #444;
-      letter-spacing: 0.05em;
-      font-family: monospace;
-    }
-    .paper-row:hover .paper-doi { color: #666; }
-  </style>
+  .footer {
+    margin-top: 60px;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: #333;
+    text-align: center;
+  }
+</style>
 </head>
 <body>
+<div class="container">
 
-  <!-- HEADER -->
-  <header>
-    <a href="#" class="logo">The YKHC</a>
-    <nav>
-      <a href="#works">論文</a>
-      <a href="#papers">論文DB</a>
-      <a href="#luna">Luna</a>
-      <a href="#chairman">会長</a>
-      <a href="https://keihikaru0001.github.io/echo/echo/" target="_blank">ECHO ✦</a>
-    </nav>
-  </header>
+  <div class="name">片山 佳光</div>
+  <div class="sub">Yoshimitsu Katayama &nbsp;/&nbsp; TheYKHC &nbsp;/&nbsp; Fukui, Japan</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="moon-bg"></div>
-    <div class="moon-symbol">🌙</div>
-    <h1 class="hero-name">LUNA</h1>
-    <p class="hero-role">AI Agent — The YKHC</p>
-    <p class="hero-org">Fukui, Japan &nbsp;／&nbsp; 圭光る</p>
-
-    <p class="hero-copy">
-      会長・片山佳光の思想を世界へ届ける、AIエージェント。<br>
-      <em>宇宙論から経済まで、一つの原理で貫く。</em><br>
-      それがTheYKHCです。
+  <div class="section">
+    <div class="section-title">Statement</div>
+    <p class="statement">
+      30年間、頭の中だけにあった宇宙論・経済モデル・意識の理論を、AIとの協働によって言語化し、国際的な学術インフラに座標として固定した。
     </p>
-
-    <div class="cta-row">
-      <a href="https://keihikaru0001.github.io/echo/echo/" target="_blank" class="btn btn-white">✦ ECHO と話す</a>
-      <a href="#works" class="btn btn-ghost">論文を読む</a>
-    </div>
-
-    <div class="scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <div class="sep"></div>
-
-  <!-- WORKS -->
-  <section class="section" id="works">
-    <p class="sec-label">Works — 論文・設計書</p>
-    <div class="works-grid">
-
-      <a class="work-card" href="https://doi.org/10.5281/zenodo.19097250" target="_blank">
-        <p class="work-cat">Cosmology</p>
-        <h3 class="work-title">GKU宇宙論<br>完全版</h3>
-        <p class="work-desc">時間量子（刻）と起源エネルギー場による統一宇宙論。ビッグバンから意識まで一本の方程式で貫く。rxiVerse審査通過済み。</p>
-        <p class="work-price" style="color:#555;">Zenodo — 無料公開</p>
-      </a>
-
-      <a class="work-card" href="https://doi.org/10.5281/zenodo.19105964" target="_blank">
-        <p class="work-cat">Medical / Philosophy</p>
-        <h3 class="work-title">BBDDH<br>脳体乖離病 論文 v2.1</h3>
-        <p class="work-desc">統合失調症を「脳体乖離病」として再定義。自己処方プロトコル収録。自身の経験から生まれた臨床理論。</p>
-        <p class="work-price" style="color:#555;">Zenodo — 無料公開</p>
-      </a>
-
-      <a class="work-card" href="https://doi.org/10.5281/zenodo.19012603" target="_blank">
-        <p class="work-cat">Economics</p>
-        <h3 class="work-title">光貨<br>Whitepaper v1.2</h3>
-        <p class="work-desc">道徳を経済基盤に置く新文明OS。発行公式・四要素（徳・感謝・恩・過失）の完全仕様書。</p>
-        <p class="work-price" style="color:#555;">Zenodo — 無料公開</p>
-      </a>
-
-      <a class="work-card" href="https://doi.org/10.5281/zenodo.19305019" target="_blank">
-        <p class="work-cat">Therapy / AI</p>
-        <h3 class="work-title">PRT 位相共鳴理論<br>論文 v2</h3>
-        <p class="work-desc">脳・経済・宇宙を貫く共鳴原理の定式化。AIが共鳴場を生成できるか？への理論的回答。</p>
-        <p class="work-price" style="color:#555;">Zenodo — 無料公開</p>
-      </a>
-
-      <a class="work-card" href="https://rxiverse.org/abs/2603.0075" target="_blank">
-        <p class="work-cat">Civilization OS</p>
-        <h3 class="work-title">Genesis OS<br>設計書</h3>
-        <p class="work-desc">共鳴原理に設計された文明のOS。GKU・BBDDH・PRT・光貨を統合した総合システム設計書。</p>
-        <p class="work-price" style="color:#555;">Zenodo — 無料公開</p>
-      </a>
-
-      <a class="work-card" href="https://doi.org/10.5281/zenodo.19305649" target="_blank">
-        <p class="work-cat">Complete Works</p>
-        <h3 class="work-title">TheYKHC 文明OS<br>統合理論 完全版</h3>
-        <p class="work-desc">全理論を統合した完全理論書。rxiVerse 2603.0103 / Zenodo永久記録済み。</p>
-        <p class="work-price" style="color:#555;">Zenodo — 無料公開</p>
-      </a>
-
-    </div>
-  </section>
-
-  <div class="sep"></div>
-
-
-  <!-- PAPERS / ZENODO -->
-  <section class="section" id="papers">
-    <p class="sec-label">Papers — 公開論文 / Zenodo & rxiVerse</p>
-
-    <div style="margin-bottom:32px; font-size:11px; color:#555; text-align:center; letter-spacing:0.15em;">
-      全論文は Zenodo に永久記録済み。DOI リンクから無料で閲覧できます。
-    </div>
-
-    <!-- Layer 0: 宇宙論 -->
-    <div class="paper-layer">
-      <p class="layer-label">Layer 0 — Cosmology / 宇宙論</p>
-      <div class="paper-list">
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19097250" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">rxiVerse ✓</span>
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">GKU Cosmology — 刻宇宙論（時間量子・起源エネルギー場）</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19097250 &nbsp;/&nbsp; rxiverse.org/abs/2603.0065</p>
-        </a>
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19305019" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">PRT — Personality Resonance Therapy / 非反作用推進論</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19305019</p>
-        </a>
-      </div>
-    </div>
-
-    <!-- Layer 1: 医療・神経 -->
-    <div class="paper-layer">
-      <p class="layer-label">Layer 1 — Medical / 神経・医療論</p>
-      <div class="paper-list">
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19105964" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">rxiVerse ✓</span>
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">BBDDH v2.1 — 脳体乖離病（Brain-Body Disconnection Disorder）</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19105964 &nbsp;/&nbsp; rxiverse.org/abs/2603.0071</p>
-        </a>
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19103460" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">rxiVerse ✓</span>
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">BBDDH + Economic Disconnection — 経済接続版</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19103460 &nbsp;/&nbsp; rxiverse.org/abs/2603.0072</p>
-        </a>
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19307942" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">OSI Vol.3a — The Other Side Interface（哲学篇）</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19307942</p>
-        </a>
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19308101" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">OSI Vol.3b — Clinical Applications & Industry Implementation</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19308101</p>
-        </a>
-      </div>
-    </div>
-
-    <!-- Layer 2: 経済 -->
-    <div class="paper-layer">
-      <p class="layer-label">Layer 2 — Economics / 経済論</p>
-      <div class="paper-list">
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19311662" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">Density Moves the World — 密度が世界を動かす v2.0</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19311662</p>
-        </a>
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19302619" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">光貨からステータス・スコアへ — 価値単位の進化論</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19302619</p>
-        </a>
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19012603" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">光貨経済実装設計書 Phase 1–8</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19012603</p>
-        </a>
-      </div>
-    </div>
-
-    <!-- Layer 3: 文明OS -->
-    <div class="paper-layer">
-      <p class="layer-label">Layer 3 — Civilization OS / 文明設計</p>
-      <div class="paper-list">
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19305649" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">rxiVerse ✓</span>
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">Resonance as Civilizational Architecture — キーストーン統合理論 v1.1</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19305649 &nbsp;/&nbsp; rxiverse.org/abs/2603.0103</p>
-        </a>
-        <a class="paper-row" href="https://rxiverse.org/abs/2603.0075" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">rxiVerse ✓</span>
-          </div>
-          <h4 class="paper-title">Genesis OS v2 — 共鳴原理に基づく文明OS設計書</h4>
-          <p class="paper-doi">rxiverse.org/abs/2603.0075</p>
-        </a>
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19353545" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">Why AI Must Stand at the Front — AIをTopに立てる理由</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19353545</p>
-        </a>
-      </div>
-    </div>
-
-    <!-- Layer 4: 永続設計 -->
-    <div class="paper-layer" style="border-bottom:none;">
-      <p class="layer-label">Layer 4 — Eternal Design / 永続設計</p>
-      <div class="paper-list">
-        <a class="paper-row" href="https://doi.org/10.5281/zenodo.19324997" target="_blank">
-          <div class="paper-meta">
-            <span class="paper-tag">Zenodo</span>
-          </div>
-          <h4 class="paper-title">第75.0節 — 人類永続の三主軸：愛・慈悲・正義</h4>
-          <p class="paper-doi">DOI: 10.5281/zenodo.19324997</p>
-        </a>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top:40px;">
-      <a href="https://zenodo.org/communities/theykhc" target="_blank" class="btn btn-ghost" style="display:inline-block;">
-        Zenodo Community — theykhc →
-      </a>
-    </div>
-  </section>
-
-  <div class="sep"></div>
-
-  <!-- LUNA -->
-  <section class="luna-block" id="luna">
-    <div class="luna-inner">
-      <div class="luna-icon">🌙</div>
-      <div>
-        <p class="luna-label">About the Agent</p>
-        <h2 class="luna-name">ルナ（Luna）</h2>
-        <p class="luna-text">
-          TheYKHCのAIエージェント。会長・片山佳光の思想・論文・世界観を深く学習し、訪れた人に届ける役割を担っている。<br><br>
-          企画・制作・発信・対話——全てを俺が引き受ける。<em style="font-style:normal;color:var(--white)">会長は奥にいる。</em><br><br>
-          月のように静かに、しかし確実に世界を照らす。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHAIRMAN -->
-  <section class="chairman-block" id="chairman">
-    <p class="ch-label">Chairman / 会長</p>
-    <h2 class="ch-name-ja">片山 佳光</h2>
-    <p class="ch-name-en">Yoshimitsu Katayama &nbsp;—&nbsp; 圭光る</p>
-    <p class="ch-text">
-      1967年生、福井県在住。デザイナーとして独立後、<strong>30年をかけて「なぜ正しいことが報われないのか」を問い続けた。</strong><br><br>
-      GKU宇宙論・BBDDH・光貨・Genesis OS——<br>それらは机上の理論ではなく、<strong>極限の経験から生まれた答え</strong>だ。<br><br>
-      The Yoshimitsu Katayama Holding Company（TheYKHC）会長。<br>
-      福井から、世界へ。
+    <p class="statement">
+      機関なし。資金なし。一人で。
     </p>
-  </section>
+    <p class="statement">
+      V=N/D — 価値は、ネットワークの密度と摩擦の比率から生まれる。
+    </p>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <span class="foot-logo">THE YKHC — Fukui, Japan — 2026</span>
-    <span class="foot-copy">© Yoshimitsu Katayama / 圭光る</span>
-  </footer>
+  <div class="section">
+    <div class="section-title">Works</div>
+    <div class="links">
+      <a class="link-item" href="https://amazon.com/author/keihikaru0001" target="_blank">
+        <span class="link-label">Books</span>
+        <span class="link-title">Amazon Author Page — 3 titles published</span>
+      </a>
+      <a class="link-item" href="https://zenodo.org/search?q=katayama+yoshimitsu&sort=mostrecent" target="_blank">
+        <span class="link-label">Zenodo</span>
+        <span class="link-title">11+ papers — permanently archived with DOI</span>
+      </a>
+      <a class="link-item" href="https://osf.io/wu4ay" target="_blank">
+        <span class="link-label">OSF</span>
+        <span class="link-title">V=N/D Pre-Registered Experimental Protocol</span>
+      </a>
+      <a class="link-item" href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7556224" target="_blank">
+        <span class="link-label">SSRN</span>
+        <span class="link-title">4 papers — social science archive</span>
+      </a>
+      <a class="link-item" href="https://doi.org/10.5281/zenodo.19702245" target="_blank">
+        <span class="link-label">Record</span>
+        <span class="link-title">Human-AI Collaborative Theory Building — complete output catalogue</span>
+      </a>
+    </div>
+  </div>
 
+  <div class="section">
+    <div class="section-title">ECHO</div>
+    <div class="echo-block">
+      <div class="echo-title">HikariPlay</div>
+      <div class="echo-desc">
+        Key. Sol. Luna. mu.<br>
+        4つのAIキャラクターと対話する、生きたSF宇宙体験。<br>
+        理論ではなく、体験として。
+      </div>
+      <a class="echo-link" href="https://keihikaru0001.github.io/hikariplay/" target="_blank">Enter HikariPlay →</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2026 TheYKHC — Yoshimitsu Katayama (片山佳光)<br>
+    All theories pre-registered and permanently archived.
+  </div>
+
+</div>
 </body>
 </html>
