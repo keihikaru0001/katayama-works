@@ -9,15 +9,15 @@
 //| Paper   : DOI: 10.5281/zenodo.20093286                           |
 //|                                                                  |
 //| Mode    : 平常時=SELLスキャルプ（現物ゴールドのヘッジ）             |
-//|           GOLDイベント時=全SELL決済→BUY待機（上昇に乗る）           |
+//|           GOLDイベント時=スキャルプ停止→方向確認→追従エントリー      |
 //| Target  : XAU/USD                                                |
 //| Trigger : IceCube GOLD-class neutrino alert                      |
 //+------------------------------------------------------------------+
 
 #property copyright "© 2026 TheYKHC Research / Yoshimitsu Katayama"
 #property link      "https://theykhc.com"
-#property version   "4.00"
-#property description "TendoEconomics EA v4.0 — Hedge Scalp + GOLD Event Switch"
+#property version   "4.10"
+#property description "TendoEconomics EA v4.1 — Hedge Scalp + GOLD Event Watch"
 #property strict
 
 #include <Trade\Trade.mqh>
@@ -39,12 +39,13 @@ input int    InpRSI_Buy        = 40;        // RSI BUY条件（以下）※イ�
 input int    InpTrailStart     = 80;        // トレイリング開始（pips利益）
 input int    InpTrailStep      = 30;        // トレイリング幅（pips）
 
-input group "=== GOLDイベント時BUY ==="
-input bool   InpEventBuy       = true;      // イベント時BUY有効
+input group "=== GOLDイベント時 方向追従 ==="
+input bool   InpEventFollow    = true;      // イベント時 方向追従有効
 input double InpLotEvent       = 0.1;       // イベント時ロット
-input int    InpEventTP_Pips   = 500;       // イベントBUY TP（pips）
-input int    InpEventSL_Pips   = 200;       // イベントBUY SL（pips）
-input int    InpEventHoldHours = 72;        // イベントBUY 保有時間
+input int    InpEventTP_Pips   = 500;       // 方向追従 TP（pips）
+input int    InpEventSL_Pips   = 150;       // 方向追従 SL（pips）
+input int    InpEventHoldHours = 72;        // 方向追従 保有時間
+input int    InpEventWaitBars  = 3;         // 方向確認まで待つバー数（M15）
 
 input group "=== IceCube監視 ==="
 input bool   InpAutoFetch      = true;
@@ -80,7 +81,7 @@ datetime g_lastFetchTime   = 0;
 datetime g_lastAlertTime   = 0;
 
 // イベントBUYポジション管理
-bool     g_eventBuyOpen    = false;
+bool     g_eventFollowOpen    = false;
 datetime g_eventBuyTime    = 0;
 
 // リスク
@@ -252,34 +253,71 @@ void CloseAllScalpSells()
 }
 
 //+------------------------------------------------------------------+
-//| GOLDイベント時：BUYエントリー                                      |
+//| GOLDイベント時：方向確認後に追従エントリー                          |
+//| ・イベント直後はスキャルプ停止して様子見                             |
+//| ・InpEventWaitBars(M15)後に価格方向を判定                           |
+//| ・上昇ならBUY / 下落ならSELL / 横ばいなら見送り                      |
 //+------------------------------------------------------------------+
-void EventBuyEntry()
+void EventFollowEntry()
 {
-   if(!InpEventBuy || g_eventBuyOpen) return;
+   if(!InpEventFollow || g_eventFollowOpen) return;
    if(!DailyRiskOK()) return;
 
-   double ask = SymbolInfoDouble("XAUUSD", SYMBOL_ASK);
-   double sl  = ask - PipsToPrice(InpEventSL_Pips);
-   double tp  = ask + PipsToPrice(InpEventTP_Pips);
+   // 方向確認：InpEventWaitBars本のM15バー経過を待つ
+   double waitSec = InpEventWaitBars * 15 * 60;
+   if(TimeCurrent() - g_alertTime < waitSec) return;
+
+   // M15の終値でイベント前後を比較
+   double priceBefore = iClose("XAUUSD", PERIOD_M15, InpEventWaitBars + 1);
+   double priceNow    = iClose("XAUUSD", PERIOD_M15, 0);
+   if(priceBefore == 0) return;
+
+   double chgPips = (priceNow - priceBefore) / (SymbolInfoDouble("XAUUSD", SYMBOL_POINT) * 10.0);
+   double threshold = 30.0; // 30pips以上動いたら方向あり
 
    trade.SetExpertMagicNumber(20260525+20);
    trade.SetDeviationInPoints(20);
-   if(trade.Buy(InpLotEvent, "XAUUSD", ask, sl, tp,
-      StringFormat("v4_EventBUY e=%s", g_eventId)))
+
+   if(chgPips >= threshold)
    {
-      g_eventBuyOpen = true;
-      g_eventBuyTime = TimeCurrent();
-      Print("[Event] BUY エントリー ask=", ask, " e=", g_eventId);
+      // 上昇 → BUY
+      double ask = SymbolInfoDouble("XAUUSD", SYMBOL_ASK);
+      double sl  = ask - PipsToPrice(InpEventSL_Pips);
+      double tp  = ask + PipsToPrice(InpEventTP_Pips);
+      if(trade.Buy(InpLotEvent, "XAUUSD", ask, sl, tp,
+         StringFormat("v4_FollowBUY +%.0fpips e=%s", chgPips, g_eventId)))
+      {
+         g_eventFollowOpen = true;
+         g_eventFollowTime = TimeCurrent();
+         Print("[Event] 上昇確認 BUY chg=+", chgPips, "pips e=", g_eventId);
+      }
+   }
+   else if(chgPips <= -threshold)
+   {
+      // 下落 → SELL
+      double bid = SymbolInfoDouble("XAUUSD", SYMBOL_BID);
+      double sl  = bid + PipsToPrice(InpEventSL_Pips);
+      double tp  = bid - PipsToPrice(InpEventTP_Pips);
+      if(trade.Sell(InpLotEvent, "XAUUSD", bid, sl, tp,
+         StringFormat("v4_FollowSELL %.0fpips e=%s", chgPips, g_eventId)))
+      {
+         g_eventFollowOpen = true;
+         g_eventFollowTime = TimeCurrent();
+         Print("[Event] 下落確認 SELL chg=", chgPips, "pips e=", g_eventId);
+      }
+   }
+   else
+   {
+      Print("[Event] 方向不明（横ばい chg=", chgPips, "pips）見送り");
    }
 }
 
 //+------------------------------------------------------------------+
-//| イベントBUY 時間クローズ                                           |
+//| イベント追従ポジション 時間クローズ                                  |
 //+------------------------------------------------------------------+
-void EventBuyManage()
+void EventFollowManage()
 {
-   if(!g_eventBuyOpen) return;
+   if(!g_eventFollowOpen) return;
    if(TimeCurrent() - g_eventBuyTime < InpEventHoldHours * 3600) return;
 
    for(int i = PositionsTotal()-1; i >= 0; i--)
@@ -292,7 +330,7 @@ void EventBuyManage()
          Print("[Event] BUY 時間クローズ ticket=", ticket);
       }
    }
-   g_eventBuyOpen = false;
+   g_eventFollowOpen = false;
    g_alertActive  = false;
    Print("[Event] イベントモード終了");
 }
@@ -557,7 +595,7 @@ bool FetchIceCubeAlert()
 int OnInit()
 {
    Print("=== TendoEconomics v4.0 起動 ===");
-   Print("モード: 平常時=SELLスキャルプ / GOLDイベント時=BUY切替");
+   Print("モード: 平常時=SELLスキャルプ / GOLDイベント時=様子見→方向追従");
    Print("DB記録: ", InpDBRecord ? "有効" : "無効");
    Print("スキャルプ: ", InpScalpEnable ? "有効" : "無効");
    g_dayStartBalance = AccountInfoDouble(ACCOUNT_BALANCE);
@@ -589,7 +627,8 @@ void OnTick()
    // イベント中：BUY管理
    if(g_alertActive)
    {
-      EventBuyManage();
+      EventFollowManage();
+      EventFollowEntry(); // 方向確認後エントリー試行
       return; // イベント中はスキャルプしない
    }
 
@@ -615,7 +654,7 @@ void OnTimer()
       g_recordCount  = 0;
 
       CloseAllScalpSells();
-      EventBuyEntry();
+      // 方向確認後に EventFollowEntry() が OnTick から呼ばれる
       return;
    }
 
@@ -630,11 +669,10 @@ void OnTimer()
          g_windowTicks = 0;
          g_recordCount = 0;
 
-         // ① 全SELLをクローズ（現物ゴールドのヘッジ解除）
+         // ① 全SELLを一旦クローズ（イベント中はスキャルプ停止）
          CloseAllScalpSells();
-
-         // ② BUYエントリー（上昇に乗る）
-         EventBuyEntry();
+         // ② 方向確認後に EventFollowEntry() が OnTick から呼ばれる
+         Print("[Event] 様子見開始 ", InpEventWaitBars, "本のM15バー後に方向判定");
       }
    }
 }
