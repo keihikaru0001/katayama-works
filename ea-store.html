@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TendoEconomics EA Store — TheYKHC Research</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#0a0a0f;
+    color:#e8e8e8;
+    font-family:'Helvetica Neue',Arial,sans-serif;
+    min-height:100vh;
+  }
+
+  /* HEADER */
+  header {
+    text-align:center;
+    padding:60px 20px 40px;
+    border-bottom:1px solid #1e1e2e;
+  }
+  header .brand {
+    font-size:11px;
+    letter-spacing:4px;
+    color:#6c6c8a;
+    text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  header h1 {
+    font-size:32px;
+    font-weight:300;
+    letter-spacing:2px;
+    color:#ffffff;
+    margin-bottom:12px;
+  }
+  header p {
+    font-size:14px;
+    color:#6c6c8a;
+    max-width:500px;
+    margin:0 auto;
+    line-height:1.7;
+  }
+  header .doi {
+    margin-top:16px;
+    font-size:11px;
+    color:#3a3a5a;
+    letter-spacing:1px;
+  }
+  header .doi a {
+    color:#4a4a8a;
+    text-decoration:none;
+  }
+
+  /* MAIN */
+  main {
+    max-width:900px;
+    margin:0 auto;
+    padding:60px 20px;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size:10px;
+    letter-spacing:4px;
+    color:#3a3a5a;
+    text-transform:uppercase;
+    margin-bottom:32px;
+    text-align:center;
+  }
+
+  /* EA CARDS GRID */
+  .grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+    gap:20px;
+    margin-bottom:80px;
+  }
+
+  .card {
+    background:#0f0f1a;
+    border:1px solid #1e1e2e;
+    border-radius:8px;
+    padding:28px;
+    transition:border-color 0.2s;
+    position:relative;
+  }
+  .card:hover { border-color:#2e2e4e; }
+
+  .card .version {
+    font-size:10px;
+    letter-spacing:3px;
+    color:#3a3a5a;
+    text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .card h2 {
+    font-size:18px;
+    font-weight:400;
+    color:#ffffff;
+    margin-bottom:8px;
+    letter-spacing:0.5px;
+  }
+  .card .tagline {
+    font-size:12px;
+    color:#5a5a7a;
+    margin-bottom:20px;
+    line-height:1.6;
+  }
+  .card .features {
+    list-style:none;
+    margin-bottom:24px;
+  }
+  .card .features li {
+    font-size:12px;
+    color:#6c6c8a;
+    padding:4px 0;
+    border-bottom:1px solid #0f0f1a;
+  }
+  .card .features li::before {
+    content:"— ";
+    color:#2e2e4e;
+  }
+
+  .card .price {
+    font-size:24px;
+    font-weight:300;
+    color:#ffffff;
+    margin-bottom:16px;
+  }
+  .card .price span {
+    font-size:13px;
+    color:#3a3a5a;
+    margin-left:4px;
+  }
+
+  .card .badge {
+    position:absolute;
+    top:16px;
+    right:16px;
+    font-size:9px;
+    letter-spacing:2px;
+    padding:4px 8px;
+    border-radius:2px;
+    text-transform:uppercase;
+  }
+  .badge-latest {
+    background:#0a1a0a;
+    border:1px solid #1a3a1a;
+    color:#3a8a3a;
+  }
+  .badge-legacy {
+    background:#1a1a0a;
+    border:1px solid #2a2a0a;
+    color:#5a5a2a;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display:block;
+    width:100%;
+    padding:13px;
+    text-align:center;
+    border-radius:4px;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    text-decoration:none;
+    transition:all 0.2s;
+    cursor:pointer;
+    border:none;
+  }
+  .btn-primary {
+    background:#ffffff;
+    color:#0a0a0f;
+    font-weight:500;
+  }
+  .btn-primary:hover { background:#d0d0e0; }
+  .btn-secondary {
+    background:transparent;
+    color:#3a3a5a;
+    border:1px solid #1e1e2e;
+  }
+  .btn-secondary:hover { border-color:#3a3a5a; color:#6c6c8a; }
+
+  /* UPGRADE NOTICE */
+  .upgrade-notice {
+    text-align:center;
+    padding:20px;
+    background:#0f0f1a;
+    border:1px solid #1e1e2e;
+    border-radius:4px;
+    margin-bottom:80px;
+    font-size:12px;
+    color:#3a3a5a;
+    line-height:1.8;
+  }
+  .upgrade-notice a {
+    color:#4a4a8a;
+    text-decoration:none;
+  }
+
+  /* THEORY */
+  .theory {
+    border-top:1px solid #1e1e2e;
+    padding-top:60px;
+    margin-bottom:60px;
+  }
+  .theory h3 {
+    font-size:13px;
+    font-weight:400;
+    color:#6c6c8a;
+    margin-bottom:20px;
+    letter-spacing:1px;
+  }
+  .theory p {
+    font-size:13px;
+    color:#3a3a5a;
+    line-height:1.9;
+    max-width:600px;
+  }
+  .theory .formula {
+    font-size:20px;
+    color:#2e2e4e;
+    margin:20px 0;
+    letter-spacing:4px;
+    font-weight:300;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align:center;
+    padding:40px 20px;
+    border-top:1px solid #1e1e2e;
+    font-size:11px;
+    color:#2e2e2e;
+    letter-spacing:1px;
+    line-height:2;
+  }
+  footer a { color:#3a3a5a; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">TheYKHC Research</div>
+  <h1>TendoEconomics EA</h1>
+  <p>IceCube neutrino alerts as market triggers.<br>Algorithmic implementation of the Social Transmission Hypothesis.</p>
+  <div class="doi">
+    <a href="https://zenodo.org/records/20093286" target="_blank">
+      DOI: 10.5281/zenodo.20093286
+    </a>
+    &nbsp;·&nbsp; Yoshimitsu Katayama &nbsp;·&nbsp; ORCID: 0009-0006-2290-6593
+  </div>
+</header>
+
+<main>
+
+  <div class="section-label">Available Versions</div>
+
+  <div class="grid">
+
+    <!-- v3.2 LATEST -->
+    <div class="card">
+      <span class="badge badge-latest">Latest</span>
+      <div class="version">Version 3.2</div>
+      <h2>Full Observatory</h2>
+      <p class="tagline">Event recording + daily baseline comparison. Anomaly score derived from real market data.</p>
+      <ul class="features">
+        <li>IceCube GOLD alert auto-detection</li>
+        <li>H1 main position (72h hold)</li>
+        <li>M1 momentum scalp</li>
+        <li>Tick density recording (30s intervals)</li>
+        <li>Daily baseline auto-recording</li>
+        <li>Live anomaly score vs baseline</li>
+        <li>Base44 DB auto-upload</li>
+      </ul>
+      <div class="price">$147 <span>one-time</span></div>
+      <a class="btn btn-primary" href="https://buy.stripe.com/28E8wQ1nu7xL8GGerw6kg0i" target="_blank">Buy v3.2</a>
+    </div>
+
+    <!-- v3.0 -->
+    <div class="card">
+      <span class="badge badge-legacy">Legacy</span>
+      <div class="version">Version 3.0</div>
+      <h2>Dual Timeframe</h2>
+      <p class="tagline">H1 trend + M1 scalp. Neutrino wave social propagation model implemented.</p>
+      <ul class="features">
+        <li>IceCube GOLD alert auto-detection</li>
+        <li>H1 main position (72h hold)</li>
+        <li>M1 RSI + EMA scalp</li>
+        <li>Composite score (9 assets)</li>
+        <li>Tick DB recording</li>
+      </ul>
+      <div class="price">$97 <span>one-time</span></div>
+      <a class="btn btn-secondary" href="https://buy.stripe.com/28E8wQ1nu7xL8GGerw6kg0i" target="_blank">Buy v3.0</a>
+    </div>
+
+    <!-- COMING SOON placeholder -->
+    <div class="card" style="opacity:0.4;">
+      <div class="version">Version 4.0</div>
+      <h2>In Development</h2>
+      <p class="tagline">Multi-asset expansion. Silver, platinum, energy ETF triggers. Coming after CSS window observation.</p>
+      <ul class="features">
+        <li>Multi-symbol entry logic</li>
+        <li>Cross-asset anomaly detection</li>
+        <li>Mechanism-verified signals</li>
+      </ul>
+      <div class="price">TBD</div>
+      <span class="btn btn-secondary" style="cursor:default;">Coming Soon</span>
+    </div>
+
+  </div>
+
+  <!-- UPGRADE NOTICE -->
+  <div class="upgrade-notice">
+    Already purchased a previous version?<br>
+    Contact us for an upgrade discount.<br>
+    <a href="mailto:lineofsuccession@icloud.com">lineofsuccession@icloud.com</a>
+  </div>
+
+  <!-- THEORY -->
+  <div class="theory">
+    <h3>Theoretical Foundation</h3>
+    <div class="formula">V = N / D</div>
+    <p>
+      High-density IceCube neutrino events (GOLD-class) form interference patterns as they pass through Earth.
+      These patterns induce probabilistic fluctuations in neural ion channels at a collective scale,
+      manifesting as measurable shifts in market tick density within seconds of GCN publication.
+      <br><br>
+      This EA detects those shifts and acts on the Social Transmission Hypothesis —
+      that cosmic events amplify human economic intent, activating capital flows across
+      safe-haven and energy assets simultaneously.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 TheYKHC Research / Yoshimitsu Katayama<br>
+  <a href="https://theykhc.com">theykhc.com</a>
+  &nbsp;·&nbsp;
+  <a href="https://zenodo.org/records/20093286">Research Paper</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:lineofsuccession@icloud.com">Contact</a>
+  <br><br>
+  This EA is an experimental research tool. Past performance does not guarantee future results.
+  Trade at your own risk.
+</footer>
+
+</body>
+</html>
