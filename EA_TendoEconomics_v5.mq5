@@ -64,7 +64,7 @@ input int    InpCooldownHours  = 168;
 
 input group "=== DB記録 ==="
 input bool   InpDBRecord       = true;
-input string InpDBEndpoint     = "https://app.base44.com/api/apps/69d570145faf332412ad4c73/entities";
+input string InpDBEndpoint     = "https://luna-12ad4c73.base44.app/functions/recordTick";
 input string InpDBApiKey       = "";
 
 input group "=== リスク管理 ==="
