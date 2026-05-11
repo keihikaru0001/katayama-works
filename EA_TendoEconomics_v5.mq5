@@ -51,9 +51,9 @@ input double InpW_Korea        = 0.04;      // ⑥ 韓国株
 input double InpW_UK           = 0.02;      // ⑦ 英国労働意欲（GBP）
 
 input group "=== 月齢・バイオリズム ==="
-input int    InpBirthYear      = 1980;      // 生年（バイオリズム用）
-input int    InpBirthMonth     = 1;
-input int    InpBirthDay       = 1;
+input int    InpBirthYear      = 1970;      // 生年（バイオリズム用）
+input int    InpBirthMonth     = 8;
+input int    InpBirthDay       = 12;
 
 input group "=== IceCube GOLDイベント ==="
 input bool   InpGoldEventBoost = true;      // GOLDイベント時スコアブースト
