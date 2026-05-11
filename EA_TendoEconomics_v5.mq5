@@ -546,6 +546,42 @@ void TryEntry(double buyScore, double sellScore)
 }
 
 //+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
+//| DB送信（Backend Function経由）                                    |
+//+------------------------------------------------------------------+
+bool SendToDBTick(string event_id, string window_type, double bid, double ask,
+                  double spread, double volume, double tick_density,
+                  double bid_velocity, double anomaly_score, int seconds_after)
+{
+   if(StringLen(InpDBEndpoint) < 5 || StringLen(InpDBApiKey) < 3) return false;
+
+   string headers = "Content-Type: application/json\r\nx-api-key: " + InpDBApiKey + "\r\n";
+   string body = StringFormat(
+      "{\"event_id\":\"%s\",\"symbol\":\"%s\",\"seconds_after_gcn\":%d,"
+      "\"tick_density\":%.4f,\"bid_velocity\":%.4f,\"spread\":%.4f,"
+      "\"volume\":%.2f,\"bid\":%.2f,\"ask\":%.2f,"
+      "\"anomaly_score\":%.4f,\"window\":\"%s\",\"note\":\"v5.0 auto\"}",
+      event_id, _Symbol, seconds_after,
+      tick_density, bid_velocity, spread,
+      volume, bid, ask,
+      anomaly_score, window_type
+   );
+
+   char post[], result[];
+   string resHeaders;
+   StringToCharArray(body, post, 0, StringLen(body));
+
+   int res = WebRequest("POST", InpDBEndpoint, headers, 10000, post, result, resHeaders);
+   if(res == 200 || res == 201)
+   {
+      Print("[v5] DB送信OK event=", event_id, " window=", window_type);
+      return true;
+   }
+   Print("[v5] DB送信失敗 code=", res, " body=", CharArrayToString(result));
+   return false;
+}
+
 //| OnInit                                                            |
 //+------------------------------------------------------------------+
 int OnInit()
@@ -556,6 +592,13 @@ int OnInit()
    g_dayStartBalance = AccountInfoDouble(ACCOUNT_BALANCE);
    g_lastFetchTime   = TimeCurrent() - InpFetchIntervalH * 3600;
    EventSetTimer(3600); // 1時間ごとにGCN確認
+   // 起動時DB疎通テスト
+   bool dbOk = SendToDBTick("BOOT_TEST","BOOT",
+      SymbolInfoDouble(_Symbol,SYMBOL_BID),
+      SymbolInfoDouble(_Symbol,SYMBOL_ASK),
+      0,0,0,0,0,0);
+   if(dbOk) Alert("[v5] DB接続OK！起動テスト成功");
+   else     Alert("[v5] DB接続失敗。APIキーとURL確認してください");
    return INIT_SUCCEEDED;
 }
 
