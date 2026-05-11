@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>TendoEconomics EA — Neutrino-Correlated Gold Trading System</title>
+<style>
+  :root {
+    --gold: #c9a84c;
+    --gold2: #f0d080;
+    --dark: #080c14;
+    --dark2: #0d1520;
+    --dark3: #111d2e;
+    --text: #e8e8e8;
+    --sub: #8a9ab0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top:0; left:0; right:0; z-index:100;
+    background: rgba(8,12,20,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    display: flex; align-items:center; justify-content:space-between;
+    padding: 0 40px; height: 64px;
+  }
+  .nav-logo {
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--gold); letter-spacing: 1px;
+  }
+  .nav-links { display:flex; gap:32px; }
+  .nav-links a {
+    color: var(--sub); text-decoration:none;
+    font-size: 0.9rem; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items:center; justify-content:center;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 80%, rgba(0,60,120,0.15) 0%, transparent 50%),
+      var(--dark);
+    padding: 80px 20px 60px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content:'';
+    position:absolute; inset:0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    font-size: 0.75rem; letter-spacing: 2px; text-transform:uppercase;
+    padding: 6px 16px; border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 800; line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-size: 1.1rem; color: var(--sub);
+    max-width: 600px; margin: 0 auto 40px;
+  }
+  .ticker-row {
+    display: flex; gap: 24px; justify-content:center; flex-wrap:wrap;
+    margin-bottom: 48px; font-size: 0.85rem; color: var(--sub);
+  }
+  .ticker { display:flex; align-items:center; gap:6px; }
+  .ticker-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #c9a84c, #f0d080);
+    color: #080c14;
+    font-weight: 800; font-size: 1rem;
+    padding: 16px 48px; border-radius: 4px;
+    text-decoration: none; letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(201,168,76,0.35);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(201,168,76,0.5);
+  }
+  .btn-secondary {
+    display: inline-block;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-weight: 600; font-size: 0.95rem;
+    padding: 14px 36px; border-radius: 4px;
+    text-decoration: none; margin-left: 16px;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    background: rgba(201,168,76,0.08);
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--dark2);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    padding: 48px 20px;
+    display: flex; justify-content:center; gap:60px; flex-wrap:wrap;
+  }
+  .stat { text-align:center; }
+  .stat-num {
+    font-size: 2.2rem; font-weight: 800;
+    color: var(--gold); display:block;
+  }
+  .stat-label { font-size:0.85rem; color:var(--sub); margin-top:4px; }
+
+  /* SECTION */
+  section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.75rem; letter-spacing:2px; text-transform:uppercase;
+    color: var(--gold); margin-bottom:12px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 800; margin-bottom: 16px;
+  }
+  .section-sub { color: var(--sub); max-width:600px; margin-bottom:48px; }
+
+  /* HOW IT WORKS */
+  .steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 24px;
+  }
+  .step {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 8px; padding: 32px 24px;
+    position:relative;
+  }
+  .step-num {
+    font-size: 3rem; font-weight: 900;
+    color: rgba(201,168,76,0.15); line-height:1;
+    margin-bottom: 16px;
+  }
+  .step h3 { font-size:1rem; margin-bottom:8px; color:var(--gold2); }
+  .step p { font-size:0.88rem; color:var(--sub); }
+
+  /* INDICATORS */
+  .indicators {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    gap: 16px; margin-top: 40px;
+  }
+  .indicator {
+    background: var(--dark3);
+    border: 1px solid rgba(201,168,76,0.1);
+    border-radius: 6px; padding: 16px 20px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .ind-icon { font-size:1.4rem; }
+  .ind-name { font-size:0.85rem; color:var(--text); }
+  .ind-cat { font-size:0.72rem; color:var(--sub); }
+
+  /* THEORY */
+  .theory-box {
+    background: var(--dark2);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px; padding: 40px;
+    margin-top: 40px;
+  }
+  .formula {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900; color: var(--gold);
+    text-align:center; margin: 24px 0;
+    letter-spacing: 4px;
+  }
+  .formula-sub {
+    text-align:center; color:var(--sub); font-size:0.9rem;
+  }
+  .doi-link {
+    display:inline-block; margin-top:20px;
+    color: var(--sub); font-size:0.8rem;
+    text-decoration:none; border-bottom:1px solid rgba(138,154,176,0.3);
+  }
+  .doi-link:hover { color:var(--gold); }
+
+  /* PRICING */
+  .pricing-card {
+    background: var(--dark2);
+    border: 2px solid var(--gold);
+    border-radius: 12px; padding: 48px 40px;
+    max-width: 480px; margin: 0 auto;
+    text-align:center;
+    box-shadow: 0 0 60px rgba(201,168,76,0.1);
+  }
+  .pricing-badge {
+    background: var(--gold);
+    color: #080c14; font-weight:800;
+    font-size:0.75rem; letter-spacing:2px;
+    padding: 4px 16px; border-radius:20px;
+    display:inline-block; margin-bottom:24px;
+  }
+  .price {
+    font-size: 3.5rem; font-weight:900;
+    color: var(--gold2); line-height:1;
+  }
+  .price-note { color:var(--sub); font-size:0.85rem; margin:8px 0 32px; }
+  .features { list-style:none; text-align:left; margin-bottom:36px; }
+  .features li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size:0.9rem; display:flex; align-items:center; gap:10px;
+  }
+  .features li:last-child { border-bottom:none; }
+  .check { color:var(--gold); font-size:1rem; }
+
+  /* FAQ */
+  .faq { margin-top:40px; }
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding: 20px 0;
+  }
+  .faq-q { font-weight:600; margin-bottom:8px; color:var(--gold2); }
+  .faq-a { color:var(--sub); font-size:0.9rem; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 40px 20px; text-align:center;
+    color: var(--sub); font-size:0.85rem;
+  }
+  footer a { color:var(--sub); }
+  .footer-logo { color:var(--gold); font-weight:700; font-size:1.1rem; margin-bottom:12px; }
+
+  /* BG FULL-WIDTH */
+  .full-bg { background: var(--dark2); }
+
+  @media(max-width:600px) {
+    nav { padding: 0 20px; }
+    .stats { gap:32px; }
+    .btn-secondary { margin-left:0; margin-top:12px; }
+    .theory-box { padding:24px; }
+    .pricing-card { padding:32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TENDO ECONOMICS</div>
+  <div class="nav-links">
+    <a href="#how">How It Works</a>
+    <a href="#theory">Theory</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-badge">⚡ Neutrino-Correlated Trading System</div>
+    <h1>Trade Gold with<br/><span>Cosmic Precision</span></h1>
+    <p class="hero-sub">
+      TendoEconomics EA monitors IceCube neutrino alerts in real time,
+      calculates a 12-indicator composite score, and enters XAU/USD
+      automatically — based on peer-reviewed research.
+    </p>
+    <div class="ticker-row">
+      <div class="ticker"><div class="ticker-dot"></div>XAU/USD</div>
+      <div class="ticker"><div class="ticker-dot"></div>MT5 Compatible</div>
+      <div class="ticker"><div class="ticker-dot"></div>Auto-Entry</div>
+      <div class="ticker"><div class="ticker-dot"></div>72h Hold</div>
+      <div class="ticker"><div class="ticker-dot"></div>DOI Verified</div>
+    </div>
+    <a href="#pricing" class="btn-primary">Get the EA →</a>
+    <a href="#theory" class="btn-secondary">Read the Theory</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">p=0.0051</span>
+    <div class="stat-label">Statistical Significance</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">+1.547%</span>
+    <div class="stat-label">Avg Excess Return (72h post-GOLD event)</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">12</span>
+    <div class="stat-label">Global Indicators Monitored</div>
+  </div>
+  <div class="stat">
+    <span class="stat-num">7yr</span>
+    <div class="stat-label">Historical Data Verified</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="section-tag">How It Works</div>
+  <h2 class="section-title">Three Steps. Fully Automated.</h2>
+  <p class="section-sub">From cosmic event to trade execution — no manual input required.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Neutrino Alert Detection</h3>
+      <p>The EA automatically fetches IceCube GOLD-class neutrino alerts from NASA GCN Circulars every 6 hours.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>12-Indicator Composite Score</h3>
+      <p>Silver, Platinum, BTC, AI ETF, Wind/Solar ETF, Nikkei, USD/JPY, China, Korea, UK PMI — all weighted and scored in real time.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>XAU/USD Auto Entry</h3>
+      <p>If score exceeds threshold (0.55), the EA enters a long position on gold with automatic SL, TP, and 72-hour exit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INDICATORS -->
+<div class="full-bg">
+<section>
+  <div class="section-tag">Indicators</div>
+  <h2 class="section-title">12 Global Signals. One Decision.</h2>
+  <p class="section-sub">The EA synthesizes economic activity across asset classes and geographies.</p>
+  <div class="indicators">
+    <div class="indicator"><div class="ind-icon">🥈</div><div><div class="ind-name">Silver (XAG)</div><div class="ind-cat">Safe Asset</div></div></div>
+    <div class="indicator"><div class="ind-icon">⚪</div><div><div class="ind-name">Platinum (XPT)</div><div class="ind-cat">Safe Asset</div></div></div>
+    <div class="indicator"><div class="ind-icon">₿</div><div><div class="ind-name">Bitcoin (BTC)</div><div class="ind-cat">Risk Asset</div></div></div>
+    <div class="indicator"><div class="ind-icon">🤖</div><div><div class="ind-name">AI & ROBOT ETF</div><div class="ind-cat">Future Investment</div></div></div>
+    <div class="indicator"><div class="ind-icon">💨</div><div><div class="ind-name">Wind Power ETF</div><div class="ind-cat">Energy Transition</div></div></div>
+    <div class="indicator"><div class="ind-icon">☀️</div><div><div class="ind-name">Solar ETF</div><div class="ind-cat">Energy Transition</div></div></div>
+    <div class="indicator"><div class="ind-icon">🗾</div><div><div class="ind-name">Nikkei 225</div><div class="ind-cat">Asia Economy</div></div></div>
+    <div class="indicator"><div class="ind-icon">💴</div><div><div class="ind-name">USD/JPY</div><div class="ind-cat">Currency Flow</div></div></div>
+    <div class="indicator"><div class="ind-icon">🇨🇳</div><div><div class="ind-name">China 50</div><div class="ind-cat">Asia Economy</div></div></div>
+    <div class="indicator"><div class="ind-icon">🇰🇷</div><div><div class="ind-name">KOSPI (Korea)</div><div class="ind-cat">Asia Economy</div></div></div>
+    <div class="indicator"><div class="ind-icon">🇬🇧</div><div><div class="ind-name">UK PMI / GBP</div><div class="ind-cat">Labour Sentiment</div></div></div>
+    <div class="indicator"><div class="ind-icon">🌌</div><div><div class="ind-name">IceCube GOLD</div><div class="ind-cat">Cosmic Trigger</div></div></div>
+  </div>
+</section>
+</div>
+
+<!-- THEORY -->
+<section id="theory">
+  <div class="section-tag">Theory</div>
+  <h2 class="section-title">Built on Peer-Reviewed Research</h2>
+  <p class="section-sub">This EA is not based on indicators alone — it is the implementation of a published academic hypothesis.</p>
+  <div class="theory-box">
+    <div class="formula">V = N / D</div>
+    <div class="formula-sub">Value = Narrative / Friction</div>
+    <p style="margin-top:24px;color:var(--sub);font-size:0.9rem;text-align:center;max-width:600px;margin-left:auto;margin-right:auto;">
+      When IceCube detects a high-energy neutrino event, information flow (N) increases
+      while uncertainty (D) rises — activating human economic will across global markets.
+      This is the <strong style="color:var(--text)">Social Transmission Hypothesis</strong>.
+    </p>
+    <div style="text-align:center;">
+      <a class="doi-link" href="https://zenodo.org/records/20093286" target="_blank">
+        📄 DOI: 10.5281/zenodo.20093286 — Tendo Economics v2.0
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:8px;">
+      <a class="doi-link" href="https://orcid.org/0009-0006-2290-6593" target="_blank">
+        🔬 ORCID: 0009-0006-2290-6593 — Yoshimitsu Katayama
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<div class="full-bg">
+<section id="pricing" style="text-align:center;">
+  <div class="section-tag">Pricing</div>
+  <h2 class="section-title">One License. All Features.</h2>
+  <p class="section-sub" style="margin:0 auto 48px;">No subscriptions. No upsells. Download and run.</p>
+  <div class="pricing-card">
+    <div class="pricing-badge">LIFETIME LICENSE</div>
+    <div class="price">$97</div>
+    <div class="price-note">One-time payment — MT5 .ex5 file delivered instantly</div>
+    <ul class="features">
+      <li><span class="check">✦</span> TendoEconomics EA v2.0 (.ex5)</li>
+      <li><span class="check">✦</span> Auto IceCube GCN alert fetching</li>
+      <li><span class="check">✦</span> 12-indicator composite scoring</li>
+      <li><span class="check">✦</span> XAU/USD auto entry + 72h exit</li>
+      <li><span class="check">✦</span> Adjustable SL / TP / Lot size</li>
+      <li><span class="check">✦</span> Full setup guide (PDF)</li>
+      <li><span class="check">✦</span> Based on DOI-registered research</li>
+    </ul>
+    <a href="https://buy.stripe.com/4gM9AU3vC19n0aaerw6kg09" class="btn-primary" style="display:block;text-align:center;">
+      Buy Now — $97
+    </a>
+    <p style="margin-top:16px;font-size:0.78rem;color:var(--sub);">
+      Secure payment via Stripe. EA file sent to your email within 24h.
+    </p>
+  </div>
+</section>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-tag">FAQ</div>
+  <h2 class="section-title">Common Questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">What platform does this work on?</div>
+      <div class="faq-a">MetaTrader 5 (MT5) only. The EA is compiled as an .ex5 file.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does it work on Prop Firm accounts?</div>
+      <div class="faq-a">Yes. The EA uses standard MT5 trade functions and is compatible with most prop firm environments. Verify your firm's EA rules before use.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does the IceCube alert work?</div>
+      <div class="faq-a">The EA uses MT5's built-in WebRequest to fetch NASA GCN Circulars every 6 hours. No external software needed. Just allow the URL in MT5 options.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this a guaranteed profit system?</div>
+      <div class="faq-a">No. This EA is based on a statistically significant correlation (p=0.0051) — not a guarantee. All trading involves risk. Use proper risk management.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Who built this?</div>
+      <div class="faq-a">Yoshimitsu Katayama, founder of TheYKHC Research. The underlying theory is published on Zenodo with a DOI and ORCID-linked authorship.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">TENDO ECONOMICS</div>
+  <p>© 2026 TheYKHC Research / Yoshimitsu Katayama</p>
+  <p style="margin-top:6px;">
+    <a href="https://theykhc.com" target="_blank">theykhc.com</a>
+    &nbsp;·&nbsp;
+    <a href="https://zenodo.org/records/20093286" target="_blank">Research Paper</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:lineofsuccession@icloud.com">Contact</a>
+  </p>
+  <p style="margin-top:12px;font-size:0.75rem;opacity:0.5;">
+    Trading involves substantial risk. Past statistical correlations do not guarantee future results.
+    This EA is an experimental research implementation.
+  </p>
+</footer>
+
+</body>
+</html>
