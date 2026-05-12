@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>片山佳光 論文全開放カタログ — TheYKHC</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0f;
+    color: #e8e8e8;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 60px 40px 40px;
+    border-bottom: 1px solid #1a1a2e;
+    background: linear-gradient(180deg, #0a0a1a 0%, #0a0a0f 100%);
+  }
+
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .orcid-tag {
+    font-size: 11px;
+    color: #a6ce39;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: normal;
+    color: #f0f0f0;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-size: 28px;
+    color: #c9a84c;
+    font-weight: bold;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .search-bar {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 40px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 14px 20px;
+    background: #111118;
+    border: 1px solid #1e1e30;
+    border-radius: 4px;
+    color: #e8e8e8;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-bar input:focus {
+    border-color: #c9a84c;
+  }
+
+  .search-bar input::placeholder {
+    color: #444;
+  }
+
+  .filters {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    padding: 0 40px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 6px 16px;
+    border: 1px solid #1e1e30;
+    background: transparent;
+    color: #666;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    border-color: #c9a84c;
+    color: #c9a84c;
+  }
+
+  .papers-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 80px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    color: #c9a84c;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #1a1a2e;
+  }
+
+  .flagship-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .paper-card {
+    background: #0e0e18;
+    border: 1px solid #1a1a2e;
+    border-radius: 6px;
+    padding: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+
+  .paper-card:hover {
+    border-color: #c9a84c44;
+    background: #10101e;
+    transform: translateY(-1px);
+  }
+
+  .paper-card.flagship {
+    border-color: #c9a84c44;
+    background: #0f0f1a;
+  }
+
+  .paper-card.flagship:hover {
+    border-color: #c9a84c;
+  }
+
+  .flagship-badge {
+    font-size: 9px;
+    color: #c9a84c;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .paper-title {
+    font-size: 14px;
+    color: #e0e0e0;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .paper-desc {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .paper-doi {
+    font-size: 11px;
+    color: #3a6ea8;
+    font-family: monospace;
+  }
+
+  .paper-keywords {
+    margin-top: 8px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .keyword {
+    font-size: 10px;
+    padding: 2px 8px;
+    background: #1a1a2e;
+    border-radius: 10px;
+    color: #666;
+  }
+
+  .regular-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .paper-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 12px 16px;
+    background: #0e0e18;
+    border: 1px solid #1a1a2e;
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.15s;
+  }
+
+  .paper-row:hover {
+    border-color: #c9a84c44;
+    background: #10101e;
+  }
+
+  .paper-row-title {
+    font-size: 13px;
+    color: #ccc;
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .paper-row-doi {
+    font-size: 11px;
+    color: #3a6ea8;
+    font-family: monospace;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .count-display {
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 16px;
+  }
+
+  .hidden { display: none !important; }
+
+  .license-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    background: #1a2a1a;
+    color: #4a8a4a;
+    border-radius: 3px;
+    margin-top: 8px;
+    border: 1px solid #2a3a2a;
+  }
+
+  footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 11px;
+    color: #333;
+    border-top: 1px solid #1a1a2e;
+  }
+
+  @media (max-width: 600px) {
+    header, .search-bar, .filters, .papers-container { padding-left: 20px; padding-right: 20px; }
+    .flagship-grid { grid-template-columns: 1fr; }
+    .paper-row { flex-direction: column; gap: 4px; }
+    .paper-row-doi { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="orcid-tag">ORCID: 0009-0006-2290-6593 · CC BY 4.0 · All Rights Reserved to Author</div>
+    <h1>片山佳光（Yoshimitsu Katayama）<br>論文全開放カタログ</h1>
+    <p class="subtitle">
+      V=N/D — Value = Numerator / Denominator<br>
+      神学から宇宙論まで、一本の数式で繋げた思想体系。全論文CC BY 4.0にて完全開放。
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num" id="total-count">—</span>
+        <span class="stat-label">Total Papers</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">CC BY 4.0</span>
+        <span class="stat-label">License</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">Zenodo</span>
+        <span class="stat-label">Platform</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="search-bar">
+  <input type="text" id="search-input" placeholder="論文タイトルまたはキーワードで検索 / Search titles or keywords..." oninput="filterPapers()">
+</div>
+
+<div class="filters">
+  <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+  <button class="filter-btn" onclick="setFilter('flagship', this)">Core Papers</button>
+  <button class="filter-btn" onclick="setFilter('neutrino', this)">Neutrino / FX</button>
+  <button class="filter-btn" onclick="setFilter('gku', this)">GKU / Cosmology</button>
+  <button class="filter-btn" onclick="setFilter('bbddh', this)">BBDDH</button>
+  <button class="filter-btn" onclick="setFilter('value', this)">V=N/D</button>
+</div>
+
+<div class="papers-container">
+  <div class="section-label">Core Papers — 精鋭論文</div>
+  <div class="flagship-grid" id="flagship-container"></div>
+
+  <div class="section-label" style="margin-top: 8px;">All Papers — 全論文</div>
+  <div class="count-display" id="count-display"></div>
+  <div class="regular-list" id="regular-container"></div>
+</div>
+
+<footer>
+  © 2026 Yoshimitsu Katayama / TheYKHC · All papers licensed under CC BY 4.0<br>
+  Attribution required: Katayama, Y. (2026). [Title]. Zenodo. https://doi.org/[DOI]
+</footer>
+
+<script>
+const PAPERS_JSON_URL = 'https://keihikaru0001.github.io/katayama-works/papers.json';
+
+// フォールバック：手元の精鋭データ
+const FLAGSHIP_DATA = [
+  {
+    title: "Tendo Economics v3.0: Neutrino-Correlated Market Activation",
+    doi: "10.5281/zenodo.20130016",
+    url: "https://doi.org/10.5281/zenodo.20130016",
+    description: "Pre-registered prospective study. Wave-Based Social Transmission Hypothesis. CSS Window: May 25–30, 2026.",
+    keywords: ["neutrino", "market", "IceCube", "GOLD event", "V=N/D"],
+    flagship: true
+  },
+  {
+    title: "GKU Theory: A Unified Cosmological Framework",
+    doi: "10.5281/zenodo.19097250",
+    url: "https://doi.org/10.5281/zenodo.19097250",
+    description: "Koku-Genki-Ma Credit Protocol. Unified cosmology integrating consciousness, energy, and structure.",
+    keywords: ["GKU", "cosmology", "consciousness", "V=N/D"],
+    flagship: true
+  },
+  {
+    title: "Resonant Civilization Theory: Keystone Integration",
+    doi: "10.5281/zenodo.19305649",
+    url: "https://doi.org/10.5281/zenodo.19305649",
+    description: "Integration of all V=N/D theoretical frameworks. Civilizational survival through friction reduction.",
+    keywords: ["civilization", "V=N/D", "resonance", "keystone"],
+    flagship: true
+  },
+  {
+    title: "BBDDH Clinical Version: Cross-Diagnostic Hypothesis",
+    doi: "10.5281/zenodo.19105964",
+    url: "https://doi.org/10.5281/zenodo.19105964",
+    description: "Body-Brain Dissociative Disorder Hypothesis. Sensory gating deficit model connecting consciousness and neuroscience.",
+    keywords: ["BBDDH", "neuroscience", "sensory gating", "consciousness"],
+    flagship: true
+  },
+  {
+    title: "V=N/D: A Unified Theory of Value, Service, and Friction",
+    doi: "10.5281/zenodo.19504826",
+    url: "https://doi.org/10.5281/zenodo.19504826",
+    description: "The complete edition integrating all theoretical frameworks from theology to cosmology.",
+    keywords: ["V=N/D", "value theory", "unified theory", "TheYKHC"],
+    flagship: true
+  },
+  {
+    title: "Tendo Economics v2.0: Exploratory Statistical Study",
+    doi: "10.5281/zenodo.20093286",
+    url: "https://doi.org/10.5281/zenodo.20093286",
+    description: "Retrospective analysis of IceCube GOLD events and market returns. p=0.0051 (Mann-Whitney U).",
+    keywords: ["statistics", "IceCube", "market", "exploratory"],
+    flagship: true
+  }
+];
+
+let allPapers = [];
+let currentFilter = 'all';
+
+async function loadPapers() {
+  try {
+    const res = await fetch(PAPERS_JSON_URL);
+    if (res.ok) {
+      const data = await res.json();
+      allPapers = data;
+    } else {
+      throw new Error('fetch failed');
+    }
+  } catch(e) {
+    // フォールバック
+    allPapers = FLAGSHIP_DATA;
+  }
+  document.getElementById('total-count').textContent = allPapers.length;
+  renderAll();
+}
+
+function setFilter(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterPapers();
+}
+
+function matchesFilter(paper) {
+  const combined = (paper.title + ' ' + (paper.description||'') + ' ' + (paper.keywords||[]).join(' ')).toLowerCase();
+  switch(currentFilter) {
+    case 'flagship': return paper.flagship;
+    case 'neutrino': return combined.includes('neutrino') || combined.includes('icecube') || combined.includes('tendo') || combined.includes('fx') || combined.includes('market');
+    case 'gku': return combined.includes('gku') || combined.includes('cosmol') || combined.includes('koku') || combined.includes('universe');
+    case 'bbddh': return combined.includes('bbddh') || combined.includes('dissociative') || combined.includes('sensory');
+    case 'value': return combined.includes('v=n/d') || combined.includes('value') || combined.includes('friction');
+    default: return true;
+  }
+}
+
+function filterPapers() {
+  const query = document.getElementById('search-input').value.toLowerCase();
+  const flagship = document.getElementById('flagship-container');
+  const regular = document.getElementById('regular-container');
+  const countEl = document.getElementById('count-display');
+
+  let visibleCount = 0;
+
+  // flagship
+  flagship.querySelectorAll('.paper-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const paper = allPapers.find(p => p.flagship && card.dataset.doi === p.doi);
+    const matchQ = !query || text.includes(query);
+    const matchF = !paper || matchesFilter(paper);
+    if (matchQ && matchF) { card.classList.remove('hidden'); visibleCount++; }
+    else card.classList.add('hidden');
+  });
+
+  // regular
+  regular.querySelectorAll('.paper-row').forEach(row => {
+    const text = row.textContent.toLowerCase();
+    const paper = allPapers.find(p => !p.flagship && row.dataset.doi === p.doi);
+    const matchQ = !query || text.includes(query);
+    const matchF = !paper || matchesFilter(paper);
+    if (matchQ && matchF) { row.classList.remove('hidden'); visibleCount++; }
+    else row.classList.add('hidden');
+  });
+
+  countEl.textContent = `${visibleCount} papers`;
+}
+
+function renderAll() {
+  const flagshipContainer = document.getElementById('flagship-container');
+  const regularContainer = document.getElementById('regular-container');
+
+  // Flagship
+  const flagships = allPapers.filter(p => p.flagship);
+  flagshipContainer.innerHTML = flagships.map(p => `
+    <a class="paper-card flagship" href="${p.url}" target="_blank" data-doi="${p.doi}">
+      <div class="flagship-badge">★ Core Paper</div>
+      <div class="paper-title">${p.title}</div>
+      ${p.description ? `<div class="paper-desc">${p.description}</div>` : ''}
+      <div class="paper-doi">${p.doi}</div>
+      ${p.keywords && p.keywords.length ? `<div class="paper-keywords">${p.keywords.map(k => `<span class="keyword">${k}</span>`).join('')}</div>` : ''}
+      <div class="license-badge">CC BY 4.0</div>
+    </a>
+  `).join('');
+
+  // Regular
+  const regulars = allPapers.filter(p => !p.flagship);
+  document.getElementById('count-display').textContent = `${allPapers.length} papers total`;
+  regularContainer.innerHTML = regulars.map(p => `
+    <a class="paper-row" href="${p.url}" target="_blank" data-doi="${p.doi}">
+      <div class="paper-row-title">${p.title || p.doi}</div>
+      <div class="paper-row-doi">${p.doi}</div>
+    </a>
+  `).join('');
+}
+
+loadPapers();
+</script>
+</body>
+</html>
