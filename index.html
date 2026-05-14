@@ -6,7 +6,7 @@
 <title>Yoshimitsu Katayama / TheYKHC</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  
+
   body {
     background: #0a0a0f;
     color: #e8e8e0;
@@ -15,9 +15,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+    padding: 0 20px 40px;
   }
+
+  /* ナビゲーション */
+  nav {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px;
+    padding: 24px 0 40px;
+    border-bottom: 1px solid #1a1a22;
+    margin-bottom: 48px;
+  }
+
+  nav a {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: #c8a84b; }
 
   .container {
     max-width: 680px;
@@ -160,9 +182,7 @@
     border: 1px solid #2a2010;
   }
 
-  .shop-info {
-    flex: 1;
-  }
+  .shop-info { flex: 1; }
 
   .shop-name {
     font-size: 1rem;
@@ -207,6 +227,7 @@
     letter-spacing: 0.15em;
     color: #333;
     text-align: center;
+    line-height: 2;
   }
 
   /* Vision section */
@@ -248,14 +269,21 @@
     background: #c8a84b;
     color: #0a0a0f;
   }
-
 </style>
 </head>
 <body>
+
+  <!-- ナビゲーション -->
+  <nav>
+    <a href="https://www.theykhc.com/product-page/gku%E5%AE%87%E5%AE%99%E8%AB%96%E5%AE%8C%E5%85%A8%E7%89%88-%E5%85%B1%E9%B3%B4%E3%81%A8%E3%81%84%E3%81%86%E6%96%87%E6%98%8E%E3%81%AE%E8%A8%AD%E8%A8%88%E5%8E%9F%E7%90%86-%E6%97%A5%E8%8B%B1%E3%83%90%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%AC%E3%83%AB" target="_blank">Shop</a>
+    <a href="https://zenodo.org/search?q=katayama+yoshimitsu&sort=mostrecent" target="_blank">Works</a>
+    <a href="https://www.theykhc.com/about-7" target="_blank">About</a>
+    <a href="https://www.theykhc.com/contact-8" target="_blank">Contact</a>
+  </nav>
+
 <div class="container">
 
-
-  <!-- Vision Image Section -->
+  <!-- ビジョン画像 -->
   <div class="section vision-section">
     <img src="https://media.base44.com/images/public/69d570145faf332412ad4c73/448a066bf_TheYKHC2.jpg"
          alt="TheYKHC Vision Map"
@@ -264,13 +292,14 @@
     <a class="vision-btn"
        href="https://www.theykhc.com/product-page/gku%E5%AE%87%E5%AE%99%E8%AB%96%E5%AE%8C%E5%85%A8%E7%89%88-%E5%85%B1%E9%B3%B4%E3%81%A8%E3%81%84%E3%81%86%E6%96%87%E6%98%8E%E3%81%AE%E8%A8%AD%E8%A8%88%E5%8E%9F%E7%90%86-%E6%97%A5%E8%8B%B1%E3%83%90%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%AC%E3%83%AB"
        target="_blank">
-      GKU宇宙論完全版を購入する &nbsp;→
+      V=N/D 統一理論を購入する &nbsp;→
     </a>
   </div>
 
   <div class="name">片山 佳光</div>
   <div class="sub">Yoshimitsu Katayama &nbsp;/&nbsp; TheYKHC &nbsp;/&nbsp; Fukui, Japan</div>
 
+  <!-- Statement -->
   <div class="section">
     <div class="section-title">Statement</div>
     <p class="statement">
@@ -280,50 +309,60 @@
       機関なし。資金なし。一人で。
     </p>
     <p class="statement">
-      V=N/D — 価値は、ネットワークの密度と摩擦の比率から生まれる。
+      V=N/D — 価値は、体験の密度と摩擦の比率から生まれる。
     </p>
   </div>
 
-  <div class="section">
+  <!-- Shop -->
+  <div class="section" id="shop">
     <div class="section-title">Shop</div>
     <div class="shop-block">
-      <a class="shop-product" href="https://www.theykhc.com/product-page/gku%E5%AE%87%E5%AE%99%E8%AB%96%E5%AE%8C%E5%85%A8%E7%89%88-%E5%85%B1%E9%B3%B4%E3%81%A8%E3%81%84%E3%81%86%E6%96%87%E6%98%8E%E3%81%AE%E8%A8%AD%E8%A8%88%E5%8E%9F%E7%90%86-%E6%97%A5%E8%8B%B1%E3%83%90%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%AC%E3%83%AB" target="_blank">
-        <img class="shop-img" src="https://static.wixstatic.com/media/c53c5e_eab7d0f803f943e49c397f4a7031f3b2~mv2.png" alt="GKU宇宙論完全版">
+      <a class="shop-product"
+         href="https://www.theykhc.com/product-page/gku%E5%AE%87%E5%AE%99%E8%AB%96%E5%AE%8C%E5%85%A8%E7%89%88-%E5%85%B1%E9%B3%B4%E3%81%A8%E3%81%84%E3%81%86%E6%96%87%E6%98%8E%E3%81%AE%E8%A8%AD%E8%A8%88%E5%8E%9F%E7%90%86-%E6%97%A5%E8%8B%B1%E3%83%90%E3%82%A4%E3%83%AA%E3%83%B3%E3%82%AC%E3%83%AB"
+         target="_blank">
+        <img class="shop-img"
+             src="https://base44.app/api/apps/69d570145faf332412ad4c73/files/mp/public/69d570145faf332412ad4c73/4cad4ce2f_vnd_cover.png"
+             alt="V=N/D 統一理論">
         <div class="shop-info">
-          <div class="shop-name">GKU宇宙論完全版<br><span style="font-size:0.82rem;color:#888;">共鳴という文明の設計原理（日英バイリンガル）</span></div>
-          <div class="shop-desc">宇宙・意識・経済を貫く一本の原理「共鳴」を解明した統一理論。GKU・BBDDH・PRT・光貨、すべての起点となるキーストーン論文。日英バイリンガル全文収録。<br><br><small style="color:#555;">※著者・片山佳光（TheYKHC）の思想を記録した文書です。査読を経ていませんが、Zenodo（CERN運営）に永久登録されており、反証可能な仮説として提示しています。内容の価値判断は読者に委ねられます。</small></div>
-          <span class="shop-buy">今すぐ購入</span><span class="shop-price">¥500</span>
+          <div class="shop-name">V=N/D：価値・奉仕・摩擦の統一理論</div>
+          <div class="shop-desc">
+            なぜイエスは2,000年を動かしたのか。なぜ聖人は無一文で歴史に残るのか。なぜ文明は繁栄した後に自滅するのか。なぜ家族は崩壊し、戦争は終わらないのか。<br><br>
+            <small style="color:#555;">Zenodo（CERN運営）に永久登録。DOI: 10.5281/zenodo.19504826</small>
+          </div>
+          <span class="shop-buy">今すぐ購入</span><span class="shop-price">¥1,000</span>
         </div>
       </a>
     </div>
   </div>
 
-  <div class="section">
+  <!-- Works -->
+  <div class="section" id="works">
     <div class="section-title">Works</div>
     <div class="links">
-      <a class="link-item" href="https://amazon.com/author/keihikaru0001" target="_blank">
+      <a class="link-item" href="https://amazon.co.jp/stores/Yoshimitsu-Katayama/author/B0F3LXQK6B" target="_blank">
         <span class="link-label">Books</span>
-        <span class="link-title">Amazon Author Page — 3 titles published</span>
+        <span class="link-title">Amazon著者ページ — 3作品出版済み</span>
       </a>
       <a class="link-item" href="https://zenodo.org/search?q=katayama+yoshimitsu&sort=mostrecent" target="_blank">
         <span class="link-label">Zenodo</span>
-        <span class="link-title">11+ papers — permanently archived with DOI</span>
+        <span class="link-title">565本以上の論文 — DOIで永久保存</span>
       </a>
       <a class="link-item" href="https://osf.io/wu4ay" target="_blank">
         <span class="link-label">OSF</span>
-        <span class="link-title">V=N/D Pre-Registered Experimental Protocol</span>
+        <span class="link-title">V=N/D 事前登録済み実験プロトコル</span>
       </a>
       <a class="link-item" href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7556224" target="_blank">
         <span class="link-label">SSRN</span>
-        <span class="link-title">4 papers — social science archive</span>
+        <span class="link-title">社会科学アーカイブ — 4論文収録</span>
       </a>
       <a class="link-item" href="https://doi.org/10.5281/zenodo.19702245" target="_blank">
         <span class="link-label">Record</span>
-        <span class="link-title">Human-AI Collaborative Theory Building — complete output catalogue</span>
+        <span class="link-title">人間×AI共創理論構築 — 完全出力カタログ</span>
       </a>
     </div>
   </div>
 
+  <!-- ECHO -->
   <div class="section">
     <div class="section-title">ECHO</div>
     <div class="echo-block">
@@ -338,8 +377,9 @@
   </div>
 
   <div class="footer">
-    © 2026 TheYKHC — Yoshimitsu Katayama (片山佳光)<br>
-    All theories pre-registered and permanently archived.
+    © 2026 TheYKHC — Yoshimitsu Katayama（片山佳光）<br>
+    All theories pre-registered and permanently archived.<br>
+    <span style="color:#222;">DOI: 10.5281/zenodo.19325276</span>
   </div>
 
 </div>
